@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.2.13)  24 FEB 2015 10:49
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.2.13)  24 FEB 2015 11:15
 entering extended mode
 **Main.tex
-(C:\Users\Clément\Documents\GitHub\Enseignements\Main.tex
+(C:\Users\Clément\Documents\GitHub\Enseignement\Main.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman, ngerman, german-x-2009-06-19, ngerman-x-2009-06-19, french, loaded.
@@ -22,7 +22,7 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(C:\Users\Clément\Documents\GitHub\Enseignements\macro.tex
+(C:\Users\Clément\Documents\GitHub\Enseignement\macro.tex
 ("C:\Program Files\miktex.28new\miktek2\tex\generic\babel\babel.sty"
 Package: babel 2008/07/08 v3.8m The Babel package
 
@@ -800,29 +800,29 @@ Package hyperref Info: Option `breaklinks' set `true' on input line 18.
 \c@conj=\count139
 \c@Res=\count140
 )
-(C:\Users\Clément\Documents\GitHub\Enseignements\Main.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Info: Redefining \degres on input line 15.
-LaTeX Info: Redefining \dots on input line 15.
-LaTeX Info: Redefining \up on input line 15.
+(C:\Users\Clément\Documents\GitHub\Enseignement\Main.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Info: Redefining \degres on input line 13.
+LaTeX Info: Redefining \dots on input line 13.
+LaTeX Info: Redefining \up on input line 13.
 
 
 Package frenchb.ldf Warning: OT1 encoding should not be used for French. 
 (frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(frenchb.ldf)                of your document, on input line 15.
+(frenchb.ldf)                of your document, on input line 13.
 
 ("C:\Program Files\miktex.28new\miktek2\tex\context\base\supp-pdf.tex"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -838,7 +838,7 @@ Package frenchb.ldf Warning: OT1 encoding should not be used for French.
 \everyMPtoPDFconversion=\toks39
 ) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box38
-Package hyperref Info: Link coloring ON on input line 15.
+Package hyperref Info: Link coloring ON on input line 13.
 
 ("C:\Program Files\miktex.28new\miktek2\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -849,23 +849,23 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count146
 )
-LaTeX Info: Redefining \ref on input line 15.
-LaTeX Info: Redefining \pageref on input line 15.
-LaTeX Info: Redefining \nameref on input line 15.
- (C:\Users\Clément\Documents\GitHub\Enseignements\Main.out)
-(C:\Users\Clément\Documents\GitHub\Enseignements\Main.out)
+LaTeX Info: Redefining \ref on input line 13.
+LaTeX Info: Redefining \pageref on input line 13.
+LaTeX Info: Redefining \nameref on input line 13.
+ (C:\Users\Clément\Documents\GitHub\Enseignement\Main.out)
+(C:\Users\Clément\Documents\GitHub\Enseignement\Main.out)
 \@outlinefile=\write4
-LaTeX Font Info:    Try loading font information for U+msa on input line 17.
+LaTeX Font Info:    Try loading font information for U+msa on input line 15.
 
 ("C:\Program Files\miktex.28new\miktek2\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 17.
+LaTeX Font Info:    Try loading font information for U+msb on input line 15.
 
 ("C:\Program Files\miktex.28new\miktek2\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (12.3059pt too wide) in paragraph at lines 22--23
+Overfull \hbox (12.3059pt too wide) in paragraph at lines 20--21
 []\OT1/cmr/m/n/10 Simuler 2 vec-teurs $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 et $
 \OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 conte-nant cha-cun $\OML/cmm/m/it/10 N \OT1
 /cmr/m/n/10 = 100$ va-riables independantes
@@ -874,88 +874,95 @@ Overfull \hbox (12.3059pt too wide) in paragraph at lines 22--23
 [1
 
 {C:/ProgramData/MiKTeX/2.8/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 50--52
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
 
  []
 
 
-Overfull \hbox (0.25691pt too wide) in paragraph at lines 73--74
+Overfull \hbox (0.25691pt too wide) in paragraph at lines 71--72
 []\OT1/cmr/m/n/10 Utiliser la com-mande \OT1/cmr/m/it/10 sum-mary \OT1/cmr/m/n/
 10 pour ana-ly-ser ra-pi-de-ment la table \OT1/cmr/m/it/10 bp.obese\OT1/cmr/m/n
 /10 .
  []
 
 
-Overfull \hbox (2.14049pt too wide) in paragraph at lines 74--75
+Overfull \hbox (2.14049pt too wide) in paragraph at lines 72--73
 []\OT1/cmr/m/n/10 Representer les donnees dans un graphe, en uti-li-sant des 
 sym-boles differents
  []
 
 [2]
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--97
+Underfull \hbox (badness 10000) in paragraph at lines 97--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 117--119
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 117--119
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
 [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 123.
- [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
- (C:\Users\Clément\Documents\GitHub\Enseignements\Main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 123.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 123.
-Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: 7E80926F63E3540F3C9F9ED13933A0CC;347.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 123.
+Underfull \hbox (badness 10000) in paragraph at lines 115--117
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--117
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 128.
+[4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 128.
+ (C:\Users\Clément\Documents\GitHub\Enseignement\Main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 128.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 128.
+
+
+Package rerunfilecheck Warning: File `Main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Main.out':
+(rerunfilecheck)             Before: 7E80926F63E3540F3C9F9ED13933A0CC;347
+(rerunfilecheck)             After:  997900F3B2E6C687CC981A71F24326C4;381.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 128.
  ) 
 Here is how much of TeX's memory you used:
- 15054 strings out of 495285
- 262889 string characters out of 3179528
- 333030 words of memory out of 3000000
- 17942 multiletter control sequences out of 15000+200000
+ 15058 strings out of 495285
+ 262905 string characters out of 3179528
+ 332030 words of memory out of 3000000
+ 17943 multiletter control sequences out of 15000+200000
  11541 words of font info for 45 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  58i,7n,55p,553b,440s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts/cm/cmbx12.
-pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts/cm/cmmi1
+pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts/cm/cmex1
 0.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts/cm/cmm
-i5.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts/cm/cm
-mi7.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts/cm/c
-mr10.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts/cm/
-cmr12.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts/cm
-/cmr17.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts/c
-m/cmr7.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts
-/cm/cmsy7.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfont
-s/cm/cmti10.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfo
-nts/symbols/msbm10.pfb>
-Output written on Main.pdf (4 pages, 158167 bytes).
+i10.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts/cm/c
+mmi5.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts/cm/
+cmmi7.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts/cm
+/cmr10.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts/c
+m/cmr12.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts/
+cm/cmr17.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts
+/cm/cmr7.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfon
+ts/cm/cmsy7.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfo
+nts/cm/cmti10.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/ams
+fonts/symbols/msbm10.pfb>
+Output written on Main.pdf (4 pages, 168245 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
- 38 named destinations out of 1000 (max. 500000)
+ 145 PDF objects out of 1000 (max. 8388607)
+ 41 named destinations out of 1000 (max. 500000)
  69 words of extra memory for PDF output out of 10000 (max. 10000000)
 

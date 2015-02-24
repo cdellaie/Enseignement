@@ -3,8 +3,6 @@
 
 \input{macro}
 
-
-
 \title{TP Statistiques et Séries Chronologiques  \\ Université de Lorraine \\ ~ \\
 \textbf{Régression Linéaire Multiple}}
 
@@ -90,7 +88,7 @@ et rapides à obtenir.\\
 \item Afficher le $R^2$ ajusté de la régression, le nombre de degrés de liberté résiduels, la matrice de variance-covariance des paramètres estimés. 
 \end{itemize}
 
-\section{Problème du voyageur de commerce}
+\section{Problème du voyageur de commerce et algorithme du recuit simulé}
 D'après le livre de Michel Benaïm et Nicole El Karoui, \textit{Promenade aléatoire, Chaîne de Markov et simulations, martingales et stratégies}, exemple $3.1.8$.\\
 
 La méthode du recuit simulé est un algorithme d'optimisation proche de celui de Metropolis, et consiste à se promener aléatoirement sur l'espace (fini) des états d'un système selon une loi construite de façon à ce que la promenade converge vers un état qui minimise une certaine fonctionnelle.\\
@@ -117,8 +115,15 @@ Initialiser $X_0$. Choisir le nombre de pas de la marche aléatoire $m$. Pour $n
 \end{minipage}}\\
 \\
 
+Le problème auquel nous allons appliquer cet algorithme est celui d'un commerçant devant visiter un ensemble fini $E={X_1,...,X_N}$ de villes, une et une seule fois. Pour minimiser son temps et son argent, il souhait trouver le chemin $l$ qui minimise la distance, soit, avec nos notations :
+\[V(l)=\sum_{j=1}^{N-1} d(X_{l(j)},X_{l(j+1)}),\]
+où l'on voit un chemin comme une permutation de l'ensemble $E$. Nous travaillerons avec des villes disposées aléatoirement dans le carré $[0;1]\times [0;1]$.
+ 
 \begin{enumerate}
-\item 
+\item Créer une fonction qui calcule le coût d'un chemin donné $l$.
+\item Créer une fonction qui affiche un chemin donné $l$.
+\item Choisir une loi de transition sur les chemins, et l'implémenter.
+\item Implémenter l'algorithme du recuit simulé sur ce problème, à l'aide d'une fonction si possible. Afficher le chemin obtenu, ainsi que l'évolution de la longueur du chemin en fonction du nombre d'itérations . Qu'en pensez vous ? De combien d'itérations avez-vous besoin pour obtenir un chemin plausible ? 
 \end{enumerate}
 \end{document}
 
