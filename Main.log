@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.2.13)  24 FEB 2015 11:15
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.2.13)  26 FEB 2015 22:29
 entering extended mode
 **Main.tex
 (C:\Users\Clément\Documents\GitHub\Enseignement\Main.tex
@@ -921,12 +921,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--117
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 128.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 136.
 [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 128.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 136.
  (C:\Users\Clément\Documents\GitHub\Enseignement\Main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 128.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 128.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 136.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 136.
 
 
 Package rerunfilecheck Warning: File `Main.out' has changed.
@@ -934,13 +934,13 @@ Package rerunfilecheck Warning: File `Main.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `Main.out':
-(rerunfilecheck)             Before: 7E80926F63E3540F3C9F9ED13933A0CC;347
-(rerunfilecheck)             After:  997900F3B2E6C687CC981A71F24326C4;381.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 128.
+(rerunfilecheck)             Before: 997900F3B2E6C687CC981A71F24326C4;381
+(rerunfilecheck)             After:  CBC73D474223A2BE0106C861C94E6D39;459.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 136.
  ) 
 Here is how much of TeX's memory you used:
- 15058 strings out of 495285
- 262905 string characters out of 3179528
+ 15062 strings out of 495285
+ 262935 string characters out of 3179528
  332030 words of memory out of 3000000
  17943 multiletter control sequences out of 15000+200000
  11541 words of font info for 45 fonts, out of 3000000 for 9000
@@ -960,9 +960,9 @@ cm/cmr17.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfonts
 ts/cm/cmsy7.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/amsfo
 nts/cm/cmti10.pfb><C:/Program Files/miktex.28new/miktek2/fonts/type1/public/ams
 fonts/symbols/msbm10.pfb>
-Output written on Main.pdf (4 pages, 168245 bytes).
+Output written on Main.pdf (4 pages, 169752 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 41 named destinations out of 1000 (max. 500000)
+ 150 PDF objects out of 1000 (max. 8388607)
+ 45 named destinations out of 1000 (max. 500000)
  69 words of extra memory for PDF output out of 10000 (max. 10000000)
 
