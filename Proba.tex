@@ -24,7 +24,7 @@
 Pour chaque loi, on considère un $n$-échantillon tiré de façon i.i.d selon cette loi. Proposer un espace des paramètres donnant un modèle identifiable. Donner une mesure dominante si possible. Calculer la vraisemblance du modèle, ainsi que la log-vraisemblance, donner les équations de vraisemblance et déterminer , s'il existe, un estimateur du maximum de vraisemblance.\\
 
 \begin{enumerate}
-\item Modèle gaussien standard, de densité par rapport à la mesure de Lebesgue \[f_\theta(x)=\frac{1}{\sqrt{2\pi \sigma^2}} \exp{(-\frac{1}{2\sigma^2}}(x-\mu)^2)\quad, \theta=(\mu,\sigma).\]
+\item Modèle gaussien standard, de densité par rapport à la mesure de Lebesgue \[f_\theta(x)=\frac{1}{\sqrt{2\pi \sigma^2}} \exp{-\frac{1}{2\sigma^2}}(x-\mu)^2\quad, \theta=(\mu,\sigma).\]
 \item Modèle de Bernoulli \[\mathbb P_\theta(X=1)=1-\mathbb P(X=0)=\theta.\]
 \item Modèle de Laplace, où $\sigma>0$ est connu, de densité par rapport à la mesure de Lebesgue \[f_\theta(x)=\frac{1}{2\sigma}\exp{(-\frac{|x-\theta|}{\sigma})}.\]
 \item Modèle uniforme, de densité par rapport à la mesure de Lebesgue \[f_\theta(x)=\frac{1}{\theta}1_{[0,\theta]}(x).\]

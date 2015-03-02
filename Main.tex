@@ -3,6 +3,8 @@
 
 \input{macro}
 
+
+
 \title{TP Statistiques et Séries Chronologiques  \\ Université de Lorraine \\ ~ \\
 \textbf{Régression Linéaire Multiple}}
 
@@ -13,118 +15,53 @@
 \begin{document}  
 \maketitle
 
-\section{Exercice 1}
-\begin{enumerate}
-\item Que font les commandes $pnorm$, $qnorm$ , $rnorm$, $dnorm$ ? Utilisez l'aide de \textit{R}.
-\item Tracer la fonction de densité de la loi normale. Faites varier les paramètres et afficher les différentes courbes sur le même graphique. 
-\item Simuler 2 vecteurs $X$ et $Y$ contenant chacun $N=100$ variables indépendantes identiquement distribuées suivant une loi normale $\mathcal N (0,1)$.
-\item Afficher les points de coordonnées $(X[j],Y[j])$ dans le plan, pour $j$ allant de $1$ à $100$.
-\item Tracer la fonction de répartition empirique des $X[j]$.
-\item Soit $\mathcal E$ une v.a. de loi exponentielle de paramètre $1$, et $U$ une v.a. suivant une loi uniforme sur $[0,2\pi]$. On pose 
-\[(X,Y)=(\sqrt{\mathcal E}\cos (U), \sqrt{\mathcal E} \sin (U)).\]
-Quelle est la loi du couple $(X,Y)$ ? (Vous pouvez le prouvez, ou observer grâce à \textit{R} ce qu'il se passe en simulant ces variables et en les traçant.)
-\end{enumerate}
+\include{Exercices}
+\section{La régression linéaire sous $R$}
 
-\section{Exercice 2}
+Ce numéro rappelle les notions nécessaires à l'interprétation d'une sortie $R$ de la fonction \textit{lm}. Dans toute la suite, \textit{regression} désigne un objet de type \textit{lm} que l'on a appellé grâce à $lm(Y\sim X_1+...+X_n, data=...)$. Si l'on note $X_{-i}$, le moins signifie que l'on calcule la quantité $X$ sans tenir compte de l'observation $i$.\\
 
-\begin{enumerate}
-\item Une table est déjà en mémoire dans \textit{R} : la table \textit{stackloss}. Analyser la rapidement.
-\item Tracer \textit{stack.loss} en fonction de \textit{Air.Flow}. Qu'en pensez-vous ?
-\item Effectuer la régression linéaire de \textit{stack.loss} en fonction des autres variables. Quelles sont celles qui sont significatives ?
-\end{enumerate}
+Dans le modèle de régression \[Y=X\beta + \epsilon ,\]
+la commande \textit{summary(regression)}, où \textit{regression} est un objet de la classe $lm$, renvoie plusieurs tableaux. 
 
-\section{Exercice 3}
+On note $\hat y_j =  \sum h_{ij}x_j$ , i.e. \[h_{ij}= \frac{1}{n}+\sum \frac{(x_i-\hat x)(x_j-\hat x)}{\sum (x_j-\hat x)^2}.\]
 
-Le fichier \textit{ozone.dta} contient les variables suivantes, pour une série de journées (qui sont ici nos individus) :
-\begin{itemize}
-\item l’identifiant de la journée,
-\item le maximum d’ozone (variable maxO3)
-\item l’heure à laquelle le maximum d’ozone a été obtenu (heure),
-\item les températures à 6h, 9h, 12h, 15h, 18h (resp. T6 à T18)
-\item la nébulosité à 6h, 9h, 12h, 15h, 18h (resp. Ne6 à Ne18)
-\item la projection du vent sur l’axe est-ouest à 12h (Vx),
-\item le maximum d’ozone de la veille (maxO3v).
-\end{itemize}
-Le but est de modéliser la valeur des pics d’ozone en fonction de grandeurs physiques facilement mesurables (température, heure, nébulosité, vent) afin d’avoir des approximations de la qualité de l’air faciles
-et rapides à obtenir.\\
+Le premier tableau,\textit{Residuals}, est destiné à donner une idée de la répartition des résidus en affichant les quantiles.  Je vous recommande d'afficher tout de même les résidus, et d'observer leur distribution. Mieux, vous pouvez utiliser les résidus studentisés. A priori, bien que tous soient centrés, les résidus n'ont pas même variance (même sous hypothèse d'homoscédasticité !) : $Var[\epsilon_j]=\sigma^2(1-h_{jj})$. Pour les rendre comparables, on pourrait les réduire, mais si l'on remplace la variance par la variance estimée, celle-ci dépend de l'information contenue dans $x_j$, ce qui empêche une quantification de l'effet que $x_j$ a sur les coeffcients de la régression. Pour palier à ce problème, on introduit 
+\[\hat \sigma_{-j}^2 = \frac{1}{n-3}[(n-2)\hat \sigma^2-\frac{\epsilon_j}{1-h_{jj}}]\]
+qui n'est rien d'autre que la variance estimé sur le modèle où l'on a supprimé l'observation $x_j$. Les résidus studentisés sont définis par $T_j = \frac{\epsilon_j}{\sigma_{-j}(1-h_{jj})}\sim T(n-3)$ et suivent une loi de Student à $n-3$ degré de liberté sous des hypothèses raisonnables. Pour détecter une anomalie dans les données, on peut vérifier que les résidus studentisés se répartissent de manière uniforme sur l'intervalle $[-2;2]$ (sous hypothèse d'homoscédasticité). Repérer des formes suspectes est un moyen facile pour repérer les valeurs aberrantes. On peut par exemple taper : \\
+\textit{qqnorm(studres(regression)); qqline(studres(regression))}.\\
+Une autre méthode pour détecter les valeurs aberrantes : utiliser la distance de Cook. Elle est définie par 
+\[D_j= \frac{\sum_j (\hat y_{-i,j}-\hat y_j)^2}{2\hat \sigma^2},\]
+et mesure l'influence d'une observation sur l'ensemble des prévisions (qu'on veut petite!). Encore une règle du pouce : si $D_j>1$, on enlève l'observation $j$. Vous pouvez le faire automatiquement en tapant \textit{plot(regression,which = 4)}.
+
+Le deuxième est nommé \textit{Coefficients} :
+\[\begin{array}{|c|c|c|c|c|}
+	\hline
+	& \text{Estimate} & \text{Std. Error} 	 & \text{t-value} & Pr(>|t|) \\
+	\hline
+ \beta_j & \hat \beta_j 	& \hat \sigma_j 	 & \hat t_j =\frac{\hat \beta_j}{\hat \sigma_j} & p\text{-value}\\
+\hline
+\end{array}\]
+
+Les trois premières colonnes s'expliquent elles-mêmes, mais à quoi servent les $2$ dernières ? A effectuer un test de significativité. Plus précisément, on sait que $\hat t_j$ suit une loi de Student à $N-k$ degrés de liberté sous l'hypothèse $H_0 | \beta_j = 0$ contre $H_1 | \beta_j \neq 0$. La quatrième colonne donne donc la valeur de cette statistique, et la dernière sa $p$-value, définie comme la valeur seuil de confiance $\alpha$ qui fait basculer le test. (Rappelez vous que, mécaniquement, si $\alpha$ diminue assez, on finit par accepter $H_0$.) Une règle appliquée par les statisticiens est la suivante :\\
+
+\begin{tabular}{|c|c|}
+\hline
+$p<0.01$ & suspicion très forte contre $H_0$ \\
+\hline
+$0.01-0.05$ & suspicion forte contre $H_0$ \\
+\hline
+$0.05-0.1$ & suspicion faible contre $H_0$ \\
+\hline
+$>0.1$ & peu ou pas de suspicion contre $H_0$\\
+\hline
+\end{tabular} 
+
+Donc, si $Pr(>|t|)$ est petit, on rejette l'hypothèse $\beta_j = 0$, ce qui signifie que le coefficient est significatif. $R$ ajoute même des petites étoiles à côté des coefficients les plus significatifs.
+
+\subsection{Exercice de remise en jambe}
 
 
-\begin{enumerate}
-\item Importer la table, et afficher un résumé de ce qu'elle contient.
-\item Tracer \textit{maxO3} en fonction de \textit{T12}, puis effectuer un régression linéaire. Ajouter la droite de régression sur le graphique. Soignez la présentation.
-\item Afficher les résultats de la régression.
-\item Extraire les résidus et tracer leur densité estimée.
-\item Effectuer la régression de \textit{maxO3} sur toutes les variables, et supprimer récursivement celles qui ne sont pas significatives, jusqu'à ce qu'elles le soient toutes.
-\end{enumerate}
-
-\section{Exercice 4}
-\begin{enumerate}
-\item Sur le site \textit{data.gouv.fr}, vous pourrez trouver des tables de données publiques en libre accès. Choisissez un thème qui vous intéresse, puis une table en conséquence. Télécharger là.
-\item Les tables sont souvent au format $.xls$ : vous aurez besoin d'installer un package pour pouvoir les lire. La commande pour ce faire est \textit{install.packages("nom du package")}. Installer le package \textit{gdata}.
-\item Analyser votre table.
-\end{enumerate}
-
-\section{Exercice 5}
-
-\begin{enumerate}
-\item Télécharger et installer le package \textit{ISwR} (Introductory Statistics with R).
-\item Utiliser la commande \textit{summary} pour analyser rapidement la table \textit{bp.obese}. L'échantillon provient d'un échantillon de population mexicaine en Californie, et la table décrit $3$ variables : le sexe (femme = $1$, homme =$0$), le ratio d'obésité (\textit{obese}) et la pression sanguine systolique en $mm$ de mercure (\textit{bp}).
-\item Représenter les données dans un graphe, en utilisant des symboles différents pour les hommes et les femmes.
-\item Expliquer la pression sanguine en fonction du ration d'obésité, puis du ratio d'obésité et du sexe.
-\item Tracer sur un même graphe les courbes correspondant aux régressions dans les 2 modèles. Soignez la présentation (couleurs différentes, légende,...)
-\end{enumerate}
-
-\section{Exercice 6}
-\begin{itemize}
-\item Télécharger la librairie \textit{MASS}.
-\item Analyser rapidement la table \textit{cats} et afficher les variables les unes en fonctions des autres par paires.
-\item Effectuer une régression linéaire selon le modèle $Hwt \sim Bwt * Sex $. Cela apporte-t-il quelque-chose par rapport au modèle $Hwt \sim Bwt + Sex $ ? 
-\item Visualiser les composantes de votre régression.
-\item En extraire les prédiction, les coefficients, les résidus, lés résidus studentisés, et la formule du modèle.
-\item Tracer le \textit{qqplot} des résidus studentisés ainsi que la première bissectrice.
-\item Tracer le graphe des résidus contre les prédictions.
-\item Tracer le graphe des distance de Cook.
-\item Observer les attributs que vous donne \textit{summary}
-\item Afficher le $R^2$ ajusté de la régression, le nombre de degrés de liberté résiduels, la matrice de variance-covariance des paramètres estimés. 
-\end{itemize}
-
-\section{Problème du voyageur de commerce et algorithme du recuit simulé}
-D'après le livre de Michel Benaïm et Nicole El Karoui, \textit{Promenade aléatoire, Chaîne de Markov et simulations, martingales et stratégies}, exemple $3.1.8$.\\
-
-La méthode du recuit simulé est un algorithme d'optimisation proche de celui de Metropolis, et consiste à se promener aléatoirement sur l'espace (fini) des états d'un système selon une loi construite de façon à ce que la promenade converge vers un état qui minimise une certaine fonctionnelle.\\
-
-On se donne une fonction $h :]0;\infty[\rightarrow ]0;1]$ telle que 
-\[h(x)=xh(\frac{1}{x}),\]
-par exemple $min(1,x)$ ou bien $\frac{x}{1+x}$. La fonction $V : E\rightarrow \R_+$ est la fonction "coût" à minimiser. \\
-
-La terminologie "recuit simulé" vient d'une technique métallurgique consistant à faire fondre de façon répétée le métal puis à le faire lentement refroidir pour en améliorer les propriétés. En effet, on va se donner un schéma de décroissance d'une quantité analogue à la température, que nous noterons $T_n$. Ce schéma est crucial pour que l'algorithme converge vers un minimum global de la fonction $V$ et ne reste pas piégé dans un de ses minima locaux. Vous pourrez choisir l'un des schémas suivants :
-\begin{itemize}
-\item décroissance logarithmique : \[T_n = \frac{C}{\log (n)}\]
-\item recuit par palier : \[T_n = \frac{1}{k}\text{ pour } e^{(k-1)C}\leq n < e^{kC}\]
-\end{itemize}
-
-Voici l'algorithme :\\
-
-\fbox{\begin{minipage}{0.9\textwidth}
-Initialiser $X_0$. Choisir le nombre de pas de la marche aléatoire $m$. Pour $n$ allant de $1$ à $m-1$, répéter :
-\begin{enumerate}
-\item Choisir un voisin $y$ de $X_n$ aléatoirement.
-\item Tirer $U\sim \mathcal{U}_{[0,1]}$.
-\item Si $U<h(\exp(\frac{1}{T_n})(V(X_n)-V(y))\frac{N(y)}{N(X_n)})$, accepter $X_{n+1}=y$, sinon refuser i.e. $X_{n+1}=X_n$.
-\end{enumerate}
-\end{minipage}}\\
-\\
-
-Le problème auquel nous allons appliquer cet algorithme est celui d'un commerçant devant visiter un ensemble fini $E={X_1,...,X_N}$ de villes, une et une seule fois. Pour minimiser son temps et son argent, il souhait trouver le chemin $l$ qui minimise la distance, soit, avec nos notations :
-\[V(l)=\sum_{j=1}^{N-1} d(X_{l(j)},X_{l(j+1)}),\]
-où l'on voit un chemin comme une permutation de l'ensemble $E$. Nous travaillerons avec des villes disposées aléatoirement dans le carré $[0;1]\times [0;1]$.
- 
-\begin{enumerate}
-\item Créer une fonction qui calcule le coût d'un chemin donné $l$.
-\item Créer une fonction qui affiche un chemin donné $l$.
-\item Choisir une loi de transition sur les chemins, et l'implémenter.
-\item Implémenter l'algorithme du recuit simulé sur ce problème, à l'aide d'une fonction si possible. Afficher le chemin obtenu, ainsi que l'évolution de la longueur du chemin en fonction du nombre d'itérations . Qu'en pensez vous ? De combien d'itérations avez-vous besoin pour obtenir un chemin plausible ? 
-\end{enumerate}
+\include{Voyageur}
 
 \section{Décryptage par analyse fréquentielle}
 
@@ -133,7 +70,10 @@ où l'on voit un chemin comme une permutation de l'ensemble $E$. Nous travailler
 \item Créer une fonction qui effectue l'analyse fréquentielle d'un texte.
 \item Arrivez-vous à décrypter le message suivant ? Mettre un message. 
 \end{enumerate}{enumerate}
+
 \end{document}
+
+
 
 
 

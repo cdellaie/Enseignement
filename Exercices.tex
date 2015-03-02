@@ -1,0 +1,75 @@
+\section{Exercice 1}
+\begin{enumerate}
+\item Que font les commandes $pnorm$, $qnorm$ , $rnorm$, $dnorm$ ? Utilisez l'aide de \textit{R}.
+\item Tracer la fonction de densité de la loi normale. Faites varier les paramètres et afficher les différentes courbes sur le même graphique. 
+\item Simuler 2 vecteurs $X$ et $Y$ contenant chacun $N=100$ variables indépendantes identiquement distribuées suivant une loi normale $\mathcal N (0,1)$.
+\item Afficher les points de coordonnées $(X[j],Y[j])$ dans le plan, pour $j$ allant de $1$ à $100$.
+\item Tracer la fonction de répartition empirique des $X[j]$.
+\item Soit $\mathcal E$ une v.a. de loi exponentielle de paramètre $1$, et $U$ une v.a. suivant une loi uniforme sur $[0,2\pi]$. On pose 
+\[(X,Y)=(\sqrt{\mathcal E}\cos (U), \sqrt{\mathcal E} \sin (U)).\]
+Quelle est la loi du couple $(X,Y)$ ? (Vous pouvez le prouvez, ou observer grâce à \textit{R} ce qu'il se passe en simulant ces variables et en les traçant.)
+\end{enumerate}
+
+\section{Exercice 2}
+
+\begin{enumerate}
+\item Une table est déjà en mémoire dans \textit{R} : la table \textit{stackloss}. Analyser la rapidement.
+\item Tracer \textit{stack.loss} en fonction de \textit{Air.Flow}. Qu'en pensez-vous ?
+\item Effectuer la régression linéaire de \textit{stack.loss} en fonction des autres variables. Quelles sont celles qui sont significatives ?
+\end{enumerate}
+
+\section{Exercice 3}
+
+Le fichier \textit{ozone.dta} contient les variables suivantes, pour une série de journées (qui sont ici nos individus) :
+\begin{itemize}
+\item l’identifiant de la journée,
+\item le maximum d’ozone (variable maxO3)
+\item l’heure à laquelle le maximum d’ozone a été obtenu (heure),
+\item les températures à 6h, 9h, 12h, 15h, 18h (resp. T6 à T18)
+\item la nébulosité à 6h, 9h, 12h, 15h, 18h (resp. Ne6 à Ne18)
+\item la projection du vent sur l’axe est-ouest à 12h (Vx),
+\item le maximum d’ozone de la veille (maxO3v).
+\end{itemize}
+Le but est de modéliser la valeur des pics d’ozone en fonction de grandeurs physiques facilement mesurables (température, heure, nébulosité, vent) afin d’avoir des approximations de la qualité de l’air faciles
+et rapides à obtenir.\\
+
+
+\begin{enumerate}
+\item Importer la table, et afficher un résumé de ce qu'elle contient.
+\item Tracer \textit{maxO3} en fonction de \textit{T12}, puis effectuer un régression linéaire. Ajouter la droite de régression sur le graphique. Soignez la présentation.
+\item Afficher les résultats de la régression.
+\item Extraire les résidus et tracer leur densité estimée.
+\item Effectuer la régression de \textit{maxO3} sur toutes les variables, et supprimer récursivement celles qui ne sont pas significatives, jusqu'à ce qu'elles le soient toutes.
+\end{enumerate}
+
+\section{Exercice 4}
+\begin{enumerate}
+\item Sur le site \textit{data.gouv.fr}, vous pourrez trouver des tables de données publiques en libre accès. Choisissez un thème qui vous intéresse, puis une table en conséquence. Télécharger là.
+\item Les tables sont souvent au format $.xls$ : vous aurez besoin d'installer un package pour pouvoir les lire. La commande pour ce faire est \textit{install.packages("nom du package")}. Installer le package \textit{gdata}.
+\item Analyser votre table.
+\end{enumerate}
+
+\section{Exercice 5}
+
+\begin{enumerate}
+\item Télécharger et installer le package \textit{ISwR} (Introductory Statistics with R).
+\item Utiliser la commande \textit{summary} pour analyser rapidement la table \textit{bp.obese}. L'échantillon provient d'un échantillon de population mexicaine en Californie, et la table décrit $3$ variables : le sexe (femme = $1$, homme =$0$), le ratio d'obésité (\textit{obese}) et la pression sanguine systolique en $mm$ de mercure (\textit{bp}).
+\item Représenter les données dans un graphe, en utilisant des symboles différents pour les hommes et les femmes.
+\item Expliquer la pression sanguine en fonction du ration d'obésité, puis du ratio d'obésité et du sexe.
+\item Tracer sur un même graphe les courbes correspondant aux régressions dans les 2 modèles. Soignez la présentation (couleurs différentes, légende,...)
+\end{enumerate}
+
+\section{Exercice 6}
+\begin{itemize}
+\item Télécharger la librairie \textit{MASS}.
+\item Analyser rapidement la table \textit{cats} et afficher les variables les unes en fonctions des autres par paires.
+\item Effectuer une régression linéaire selon le modèle $Hwt \sim Bwt * Sex $. Cela apporte-t-il quelque-chose par rapport au modèle $Hwt \sim Bwt + Sex $ ? 
+\item Visualiser les composantes de votre régression.
+\item En extraire les prédiction, les coefficients, les résidus, lés résidus studentisés, et la formule du modèle.
+\item Tracer le \textit{qqplot} des résidus studentisés ainsi que la première bissectrice.
+\item Tracer le graphe des résidus contre les prédictions.
+\item Tracer le graphe des distance de Cook.
+\item Observer les attributs que vous donne \textit{summary}
+\item Afficher le $R^2$ ajusté de la régression, le nombre de degrés de liberté résiduels, la matrice de variance-covariance des paramètres estimés. 
+\end{itemize}
+

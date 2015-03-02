@@ -1,0 +1,38 @@
+\section{Problème du voyageur de commerce et algorithme du recuit simulé}
+D'après le livre de Michel Benaïm et Nicole El Karoui, \textit{Promenade aléatoire, Chaîne de Markov et simulations, martingales et stratégies}, exemple $3.1.8$.\\
+
+La méthode du recuit simulé est un algorithme d'optimisation proche de celui de Metropolis, et consiste à se promener aléatoirement sur l'espace (fini) des états d'un système selon une loi construite de façon à ce que la promenade converge vers un état qui minimise une certaine fonctionnelle.\\
+
+On se donne une fonction $h :]0;\infty[\rightarrow ]0;1]$ telle que 
+\[h(x)=xh(\frac{1}{x}),\]
+par exemple $min(1,x)$ ou bien $\frac{x}{1+x}$. La fonction $V : E\rightarrow \R_+$ est la fonction "coût" à minimiser. \\
+
+La terminologie "recuit simulé" vient d'une technique métallurgique consistant à faire fondre de façon répétée le métal puis à le faire lentement refroidir pour en améliorer les propriétés. En effet, on va se donner un schéma de décroissance d'une quantité analogue à la température, que nous noterons $T_n$. Ce schéma est crucial pour que l'algorithme converge vers un minimum global de la fonction $V$ et ne reste pas piégé dans un de ses minima locaux. Vous pourrez choisir l'un des schémas suivants :
+\begin{itemize}
+\item décroissance logarithmique : \[T_n = \frac{C}{\log (n)}\]
+\item recuit par palier : \[T_n = \frac{1}{k}\text{ pour } e^{(k-1)C}\leq n < e^{kC}\]
+\end{itemize}
+
+Voici l'algorithme :\\
+
+\fbox{\begin{minipage}{0.9\textwidth}
+Initialiser $X_0$. Choisir le nombre de pas de la marche aléatoire $m$. Pour $n$ allant de $1$ à $m-1$, répéter :
+\begin{enumerate}
+\item Choisir un voisin $y$ de $X_n$ aléatoirement.
+\item Tirer $U\sim \mathcal{U}_{[0,1]}$.
+\item Si $U<h(\exp(\frac{1}{T_n})(V(X_n)-V(y))\frac{N(y)}{N(X_n)})$, accepter $X_{n+1}=y$, sinon refuser i.e. $X_{n+1}=X_n$.
+\end{enumerate}
+\end{minipage}}\\
+\\
+
+Le problème auquel nous allons appliquer cet algorithme est celui d'un commerçant devant visiter un ensemble fini $E={X_1,...,X_N}$ de villes, une et une seule fois. Pour minimiser son temps et son argent, il souhait trouver le chemin $l$ qui minimise la distance, soit, avec nos notations :
+\[V(l)=\sum_{j=1}^{N-1} d(X_{l(j)},X_{l(j+1)}),\]
+où l'on voit un chemin comme une permutation de l'ensemble $E$. Nous travaillerons avec des villes disposées aléatoirement dans le carré $[0;1]\times [0;1]$.
+ 
+\begin{enumerate}
+\item Créer une fonction qui calcule le coût d'un chemin donné $l$.
+\item Créer une fonction qui affiche un chemin donné $l$.
+\item Choisir une loi de transition sur les chemins, et l'implémenter.
+\item Implémenter l'algorithme du recuit simulé sur ce problème, à l'aide d'une fonction si possible. Afficher le chemin obtenu, ainsi que l'évolution de la longueur du chemin en fonction du nombre d'itérations . Qu'en pensez vous ? De combien d'itérations avez-vous besoin pour obtenir un chemin plausible ? 
+\end{enumerate}
+
