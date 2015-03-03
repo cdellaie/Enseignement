@@ -55,7 +55,6 @@ $0.05-0.1$ & suspicion faible contre $H_0$ \\
 $>0.1$ & peu ou pas de suspicion contre $H_0$\\
 \hline
 \end{tabular} 
-\\
 
 Donc, si $Pr(>|t|)$ est petit, on rejette l'hypothèse $\beta_j = 0$, ce qui signifie que le coefficient est significatif. $R$ ajoute même des petites étoiles à côté des coefficients les plus significatifs.\\
 
