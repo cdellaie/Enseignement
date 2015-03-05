@@ -1,12 +1,56 @@
-\section{test}
+\section{Théorie des tests}
 
+\subsection{Exemples}
 \begin{enumerate}
 \item Une entrerise vend des biens dont elle assure que la durée de vie dépasse $10000$ heures. Vous êtes engagés pour vérifier la qualité d'iceux. Vous disposez d'un échantillon de $30$ de ces biens. La durée de vie moyenne calculée sur l'échantillon vaut $9900$ heures, on suppose que l'écart-type est connu et vaut $120$ heures. Pouvez-vous rejeter leur assertion à à un niveau de confiance de $0.05\%$.\\
 Répondez à la même question si l'écart-type n'est plus connu, et que l'écart-type obtenu sur l'échantillon vaut $125$ heures.\\
 Calculez la puissance du test, c'est-à-dire la probabilité de l'erreur de seconde espèce.
 
-\item 
+\item Une firme agroalimentaire assure qu'un cookie qu'elle produit ne contient pas plus de $2$ grammes d'un certain composé (graisse, colorant,...). Vous achetez un paquet, contentant $35$ cookiees, et mesurez une teneur moyenne de $2.1$ grammes. En supposant que l'écart-type de l'échantillon est de $0.25$, pouvez-vous incriminez la firme à un niveau de confiance de $0.05\%$. Même question si l'on ne connaît que l'écart-type empirique de $0.3$. Calculez la puissance du test.
+
+\item Lors des dernières élections, les médias affirment qu'au moins $60\%$ des citoyens ont voté. Vous interrogez $148$ citoyens de façon à obtenir un échantillon représentatif de la population (vous êtes statisticien après tout). Vous obtenez que $85$ des personnes interrogées ont voté. A $0.05\%$, votre test concorde-t-il  avec l'affirmation des médias ?
+\end{enumerate}
+\subsection{Analyse of Variance ou procédure ANOVA}
+\begin{enumerate}
+\item Une institution de santé publique veut comparer l'effet de trois traitement contre la grippe. Pour cela, $18$ hopitaux sont choisis de façon aléatoire, répartis par groupes de $6$, chacun appliquant un et un seul des trois traitement. Voici le nombre de personnes guéries au bout d'une semaine de traitement : \\
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Trait. $1$ & Trait. $2$ & Trait. $3$ \\
+\hline
+22 & 52 & 16 \\
+42 & 33 & 24 \\
+44 & 8 & 19 \\
+52 & 47 & 18 \\
+45 & 43 & 34 \\
+37 & 32 & 39 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item Une méthode pour rentrer les données dans \textit{R} : les taper dans un fichier \textit{.txt} puis utiliser \textit{read.table}  pour créer un objet de la classe \textit{data frame}. (Faîtes-le)
+\item Utiliser un test ANOVA pour répondre à la problématique de l'institution.
+\item Un pays frontalier, lui aussi touché par l'épidémie, décide de répliquer l'expérience avec le même nombre d'hôpitaux et les mêmes traitements. Chaque hôpital est selectionné de façon aléatoire, et dois appliquer les trois traitements pendant trois semaines, chaque traitement pendant une semaine, l'ordre des traitements étant lui aussi aléatoire. Voici le résultat :
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Trait. $1$ & Trait. $2$ & Trait. $3$ \\
+\hline
+22 & 52 & 16 \\
+42 & 33 & 24 \\
+44 & 8 & 19 \\
+52 & 47 & 18 \\
+45 & 43 & 34 \\
+37 & 32 & 39 \\
+\hline
+\end{tabular}
+\end{center}
+\end{enumerate}
 
 \end{enumerate}
+
 
 

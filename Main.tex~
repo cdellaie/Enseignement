@@ -16,54 +16,9 @@
 \maketitle
 
 \include{Exercices}
-\section{La régression linéaire sous $R$}
-
-Ce numéro rappelle les notions nécessaires à l'interprétation d'une sortie $R$ de la fonction \textit{lm}. Dans toute la suite, \textit{regression} désigne un objet de type \textit{lm} que l'on a appellé grâce à $lm(Y\sim X_1+...+X_n, data=...)$. Si l'on note $X_{-i}$, le moins signifie que l'on calcule la quantité $X$ sans tenir compte de l'observation $i$.\\
-
-Dans le modèle de régression \[Y=X\beta + \epsilon ,\]
-la commande \textit{summary(regression)}, où \textit{regression} est un objet de la classe $lm$, renvoie plusieurs tableaux. 
-
-On note $\hat y_j =  \sum h_{ij}x_j$ , i.e. \[h_{ij}= \frac{1}{n}+\sum \frac{(x_i-\hat x)(x_j-\hat x)}{\sum (x_j-\hat x)^2}.\]
-
-Le premier tableau,\textit{Residuals}, est destiné à donner une idée de la répartition des résidus en affichant les quantiles.  Je vous recommande d'afficher tout de même les résidus, et d'observer leur distribution. Mieux, vous pouvez utiliser les résidus studentisés. A priori, bien que tous soient centrés, les résidus n'ont pas même variance (même sous hypothèse d'homoscédasticité !) : $Var[\epsilon_j]=\sigma^2(1-h_{jj})$. Pour les rendre comparables, on pourrait les réduire, mais si l'on remplace la variance par la variance estimée, celle-ci dépend de l'information contenue dans $x_j$, ce qui empêche une quantification de l'effet que $x_j$ a sur les coeffcients de la régression. Pour palier à ce problème, on introduit 
-\[\hat \sigma_{-j}^2 = \frac{1}{n-3}[(n-2)\hat \sigma^2-\frac{\epsilon_j}{1-h_{jj}}]\]
-qui n'est rien d'autre que la variance estimé sur le modèle où l'on a supprimé l'observation $x_j$. Les résidus studentisés sont définis par $T_j = \frac{\epsilon_j}{\sigma_{-j}(1-h_{jj})}\sim T(n-3)$ et suivent une loi de Student à $n-3$ degré de liberté sous des hypothèses raisonnables. Pour détecter une anomalie dans les données, on peut vérifier que les résidus studentisés se répartissent de manière uniforme sur l'intervalle $[-2;2]$ (sous hypothèse d'homoscédasticité). Repérer des formes suspectes est un moyen facile pour repérer les valeurs aberrantes. On peut par exemple taper : \\
-\textit{qqnorm(studres(regression)); qqline(studres(regression))}.\\
-Une autre méthode pour détecter les valeurs aberrantes : utiliser la distance de Cook. Elle est définie par 
-\[D_j= \frac{\sum_j (\hat y_{-i,j}-\hat y_j)^2}{2\hat \sigma^2},\]
-et mesure l'influence d'une observation sur l'ensemble des prévisions (qu'on veut petite!). Encore une règle du pouce : si $D_j>1$, on enlève l'observation $j$. Vous pouvez le faire automatiquement en tapant \textit{plot(regression,which = 4)}.
-
-Le deuxième est nommé \textit{Coefficients} :
-\[\begin{array}{|c|c|c|c|c|}
-	\hline
-	& \text{Estimate} & \text{Std. Error} 	 & \text{t-value} & Pr(>|t|) \\
-	\hline
- \beta_j & \hat \beta_j 	& \hat \sigma_j 	 & \hat t_j =\frac{\hat \beta_j}{\hat \sigma_j} & p\text{-value}\\
-\hline
-\end{array}\]
-\\
-Les trois premières colonnes s'expliquent elles-mêmes, mais à quoi servent les $2$ dernières ? A effectuer un test de significativité. Plus précisément, on sait que $\hat t_j$ suit une loi de Student à $N-k$ degrés de liberté sous l'hypothèse $H_0 | \beta_j = 0$ contre $H_1 | \beta_j \neq 0$. La quatrième colonne donne donc la valeur de cette statistique, et la dernière sa $p$-value, définie comme la valeur seuil de confiance $\alpha$ qui fait basculer le test. (Rappelez vous que, mécaniquement, si $\alpha$ diminue assez, on finit par accepter $H_0$.) Une règle appliquée par les statisticiens est la suivante :\\
-
-\begin{tabular}{|c|c|}
-\hline
-$p<0.01$ & suspicion très forte contre $H_0$ \\
-\hline
-$0.01-0.05$ & suspicion forte contre $H_0$ \\
-\hline
-$0.05-0.1$ & suspicion faible contre $H_0$ \\
-\hline
-$>0.1$ & peu ou pas de suspicion contre $H_0$\\
-\hline
-\end{tabular} 
-
-Donc, si $Pr(>|t|)$ est petit, on rejette l'hypothèse $\beta_j = 0$, ce qui signifie que le coefficient est significatif. $R$ ajoute même des petites étoiles à côté des coefficients les plus significatifs.\\
-
-Reste encore à observer plusieurs indicateurs. L'erreur \textit{Residual standard error} est calculée comme un estimateur de $\sigma$ sous l'hypothèse de matrice variance-covariance égale à $\sigma^2 I_n$. Il nous reste encore le $R^2$ et le $R^2$ ajusté. Rappelons que le coefficient $R^2$ peut s'interpréter comme le cosinus de l'angle entre le vecteur des observations $Y_j$ et son projeté pour la norme $\mathcal L^2$ sur l'espace linéaire engendré par les observations $X_j$, soit
-\[R^2 = \frac{\sum (\hat y_j-\overline y)^2}{\sum ( y_j-\overline y)^2}.\]
-Cet indicateur à des valeurs comprises entre $0$ et $1$, la proximité avec $1$ indiquant une bonne adéquation du modèle aux données. Toutefois, son interprétation est sujette à caution : sa valeur augmente mécaniquement avec l'ajout de variables explicatives. En particulier, pour comparer la qualité de deux modèles au nombre de variables explicatives distinct, on lui préférera le $R^2$ ajusté, qui prend en compte ce nombre noté $k$ :
-\[RR^2 = 1-(1-R^2)\frac{n-1}{n-k-1}.\] 
-
+\include{Regression}
 \include{Voyageur}
+\include{Test}
 
 \section{Décryptage par analyse fréquentielle}
 

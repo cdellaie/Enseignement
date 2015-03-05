@@ -59,4 +59,56 @@ P=(p-0.6)/(sigma/sqrt(148));
 Rejection=(P<(-pnorm(1-alpha)))
 #We do not reject the null hypothesis, we can say that more than 60% of voters voted last year.
 
+# ANOVA
+
+data <- read.table("Traitement.txt",header=TRUE);
+data
+Out <- c(data[,1],data[,2],data[,3])
+In <- c(rep("Trait1",6),rep("Trait2",6),rep("Trait3",6))
+ANOVA=aov(Out ~ In)
+summary(ANOVA)
+
+# The pvalue is 0.11 > 0.05 : we do not reject the null hypothesis, that is the effect of each cure is equal.
+
+data2 <- read.table("Traitement2.txt",header=TRUE);
+data2
+Out2 <- c(data2[,1],data2[,2],data2[,3])
+In2 <- c(rep("H1",6),rep("H2",6),rep("H3",6))
+In3 <- c(rep('1',2),rep('2',2),rep('3',2))
+In3 <- c(In3,In3,In3)
+
+In4 <- c(c('1','2','3'),c('1','2','3'))
+In4 <- c(In4,In4,In4)
+
+ANOVA2=aov(Out2 ~ In2+In4)
+summary(ANOVA2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -60,7 +60,7 @@ et rapides à obtenir.\\
 \end{enumerate}
 
 \section{Exercice 6}
-\begin{enumerate}
+\begin{itemize}
 \item Télécharger la librairie \textit{MASS}.
 \item Analyser rapidement la table \textit{cats} et afficher les variables les unes en fonctions des autres par paires.
 \item Effectuer une régression linéaire selon le modèle $Hwt \sim Bwt * Sex $. Cela apporte-t-il quelque-chose par rapport au modèle $Hwt \sim Bwt + Sex $ ? 
@@ -71,5 +71,5 @@ et rapides à obtenir.\\
 \item Tracer le graphe des distance de Cook.
 \item Observer les attributs que vous donne \textit{summary}
 \item Afficher le $R^2$ ajusté de la régression, le nombre de degrés de liberté résiduels, la matrice de variance-covariance des paramètres estimés. 
-\end{enumerate}
+\end{itemize}
 

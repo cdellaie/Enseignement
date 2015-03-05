@@ -25,6 +25,10 @@ Rejection=(pvalue<alpha)
 s=125;
 TT=(sqrt(N)/s)*(xbar-10000); #is supposed to follow a Student(N-1) under H0 and to diverge under H1, is -4.3818
 Rejection2=(TT< (-qt(1-alpha,df=N-1))); # We reject H0 at 0.05% significane level
+# Power of the test
+# Error of type : Failure of null hypothesis rejection when it should have been.
+se=sigma/sqrt(N); #standard error
+
 
 # Exercice 2
 # Upper Tail Test of the Population Mean : H0| m =< m0 vs H1| m> m0
@@ -54,5 +58,56 @@ sigma=sqrt(0.6*(1-0.6));
 P=(p-0.6)/(sigma/sqrt(148)); 
 Rejection=(P<(-pnorm(1-alpha)))
 #We do not reject the null hypothesis, we can say that more than 60% of voters voted last year.
+
+# ANOVA
+
+data <- read.table("Traitement.txt",header=TRUE);
+data
+Out <- c(data[,1],data[,2],data[,3])
+In <- c(rep("Trait1",6),rep("Trait2",6),rep("Trait3",6))
+ANOVA=aov(Out ~ In)
+summary(ANOVA)
+
+# The pvalue is 0.11 > 0.05 : we do not reject the null hypothesis, that is the effect of each cure is equal.
+
+data2 <- read.table("Traitement2.txt",header=TRUE);
+data2
+Out2 <- c(data2[,1],data2[,2],data2[,3])
+In2 <- c(rep("H1",6),rep("H2",6),rep("H3",6))
+In3 <- c(rep('1',2),rep('2',2),rep('3',2))
+In3 <- c(In3,In3,In3)
+
+In4 <- c(c('1','2','3'),c('1','2','3'))
+In4 <- c(In4,In4,In4)
+
+ANOVA2=aov(Out2 ~ In2+In4)
+summary(ANOVA2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
