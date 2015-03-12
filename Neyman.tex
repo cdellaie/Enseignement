@@ -1,0 +1,43 @@
+\section{Principe de Neyman : décision à $2$ points}
+
+\begin{enumerate}
+
+\item Soit $f$ la densité d'une loi de probabilité sur $\R$, et $\mathcal E$ l'expérience statistique engendré par un $n$-échantillon de loi $p_\theta(x)=f(x-\theta)$. On suppose que $\Theta =\{0, \theta_0\}$ avec $\theta_0\neq 0$. On veut tester $H_0| \theta = 0$ contre $H_1| \theta= \theta_0$.
+\begin{enumerate}
+\item Décrire l'expérience statistique et donner la vraisemblance du modèle.
+\item Donner la zone de rejet du test de Neyman-Pearson de niveau $\alpha$ associé à $H_0$ et $H_1$.
+\end{enumerate}
+
+\item L'expérimentateur observe une seule réalisation d'une v.a. $X$ de loi de Poisson de paramètre $\theta>0$. On veut tester $H_0| \theta = \theta_0$ contre $H_1| \theta= \theta_1$, où $\theta_0\neq \theta_1$.
+\begin{enumerate}
+\item Donner la zone de rejet du test de Neyman-Pearson de niveau $\alpha$ associé.
+\item Sachant que $\mathbb P_{\theta_0}(X>9)=0.032$ et $\mathbb P_{\theta_1}(X>8)=0.068$, donner une zone de rejet explicite pour $\alpha = 0.05 = 5\%$. Le test est-il optimal ?
+\end{enumerate}
+
+\end{enumerate}
+
+\section{Neyman-Pearson : familles à rapport de vraisemblance monotone}
+
+\begin{enumerate}
+\item Soit $\mathcal E$ l'expérience statistique engendrée par un $n$-échantillon de loi normale $\mathcal N (\theta,\sigma^2)$, où $\sigma^2$ est connu, et $\theta\in \Theta =\R$. On souhaite tester $H_0| \theta = \theta_0$ contre $H_1| \theta= \theta_1$, où $\theta_0<\theta_1$.
+\begin{enumerate}
+\item Décrire le modèle ainsi que la vraisemblance. On choisira la mesure de Lebesgue comme mesure dominante.
+\item Calculer le rapport de vraisemblance \[\frac{f(\theta_1,Z)}{f(\theta_0,Z)}.\]
+\item Donner la zone de rejet pour le test de Neyman-Pearson associé.
+\end{enumerate}
+
+\item Pour la même expérience statistique, on a un test optimal (uniformément plus puissant ) de $H_0$ contre $H_1$ donné par la région de rejet 
+\[\mathcal R = \{\overline X_n >c\}\]
+où $c$ est solution de $\mathbb P_{\theta_0}(\overline X_n > c)=\alpha$.
+\begin{enumerate}
+\item Calculer explicitement la valeur de la constante $c=c(\theta_0,\alpha)$.
+\item Calculer la puissance de ce test.
+\end{enumerate}
+
+\section{Exercice}
+L'expérimentateur observe $2$ échantillons indépendants $X_1,...,X_n$ et $Y_1,...,Y_m$ de tailles distinctes $n\neq m$, de lois respectives $\mathcal N(\mu_1,\sigma^2_1)$ et $\mathcal N(\mu_2,\sigma^2_2)$. Il souhaite tester
+\[H_0\ : \ \mu_1=\mu_2 \quad \text{contre} \quad H_1  : \ \mu_1\neq \mu_2 .\]
+Si $s_{n,1}^2 = \frac{1}{n}\sum_{j=1}^n (X_j-\overline X_n)^2$ et $s_{m,2}^2 = \frac{1}{m}\sum_{j=1}^m (Y_j-\overline Y_m)^2$, construire un test basé sur la statistique 
+\[T_{n,m}=\frac{\overline X_n - \overline Y_m}{\sqrt{s_{n,1}^2}+s_{m,2}^2}\]
+et étudier sa consistance.
+\end{enumerate}

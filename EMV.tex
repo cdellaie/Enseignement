@@ -1,0 +1,27 @@
+\section{Généralités sur l'estimateur du maximum de vraisemblance}
+\begin{enumerate}
+\item Rappeler les propriétés de l'EMV.
+\item Soient $X_j$ des variables exponentielles indépendantes de paramètre $\theta>0$, non-observées, et $T$ un instant de censure. Soit $\mathcal E^n$ l'expérience engendrée par l'observation du $n$-échantillon $X_j^*=\min{\{T,X_j\}}$. Donner une mesure qui domine le modèle et calculer sa vraisemblance.
+\item Montrer que l'estimateur du maximum de vraisemblance ne dépend pas du choix de la mesure dominante.  
+\end{enumerate}
+\section{Exemples de calculs de maximum de vraisemblance}
+
+Pour chaque loi, on considère un $n$-échantillon tiré de façon i.i.d selon cette loi. Proposer un espace des paramètres donnant un modèle identifiable. Donner une mesure dominante si possible. Calculer la vraisemblance du modèle, ainsi que la log-vraisemblance, donner les équations de vraisemblance et déterminer , s'il existe, un estimateur du maximum de vraisemblance.\\
+
+\begin{enumerate}
+\item Modèle gaussien standard, de densité par rapport à la mesure de Lebesgue \[f_\theta(x)=\frac{1}{\sqrt{2\pi \sigma^2}} \exp{-\frac{1}{2\sigma^2}}(x-\mu)^2\quad, \theta=(\mu,\sigma).\]
+\item Modèle de Bernoulli \[\mathbb P_\theta(X=1)=1-\mathbb P(X=0)=\theta.\]
+\item Modèle de Laplace, où $\sigma>0$ est connu, de densité par rapport à la mesure de Lebesgue \[f_\theta(x)=\frac{1}{2\sigma}\exp{(-\frac{|x-\theta|}{\sigma})}.\]
+\item Modèle uniforme, de densité par rapport à la mesure de Lebesgue \[f_\theta(x)=\frac{1}{\theta}1_{[0,\theta]}(x).\]
+\item Modèle de Cauchy, de densité par rapport à la mesure de Lebesgue \[f_\theta(x)=\frac{1}{\pi(1-(x-\theta)^2)}.\]
+\item Modèle de translation. On considère la densité \[h(x)=\frac{ e^{-\frac{|x|}{2}}}{2\sqrt{2\pi|x|}}.\] Le modèle de translation par rapport à la densité $h$ est le modèle dominé par la mesure de Lebesgue sur $\R$ de densités 
+\[f_\theta(x)=h(x-\theta)\quad, x\in R,\theta \in \R.\]
+\end{enumerate}
+
+\section{Méthode des moments}
+\begin{enumerate}
+\item Calculer des estimateurs des moments d'ordre $1$ et $2$ pour l'expérience engendrée par l'observation d'un $n$-échantillon de variables exponentielles de paramètre $\theta>0$. Donner l'asymptotique des ces deux estimateurs.
+\item On considère le modèle de translation associé à la famille des lois de Cauchy :
+\[f_\theta(x)=\frac{1}{\pi(1+(x-\theta)^2)}\quad, x\in\R.\]
+On note $g$ la fonction signe, qui vaut $1$ si $x>0$, $-1$. Trouver un estimateur pour $\theta\mapsto \mathbb E[g(X_1)]$ et donner ses propriétés.
+\end{enumerate}
