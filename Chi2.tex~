@@ -4,7 +4,7 @@ On considère une variable qualitative $X$, à valeur dans un ensemble fini $E=\
 \[\mathfrak M_d=\{p=(p_1,...,p_d)^T : 0\geq p_j\geq 1 \text{ et } \sum p_j = 1\}.\]
 
 \begin{enumerate}
-\item \textbf{Test d'adéquation du $\chi^2$.} On observe un $n$-échantillon de loi $p$ et l'on souhaite tester $p=q$ contre $p\neq q$ où $q\in \mathfrak M_d$ est une loi fixée.
+\item \textbf{Test d'adéquation du $\chi^2$.} On observe un $n$-échantillon de loi $p$ et l'on souhaite tester $p=q$ contre $p\neq q$, où $q\in \mathfrak M_d$ est une loi fixée.
 \begin{enumerate}
 \item Décrire le modèle statistique.
 \item On définit les fréquences empiriques

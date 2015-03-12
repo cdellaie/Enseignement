@@ -35,10 +35,9 @@ où $c$ est solution de $\mathbb P_{\theta_0}(\overline X_n > c)=\alpha$.
 \end{enumerate}
 
 \section{Exercice}
-L'expérimentateur observe $2$ échantillons indépendants $X_1,...,X_n$ et $Y_1,...,Y_m$ de tailles distinctes $n\neq m$, de lois respectives $\mathcal N(\mu_1,\sigma^2_1$ et $\mathcal N(\mu_2,\sigma^2_2$. Il souhaite tester
+L'expérimentateur observe $2$ échantillons indépendants $X_1,...,X_n$ et $Y_1,...,Y_m$ de tailles distinctes $n\neq m$, de lois respectives $\mathcal N(\mu_1,\sigma^2_1)$ et $\mathcal N(\mu_2,\sigma^2_2)$. Il souhaite tester
 \[H_0\ : \ \mu_1=\mu_2 \quad \text{contre} \quad H_1  : \ \mu_1\neq \mu_2 .\]
 Si $s_{n,1}^2 = \frac{1}{n}\sum_{j=1}^n (X_j-\overline X_n)^2$ et $s_{m,2}^2 = \frac{1}{m}\sum_{j=1}^m (Y_j-\overline Y_m)^2$, construire un test basé sur la statistique 
 \[T_{n,m}=\frac{\overline X_n - \overline Y_m}{\sqrt{s_{n,1}^2}+s_{m,2}^2}\]
 et étudier sa consistance.
- 
 \end{enumerate}
