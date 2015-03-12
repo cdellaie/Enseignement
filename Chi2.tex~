@@ -1,0 +1,31 @@
+\section{ Tests du $\chi^2$}
+
+On considère une variable qualitative $X$, à valeur dans un ensemble fini $E=\{1,..,d\}$. Les lois de probabilité de telles v.a. sont entièrement décrites par le vecteur de probabilité $(p_1,...,p_d)^T$, où $p_j=\mathbb P(X=j)$. On confondera donc les lois de probabilités de $E$ avec 
+\[\mathfrak M_d=\{p=(p_1,...,p_d)^T : 0\geq p_j\geq 1 \text{ et } \sum p_j = 1\}.\]
+
+\begin{enumerate}
+\item \textbf{Test d'adéquation du $\chi^2$.} On observe un $n$-échantillon de loi $p$ et l'on souhaite tester $p=q$ contre $p\neq q$ où $q\in \mathfrak M_d$ est une loi fixée.
+\begin{enumerate}
+\item Décrire le modèle statistique.
+\item On définit les fréquences empiriques
+\[\ \hat p_{n,l} = \frac{1}{n}\sum_{j=1}^n 1_{X_j=l}\quad\text{pour }l=1,...,d.\]
+Donner la limite du vecteur $\hat p_n=(\hat p_{n,l} )_{l=1,d}^T$ pour la topologie de la convergence en probabilité sous $\mathbb P_p$.
+\item On définit
+\[U_n(p)=\sqrt{n}(\frac{\hat p_{n,l}-p_l}{\sqrt{p_l}})_{l=1,d}^T.\]
+Donner la limite en loi de chaque composante de $U_n(p)$ sous $\mathbb P_p$. Que peut-on dire a priori de la limite en loi de $U_n(p)$ ? Pourquoi ?
+\item On définit
+\[Y_l^j = \frac{1}{\sqrt{p_l}}(1_{X_j=l}-p_l).\]
+Si $Y_j$ désigne le vecteur $(Y_1^j, ... ,Y_d^j) $, montrer que $\frac{1}{\sqrt{n}}\sum Y_j = U_n(p)$.
+\item Calculer $E[Y^j _l ]$, et $E[Y^j _l Y_{l'}^j]$. Que valent les composantes de la matrice $V(p)= I_d- \sqrt{p}\sqrt{p}^T$, où $\sqrt{p}=(\sqrt{p_1}, ... , \sqrt{p_d})^T$ ?
+\item En déduire la limite en loi sous $\mathbb P_p$ de $U_n(p)$ et de $||U_n(p)||^2$, le carré de sa norme euclidienne.
+\item Soient $p,q\in \mathfrak M_d$ tels que les coefficients de $q$ soient tous non nuls. On définit :
+\[\chi^2 (p,q) = \sum_{l=1}^d\frac{(p_l-q_l)^2}{q_l}.\]
+Cette quantité est appelée ''distance du $\chi^2$'' bien que ce ne soit pas une distance ! Toutefois, $\chi^2(p,q)=0$ ssi $p=q$.\\
+Montrer que $n\chi^2(\hat p_n,p)= ||U_n(p)||^2$.
+\item On définit, pour $\alpha \in (0,1)$, la zone de rejet
+\[\mathcal R_{n,\alpha}=\{n\chi^2(\hat p_n,p)\geq q_{1-\alpha, d-1}^{\chi^2}\},\]
+où $q_{1-\alpha, d-1}^{\chi^2}$ est le quantile d'ordre $1-\alpha$ de la loi du $\chi^2$ à $d-1$ degrés de liberté.\\
+Montrer que le test associé est asymptotiquement de niveau $\alpha$ et est asymptotiquement consistant.
+\end{enumerate}
+
+\end{enumerate}
