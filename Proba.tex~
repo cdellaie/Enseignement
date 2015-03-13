@@ -13,10 +13,10 @@
 \begin{document}  
 \maketitle
 
-\include{EMV}
-\include{FDR}
-\include{Neyman}
-\include{Chi2}
+\input{EMV}
+\input{FDR}
+\input{Neyman}
+\input{Chi2}
 \end{document}
 
 
