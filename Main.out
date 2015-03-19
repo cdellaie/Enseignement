@@ -1,13 +1,3 @@
-\BOOKMARK [1][-]{section.1}{Exercice 1}{}% 1
-\BOOKMARK [1][-]{section.2}{Exercice 2}{}% 2
-\BOOKMARK [1][-]{section.3}{Exercice 3}{}% 3
-\BOOKMARK [1][-]{section.4}{Exercice 4}{}% 4
-\BOOKMARK [1][-]{section.5}{Exercice 5}{}% 5
-\BOOKMARK [1][-]{section.6}{Exercice 6}{}% 6
-\BOOKMARK [1][-]{section.7}{La r\351gression lin\351aire sous R}{}% 7
-\BOOKMARK [1][-]{section.8}{Probl\350me du voyageur de commerce et algorithme du recuit simul\351}{}% 8
-\BOOKMARK [1][-]{section.9}{Th\351orie des tests}{}% 9
-\BOOKMARK [2][-]{subsection.9.1}{Exemples}{section.9}% 10
-\BOOKMARK [2][-]{subsection.9.2}{Analyse of Variance ou proc\351dure ANOVA}{section.9}% 11
-\BOOKMARK [1][-]{section.10}{Follicule de rose}{}% 12
-\BOOKMARK [1][-]{section.11}{D\351cryptage par analyse fr\351quentielle}{}% 13
+\BOOKMARK [1][-]{section.1}{R\351gression sur variables qualitatives}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{ANOVA \340 1 facteur}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{ANOVA \340 2 facteurs}{section.1}% 3

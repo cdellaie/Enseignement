@@ -1,0 +1,4 @@
+data <- read.table('eucalyptus.txt',header=TRUE,sep=';')
+summary(data)
+
+plot(ht ~ circ, data = data) 

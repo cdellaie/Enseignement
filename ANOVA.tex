@@ -1,0 +1,43 @@
+\section{Régression sur variables qualitatives}
+
+Le but de cet exercice est d'expliquer la concentration en ozone \textit{O3} en fonction de la température \textit{T12} et de la direction du vent \textit{vent} dans la table \textit{ozone.txt}.\\
+
+\begin{enumerate}
+\item Télécharger la table, et effectuer des régressions selon les différents modèles.
+\item Tester l'égalité des pentes.
+\item Tester l'égalité des ordonnées à l'origine.
+\item Analyser les résidus.
+\end{enumerate}
+
+\subsection{ANOVA à $1$ facteur}
+
+Nous souhaitons modéliser la concentration en ozone en fonction de la direction du vent.
+
+\begin{enumerate}
+\item Tracer une boîte à moustaches de la variable $O3$ par rapport aux quatres modalités de la variable \textit{vent}. Le vent semble-t-il avoir une influence sur la concentration en ozone ?
+\item On se place dans un modèle d'analyse de la variance à un facteur
+\[y_{ij}=\mu + \alpha_j+\epsilon_{ij}\]
+\begin{enumerate}
+\item Effectuer la regression linéaire de \textit{O3} sur \textit{vent} sous la contrainte $\mu = 0$.
+\item Effectuer la regression linéaire de \textit{O3} sur \textit{vent} sous la contrainte $\alpha_1 = 0$.
+\item Effectuer la regression linéaire de \textit{O3} sur \textit{vent} sous la contrainte $\sum n_i \alpha_i = 0$.
+\item Effectuer la regression linéaire de \textit{O3} sur \textit{vent} sous la contrainte $\sum n_i \alpha_i = 0$.
+\end{enumerate}
+\item Analyser les résidus afin de constater que l'hypothèse d'homoscédasticité est vérifiée. Pour cela, tracer un boxplot des résidus en fonction de \textit{vent}, les résidus en fonction de $\hat{O3}$, leurs quantiles théoriques ainsi que la distribution des résidus par modalité de \textit{vent}.
+\end{enumerate}
+
+\subsection{ANOVA à $2$ facteurs}
+
+Nous voulons maintenant modéliser la concentration en ozone par le vent et la nébulosité, variable à $2$ modalités : SOLEIL et NUAGEUX.\\
+
+\begin{enumerate}
+\item Procéder à un examen graphique qui puisse déterminer si l'interaction des facteurs influe sur la variable à expliquer. (voir ce qu'est un \textit{profil})
+\item On suppose la gaussianité des résidus. 
+\begin{enumerate}
+\item Tester le modèle avec interaction : \textbf{mod1}.
+\item Tester le modèle sans interaction : \textbf{mod2}.
+\item Tester le modèle sans effet du facteur \textit{nebulosité} : \textbf{mod3}.
+\end{enumerate}
+ \item Grâce à la commande ANOVA de R, effectuer des analyses de la variance entre les modèles \textbf{mod1}, \textbf{mod2} et \textbf{mod3}.
+\item Répondez à la problématique.
+\end{enumerate}

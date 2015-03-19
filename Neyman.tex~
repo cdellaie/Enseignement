@@ -33,11 +33,26 @@ où $c$ est solution de $\mathbb P_{\theta_0}(\overline X_n > c)=\alpha$.
 \item Calculer explicitement la valeur de la constante $c=c(\theta_0,\alpha)$.
 \item Calculer la puissance de ce test.
 \end{enumerate}
+\end{enumerate}
 
 \section{Exercice}
 L'expérimentateur observe $2$ échantillons indépendants $X_1,...,X_n$ et $Y_1,...,Y_m$ de tailles distinctes $n\neq m$, de lois respectives $\mathcal N(\mu_1,\sigma^2_1)$ et $\mathcal N(\mu_2,\sigma^2_2)$. Il souhaite tester
 \[H_0\ : \ \mu_1=\mu_2 \quad \text{contre} \quad H_1  : \ \mu_1\neq \mu_2 .\]
 Si $s_{n,1}^2 = \frac{1}{n}\sum_{j=1}^n (X_j-\overline X_n)^2$ et $s_{m,2}^2 = \frac{1}{m}\sum_{j=1}^m (Y_j-\overline Y_m)^2$, construire un test basé sur la statistique 
-\[T_{n,m}=\frac{\overline X_n - \overline Y_m}{\sqrt{s_{n,1}^2}+s_{m,2}^2}\]
+\[T_{n,m}=\frac{\overline X_n - \overline Y_m}{\sqrt{s_{n,1}^2+s_{m,2}^2}}\]
 et étudier sa consistance.
+
+
+\section{Neyman-Pearson : loi exponentielle}
+
+On observe un $n$-échantillon $\underline x=(X_1,...,X_n)$ de variables iid de loi exponentielle de paramètre $\lambda>0$, de densité 
+\[x\mapsto \lambda \exp(-\lambda x)1_{x\leq 0}.\]
+\begin{enumerate}
+\item Rappeler l'espérance et la variance (les calculer si besoin) d'une loi exponentielle de paramètre $\lambda$. On rappelle que $2\lambda_{j=1}^n \sum X_j$ suit alors une loi du $\chi^2$ à $2n$ degrés de liberté.
+\item Ecrire le modèle statistique engendré par l'observation $ \underline x$.
+\item Calculer l'estimateur du maximum de vraisemblance $\hat \lambda^{MV}$ de $\lambda$.
+\item Montrer que $\hat \lambda^{MV}$ est asymptotiquement normal, et calculer sa variance limite.
+\item Soient $0<\lambda_0 < \lambda_1$. Construire un test d'hypothèse de 
+\[H_0 : \lambda =\lambda_0 \text{ contre } H_1 : \lambda = \lambda_1\]
+de niveau $\alpha$ et uniformément plus puissant. Expliciter le choix du seuil définissant la région critique. Montrer que le test est consistant, i.e. que l'erreur de seconde espèce du test tend vers $0$ lorsque $n\rightarrow \infty$.
 \end{enumerate}

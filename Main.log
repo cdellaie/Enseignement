@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.3)  5 MAR 2015 15:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.3)  19 MAR 2015 17:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -746,7 +746,7 @@ Package hyperref Info: Option `breaklinks' set `true' on input line 18.
 \c@conj=\count140
 \c@Res=\count141
 ) (./Main.aux
-(./Exercices.aux) (./Regression.aux) (./Voyageur.aux) (./Test.aux))
+(./ANOVA.aux))
 \openout1 = `Main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -829,185 +829,73 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 17.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-\openout2 = `Exercices.aux'.
-
- (./Exercices.tex
-Overfull \hbox (17.3059pt too wide) in paragraph at lines 5--6
-[]\OT1/cmr/m/n/10 Simuler 2 vec-teurs $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 et $
-\OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 conte-nant cha-cun $\OML/cmm/m/it/10 N \OT1
-/cmr/m/n/10 = 100$ va-riables ind^^Sependantes
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--35
-
- []
-
-[2
-
-]
-Overfull \hbox (5.25691pt too wide) in paragraph at lines 56--57
-[]\OT1/cmr/m/n/10 Utiliser la com-mande \OT1/cmr/m/it/10 sum-mary \OT1/cmr/m/n/
-10 pour ana-ly-ser ra-pi-de-ment la table \OT1/cmr/m/it/10 bp.obese\OT1/cmr/m/n
-/10 .
- []
-
-
-Overfull \hbox (7.14049pt too wide) in paragraph at lines 57--58
-[]\OT1/cmr/m/n/10 Repr^^Sesenter les donn^^Sees dans un graphe, en uti-li-sant 
-des sym-boles diff^^Serents
- []
-
-
-Overfull \hbox (7.09163pt too wide) in paragraph at lines 59--60
-\OT1/cmr/m/n/10 dans les 2 mod^^Reles. Soi-gnez la pr^^Sesentation (cou-leurs d
-iff^^Serentes, l^^Segende,...) 
- []
-
-) [3] [4]
-\openout2 = `Regression.aux'.
-
- (./Regression.tex
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1.
-
-
+) (./ANOVA.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--28
-
- []
-
-[5
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 44--45
-
- []
-
-) [6]
-\openout2 = `Voyageur.aux'.
-
- (./Voyageur.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--3
-
+Overfull \hbox (7.00153pt too wide) in paragraph at lines 6--7
+[]\OT1/cmr/m/n/10 T^^Sel^^Secharger la table, et ef-fec-tuer des r^^Segressions
+ se-lon les diff^^Serents mod^^Reles. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 12.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 12.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 29.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 29.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
+[1
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--9
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--27
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--27
-
- []
-
-[7
-
-
-]) [8]
-\openout2 = `Test.aux'.
-
- (./Test.tex
-Overfull \hbox (2.3916pt too wide) in paragraph at lines 9--10
-\OT1/cmr/m/n/10 ache-tez un pa-quet, conten-tant $35$ co-okiees, et me-su-rez u
-ne te-neur moyenne
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--16
-
- []
-
-[9
-
-
-]) [10]
-\openout2 = `Init.aux'.
-
- (./Init.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-
- []
-
-) [11
-
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 32.
- [12
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 32.
- (./Main.aux (./Exercices.aux) (./Regression.aux) (./Voyageur.aux)
-(./Test.aux) (./Init.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 32.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 32.
-
-
-Package rerunfilecheck Warning: File `Main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Main.out':
-(rerunfilecheck)             Before: 62B82E39F3F47CB0096E8A369B7BD963;727
-(rerunfilecheck)             After:  DA1766D1810387307EDBB8F9115081D0;781.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 32.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 34.
+ [2]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 34.
+ (./Main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 34.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 34.
+Package rerunfilecheck Info: File `Main.out' has not changed.
+(rerunfilecheck)             Checksum: 1D3D50540F9093891AECC3A134E7E3AD;214.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 34.
  ) 
 Here is how much of TeX's memory you used:
- 15468 strings out of 494958
- 264817 string characters out of 6179263
- 345423 words of memory out of 5000000
- 18294 multiletter control sequences out of 15000+600000
- 13095 words of font info for 51 fonts, out of 8000000 for 9000
+ 15355 strings out of 494958
+ 263765 string characters out of 6179263
+ 342135 words of memory out of 5000000
+ 18270 multiletter control sequences out of 15000+600000
+ 12156 words of font info for 47 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 58i,8n,55p,802b,580s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Main.pdf (12 pages, 191408 bytes).
+ 58i,7n,55p,429b,380s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmti10.pfb>
+Output written on Main.pdf (2 pages, 110569 bytes).
 PDF statistics:
- 252 PDF objects out of 1000 (max. 8388607)
- 220 compressed objects within 3 object streams
- 86 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 95 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
+ 24 named destinations out of 1000 (max. 500000)
+ 37 words of extra memory for PDF output out of 10000 (max. 10000000)
 
