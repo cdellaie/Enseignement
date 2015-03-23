@@ -1,16 +1,19 @@
 \section{Follicule de rose}
 
-Cet exercice est issu du live \textit{Initiation à la statistique avec R} de F. Bertrand et M. Maumy-Bertrand aux édition Dunod.\\
+Cet exercice est fortement inspiré d'un exercice du livre \textit{Initiation à la statistique avec R} de F. Bertrand et M. Maumy-Bertrand aux édition Dunod. Vous renderez une copie sur laquelle chaque question sera détaillée, et vous enverrez votre fichier $.R$ à mon adresse mail ainsi que tous vos graphiques. Votre fichier $.R$ devra être nommé \textit{NomPrénom.R}. Lorsque l'on demande de donner des conclusions, cela signifie que l'on s'attend à une \textbf{phrase rédigée} sur la copie, ainsi que du code \textbf{commenté} dans le fichier $.R$. De plus, les graphiques et autres tableaux ne peuvent qu'être bénéfiques à la compréhension, et donc à la notation, de votre travail.\\
+
+Cet énoncé s'intéresse à quantifier l'effet de la taille des follicules de roses sur leurs masse, ainsi que l'effet possible de l'espèce. Dans la première partie, on ne s'intéresse qu'à la relation entre taille et masse, la seconde essaie d'incorporer l'espèce (qui est une variable qualitative).\\
 
 \begin{enumerate}
-\item Télécharger le package \textit{BioStatR} et importer la librairie ainsi que la table \textit{Mesures}.
+\item Télécharger le package \textit{BioStatR} et importer la librairie ainsi que la table \textit{Mesures}. Décrire rapidement la table \textit{Mesures}. (Nombre de variables, principales caractéristiques des variables,etc.)
 \item Tracer le nuage de points de la taille en fonction de la masse des follicules de roses.
 \item Pouvez-vous soupçonner une relation linéaire entre ces deux variables ?
-\item Effectuer la régression linéaire de la taille sur la masse. Tracer la droite de régression sur le graphique.
+\item Effectuer la régression linéaire de la taille sur la masse. Tracer la droite de régression sur le graphique. Soignez la présentation (titre, couleurs,etc). 
+\item Donner un intervalle de confiance pour les coefficients du modèle que vous obtenez. Comment avez-vous trouvé ces informations ? En bonus, vous pouvez tracer la zone de confiance pour la droite de régression sur votre graphique.
 \item Donnez une prédiction plausible de la taille d'un follicule si sa masse est de $42$ grammes.
 \item Comment appellez-vous l'écart entre la valeur observée d'une observation et celle prédit par le modèle ?
 \item La droite des moindres carrés passe-t-elle par le point moyen $(\overline x_n, \overline y_n)$ ? Si oui, démontrer-le.
-\item Donner le coefficient de détermination $R^2$.
+\item Donner le coefficient de détermination $R^2$. A quoi sert ce coefficient ? Quelle est la différence entre le $R^2$ et le $R^2$ ajusté ?
 \item Donner la part de variance expliquée et totale.
 \item Donnez la valeur de l'estimation de $\sigma^2$.
 \item Effectuer les deux tests suivants au risque $0.05\%$ :
@@ -18,4 +21,12 @@ Cet exercice est issu du live \textit{Initiation à la statistique avec R} de F.
 \item $H_0 \ | \ \beta_0 = 0$ contre $H_1 \ | \ \beta_0 \neq 0$.
 \item $H_0 \ | \ \beta_1 = 0$ contre $H_1 \ | \ \beta_1 \neq 0$.
 \end{itemize}
+\end{enumerate}
+
+Cette partie vise à quantifier l'effet de l'espèce sur la taille du follicule. 
+
+\begin{enumerate}
+\item Effectuer une régression croisée qui tient compte de la variable \textit{espece}. Donner une synthèse rapide du résultat.
+\item Comment pourriez-vous tester si l'espèce à un effet sur la taille ? 
+\item Proposer une méthode, le mettre en oeuvre et donnez vos conclusions.
 \end{enumerate}
