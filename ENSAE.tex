@@ -1,0 +1,103 @@
+\section{Théorème de Cochran et applications}
+
+Voici un énoncé simplifié du théorème de Cochran.
+\begin{thm}[Cochran]
+Soit $E=(\R^n,\langle \ ,\ \rangle)$ l'espace euclidien usuel, et $F$ un sous-espace vectoriel de $E$ de dimension $p\leq n$. Notons $P$ la projection orthogonale sur le sous-espace $F$. Soit $\underline x$ un vecteur gaussien de $E$ centré réduit. \\
+Les vecteurs $P\underline x$ et $P^{\perp}\underline x$ sont indépendants, gaussiens, centrés et de matrice de variance-covariance respectives $P$ et $P^{\perp}$.\\
+Les variables aléatoires $||P\underline x||^2$ et $||P^{\perp}\underline x||^2$ sont indépendantes et suivent une loi du $\chi^2$ à $p$ et $n-p$ degrés de liberté, respectivement.
+\end{thm}
+
+\begin{enumerate}
+\item Démontrer le théorème.
+\item Soient $X_j$ un $n$-échantillon gaussien i.i.d d'espérance $\mu$ et de variance $\sigma^2$. On note
+\[\overline X_n = \frac{1}{n}\sum_{j=1}^n X_j\text{  et  } s^2_n=\frac{1}{n-1} \sum_{j=1}^n (X_j-\overline X_n)^2.\]
+Démontrer que $\overline X_n $ suit un loi normale $\mathcal N(\mu, \frac{\sigma^2}{n})$ et que $(n-1)\frac{s^2_n}{\sigma^2}$ suit une loi du $\chi^2$ à $n-1$ degrés de liberté. En déduire la loi de $\sqrt{n}\frac{\overline X_n -\mu}{s^2_n}$.
+\end{enumerate}
+
+\section{Un modèle non-linéaire}
+
+Soit $f : \R^n \times \R^k \rightarrow \R^n$ une fonction de classe $\mathcal C^2$ que l'on suppose connue. Soit le modèle 
+\[y=f(X,\alpha)+\epsilon \text{  et  } \epsilon \sim \mathcal N(0,\sigma^2 I_n).\] 
+On cherche à estimer \[\theta=(\alpha, \sigma^2) \in \Theta\subset \R^{k+1}.\]
+On note $L(\alpha)=||y-f(X,\alpha)||^2$.\\
+\begin{enumerate}
+\item Définir le modèle, et calculer la vraisemblance.
+\item Montrer que maximiser la vraisemblance est équivalent à minimiser $L(\alpha)$. 
+\item Calculer l'information de Fisher du modèle.
+\end{enumerate}
+
+\section{Maximum de vraisemblance et séries temporelles}
+
+Soient $\lambda\in \R$ tel que $|\lambda|<1$, $c\in \R$ et $\sigma^2 >0$. On observe un échantillon $\{Y_t\}_{t\leq T}$ que l'on pense suivre le modèle $AR(1)$
+\[Y_t = c +\lambda Y_{t-1} +\epsilon_t  \text{  où les } \epsilon_t \sim \mathcal N(0,\sigma^2)\]
+sont des variables i.i.d.\\
+On cherche à estimer 
+\[\theta = (c,\lambda,\sigma^2)^{T}\in\Theta\subset \R^3.\]
+\begin{enumerate}
+\item Calculer $\mathcal L(Y_1;\theta)$, $\mathcal L(Y_t|Y_{t-1};\theta)$, et en déduire $\mathcal L(Y_2,Y_1;\theta)$.
+\item Calculer la vraisemblance du modèle $\mathcal L(Y_1,...,Y_n|\theta)$. 
+\item Calculer la matrice de variance-covariance du processus $AR(1)$ gaussien. On la note $\Omega$.
+\item Réécrire la log-vraisemblance du modèle en utilisant $\Omega$. Quel est le lien avec la question $2$ ?
+\item Déterminer un estimateur du maximum de vraisemblance.
+\item Refaire l'exercice pour le modèle $MA(1)$ gaussien
+\[Y_t = c + \epsilon_t -\theta \epsilon_{t-1}\text{  où } \epsilon_t \sim \mathcal N(0,\sigma^2) \text{ i.i.d. }\]
+\item En cas de forme de motivation extrême, le faire pour le modèle $ARMA(p,q)$ gaussien
+\[Y_t=c+\sum_{j=1}^p \lambda_{j}Y_{t-j}+\epsilon_t +\sum_{j=1}^q \theta_{j}\epsilon_{t-j}\] 
+avec $\epsilon_t \sim \mathcal N(0,\sigma^2)$ i.i.d.
+\end{enumerate}
+
+\section{Test du $\chi^2$}
+\begin{enumerate}
+\item Soit $(X_k , Y_k )_{k=1,...,n}$ un $n$-échantillon d’une loi $Q = (q_{ij} )_{(i,j)\in \{1,...,I\}^2}$ sur $\{1, . . . , I\}^2$ ,
+dont les marginales sont égales.
+Soit, pour tout $k = 1, . . . , n$, le vecteur aléatoire
+\[Z_k = (1_{X_k =i} - 1_{Y_k =i} )_{1\leq i \leq I} .\]
+\begin{enumerate}
+ \item Quelle est la matrice de covariance $\Gamma$ de $Z_k$ ?
+\item On suppose $\Gamma$ inversible et on note son inverse
+\[\Gamma^{-1} = (\Gamma^{ij})_{1\leq i,j\leq I-1} .\]
+
+Soient, pour tout $i, j = 1, . . . , I,$
+\[\begin{array}{l} N_{ij} =  \sum_{k = 1}^{n} 1_{X_k =i,Y_k =j} \\
+
+	N_{i.} = \sum_{k = 1}^{n} 1_{X_k =i} \\ 
+
+	N_{.j} = \sum_{k = 1}^{n} 1_{Y_k =j} \\
+\end{array}
+\]
+Quelle est la loi asymptotique de
+
+\[\frac{1}{n}\sum_{1\leq i,j \leq I}(N_{i.} - N_{.i} )(N_{j.} - N_{.j} )\Gamma^{ij} \text{   ?}\]
+\end{enumerate}
+
+\item On ne suppose plus a priori que les marginales soient égales. On observe $(X_k , Y_k )$
+décrit comme ci-dessus. Soit $V$ la matrice $(V_{ij} )_{1\leq i,j\leq I-1}$ définie par
+\[ nV_{ii} = N_{i. }+ N_{.i} - 2N_{ii} , \]
+et pour tout $i \neq  j$,
+\[nV_{ij} = -(N_{ij} + N_{ji} ).\]
+\begin{enumerate}
+\item Montrer que, sous l’hypothèse d’égalité des marginales, $V$ converge vers $\Gamma$.
+\item Soit $(V^{ij} )_{ 1\leq i,j\leq I-1} $ l’inverse de V . Montrer que
+\[\Delta= \frac{1}{n}\sum_{i,j} (N_{i.} - N_{.i} )(N_{j.} - N_{.j} )V _{ij}\]
+converge vers une loi $\chi^2 (I - 1)$.
+\end{enumerate}
+
+\item Quel test peut-on construire ?
+\item Appliquer ce test aux données suivantes. On évalue le degré de vision des deux yeux de 7477 femmes agées de 30 à 40 ans en le classifiant en $4$ groupes ($1$ à $4$, du meilleur au pire). On obtient \\
+
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|}
+\hline
+oeildroit | oeilgauche &	1 & 	2	&	3 	& 	4 	\\
+\hline
+1			&  1520 	  &	266	& 124 		&	66	\\
+\hline
+2			&  234 	  & 	1512 	& 432		& 	78	\\
+\hline
+3			& 117 	&  362		& 	1772	& 	205	\\
+\hline
+4			& 36 	& 82 & 179 & 492 \\
+\hline
+\end{tabular}
+\end{center}
+\end{enumerate}
