@@ -8,6 +8,9 @@
 \title{TP Statistiques et Séries Chronologiques  \\ Université de Lorraine \\ ~ \\
 \textbf{Régression Linéaire Multiple}}
 
+%\title{TP Statistiques et Séries Chronologiques  \\ Université de Lorraine \\ ~ \\
+%\textbf{Partiel du $27$ mars $2015$}}
+
 \date{} %la date
 \author{ Clément Dell'Aiera }
 
@@ -15,11 +18,13 @@
 \begin{document}  
 \maketitle
 
-%\include{Exercices}
-%\include{Regression}
-%\include{Voyageur}
-%\include{Test}
-%\include{Init}
+%régression
+\include{Exercices}
+\include{Regression}
+
+%Tests
+\include{Test}
+\input{ANOVA}
 
 %\section{Décryptage par analyse fréquentielle}
 
@@ -29,8 +34,10 @@
 %\item Arrivez-vous à décrypter le message suivant ? Mettre un message. 
 %\end{enumerate}{enumerate}
 
-\include{ANOVA}
-
+%Partiel
+\input{Init}
+%Projet
+\include{Voyageur}
 \end{document}
 
 
