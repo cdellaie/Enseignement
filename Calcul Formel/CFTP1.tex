@@ -7,8 +7,38 @@ Quelques adresses utiles :
 \section{Prise en main de SAGE}
 
 \begin{enumerate}
-\item Ouvrir la page \url{https://cloud.sagemath.com/} dans votre navigateur, créer un compte gratuit et un nouveau fichier (\textit{sageworksheet}) que vous nommerez \text{TP1} par exemple.
-\item Trouver comment ouvrir l'aide.
+\item Ouvrir la page \url{https://cloud.sagemath.com/} dans votre navigateur, créer un compte gratuit et un nouveau fichier (\textit{New sageworksheet}) que vous nommerez \text{TP1} par exemple.
+\item Trouver et télécharger le tutoriel SAGE : vous pouvez le faire chez vous pour vous entraîner.
+\item Pour évaluer les instructions contenues dans une cellule, vous pouvez soit cliquer sur le lien \textit{evaluate} ou \textit{Run} en haut à gauche, soit utiliser le raccourci clavier MAJ+ENTREE. Saisir les expressions suivantes et les évaluer :
+\[9+3,\ 6*5,\ 63//9,\ 17//5,\ 17\%5.\]
+\item Que donne l'évaluation des instructions suivantes ?
+\[cos?,\ RationalField? \ , PolynomilaRing? \ .\] 
+\item Pour affecter une valeur à une variable, on utilise le signe $=$. Affecter la valeur $cos(\frac{\pi}{2})$ à une variable $x$, puis évaluer $x$, $print(x)$. Pour un affichage graphique, utilisez $x.show()$. Que renvoie l'évaluation de $x.n(digits=10)$ ?
+\item SAGE permet de faire du calcul symbolique. Pour déclarer des variables $x$ et $y$, on utilise la commande $var('x,y')$. Evaluer
+\[\begin{array}{l}
+var\ ('x,y') \\
+z = cos (x )^2 + sin (y )^2 \\
+print\ z.\ subs\_expr\ (x== pi /2)\\
+print \ z(y=pi /2)
+\end{array}\]
+Si SAGE indique une erreur (\textit{deprecation}), c'est seulement que vous avez déjà utilisé un des noms de variables auparavant. Pour corriger ce problème, il suffit de réinitialiser les variables en évaluant $reset()$ au début de votre code.
+\item Définir une fonction de la façon suivante :
+\[\begin{array}{l}
+reset ()\\
+var\ ('x,y') \\
+f(x,y) \ = \ x/ sin (x) + sqrt (y) \\
+f
+\end{array}\]
+La fonction $f$ est désormais un objet, évaluer $f.parent()$ pour savoir lequel. Evaluer \[f. show (), \  f. limit (x =0). show (),\ f. diff (x). show ().\]
+\item On peut aussi utiliser la commande $def$ pour définir une fonction : 
+\[\begin{array}{l}
+def\ FONCTION(entree):\\
+instructions\\
+return(sortie)
+\end{array}
+\]
+Définir une fonction qui prend en entrée un nombre réel $x$ et renvoie son carré $x^2$.
+\section{Arithmétique}
 \item Créer une fonction qui prend en entrée deux entiers positifs, et renvoie leur \textit{pgcd}, grâce à l'algorithme d'Euclide.
 \item Créer une fonction qui prend en entrée deux entiers positifs $x$ et $y$, et renvoie leur \textit{pgcd} $d$ ainsi que deux entiers $u$ et $v$ qui vérifient $ux+vy=d$. Vous utiliserez l'algorithme d'Euclide étendu.
 \item Créer un fonction qui prend en entrée deux listes d'entiers $[a_1,...,a_k]$ et $[n_1,...,n_k]$ et renvoie une solution du système de congruences
@@ -17,5 +47,8 @@ Quelques adresses utiles :
    &  ... & \\
  x & = & a_k \ \text{mod }n_k\\
 \end{array}\right.\]
+\item SAGE permet de faire de l'arithmétique avec des polynômes. Construire l'anneau des polynômes à coefficients rationels à une indeterminée en évaluant $R=QQ['x']$. 
+\item Spécifier le nom de la variable grâce à $T=R.gen()$.
+\item Créer une fonction qui effectue l'algorithme d'Euclide étendu sur deux polynômes, et le tester sur $P=T^2+1$ et $Q=T^3+2*T^2+1$.
 
 \end{enumerate}
