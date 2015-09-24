@@ -1,9 +1,0 @@
-def euclid(x,y):
-    u=max(x,y)
-    v=min(x,y)
-    while(v>0) :
-        vv= (u%v)
-        u <- v
-        v <- vv
-    return(v);
-euclid(17,5);
