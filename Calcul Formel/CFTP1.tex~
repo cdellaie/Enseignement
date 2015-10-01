@@ -12,7 +12,7 @@ Quelques adresses utiles :
 \item Pour évaluer les instructions contenues dans une cellule, vous pouvez soit cliquer sur le lien \textit{evaluate} ou \textit{Run} en haut à gauche, soit utiliser le raccourci clavier MAJ+ENTREE. Saisir les expressions suivantes et les évaluer :
 \[9+3,\ 6*5,\ 63//9,\ 17//5,\ 17\%5.\]
 \item Que donne l'évaluation des instructions suivantes ?
-\[cos?,\ RationalField? \ , PolynomialRing? \ .\] 
+\[cos?,\ RationalField? \ , PolynomilaRing? \ .\] 
 \item Pour affecter une valeur à une variable, on utilise le signe $=$. Affecter la valeur $cos(\frac{\pi}{2})$ à une variable $x$, puis évaluer $x$, $print(x)$. Pour un affichage graphique, utilisez $x.show()$. Que renvoie l'évaluation de $x.n(digits=10)$ ?
 \item SAGE permet de faire du calcul symbolique. Pour déclarer des variables $x$ et $y$, on utilise la commande $var('x,y')$. Evaluer
 \[\begin{array}{l}
