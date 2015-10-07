@@ -1,9 +1,9 @@
-︠ac95a77e-ab24-490b-bd07-6e384891d334s︠
+︠ac95a77e-ab24-490b-bd07-6e384891d334︠
 ###################
 #  Preliminaries  #
 ###################
 
-def converter(binary):
+def converter(binary): # converts a list of bits 0 and 1 into its value as a binary
     x=0
     y=binary
     j=0
@@ -13,7 +13,7 @@ def converter(binary):
         j+=1
     return(x)
 
-def bits(m):
+def bits(m): # converts a number into its binary
     x=0
     y=m
     j=0
@@ -68,7 +68,7 @@ print(mm)
 print("which corresponds to")
 bits(mm)
 ︡4424f8ed-e708-4c1d-9aac-b83e9e206a33︡{"stdout":"B wants to say 4\n"}︡{"stdout":"B sends\n"}︡{"stdout":"31\n"}︡{"stdout":"to A, and A reads\n"}︡{"stdout":"4\n"}︡{"stdout":"B wants to say 100101\n"}︡{"stdout":"B sends\n"}︡{"stdout":"7\n"}︡{"stdout":"to A, and A reads\n"}︡{"stdout":"37\n"}︡{"stdout":"which corresponds to\n"}︡{"stdout":"100101\n"}︡
-︠969fbfa3-6d9f-48d8-a568-8adbf067fd6e︠
+︠969fbfa3-6d9f-48d8-a568-8adbf067fd6es︠
 #############
 ##  Rabin  ##
 #############
@@ -109,12 +109,16 @@ def decodeRabin(p,q,s):
     S=rp*ep-rq*eq
     return(R,N-R,S,N-S)
 
+def Rabin(p,q,NB,m): #mysecretkey p,q ; mypublickey d ; Bob public key NB,dB ; the message m 
+    m1=decodeRabin(p,q,m)
+    return(codeRabin(NB,m1))
+
 x=TS(277,62111)
 (x^2 -62111)%277
 y=TS(331,62111)
 (y^2 -62111)% 331
 
-︡a3cebb55-6ec5-47bd-b13b-d67950d1802e︡{"stdout":"151\n"}︡{"stdout":"0\n"}︡
+︡32b3b2ff-3bef-49d0-a650-c05eeb64b7f1︡{"stdout":"151\n"}︡{"stdout":"0\n"}︡
 ︠f2bfb71d-de9b-4617-9558-50ae5e4afd6es︠
 # Exemple 3 : Rabin
 
