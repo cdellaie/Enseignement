@@ -1,9 +1,13 @@
 \section{Complexité}
 
-Au premier TP, vous avez implémenté les algorithmes d'Euclide et d'Euclide étendu. Ces algorithmes se basent sur la propriété $pgcd(x,y)=pgcd(y,r)$ où $r$ est le reste de la division euclidienne de $x$ par $y$. La terminaison de l'algorithme fournit entre autre une preuve de l'identité de Bézout : il existe des entiers $u$ et $v$ tels que $ux+vy=pgcd(x,y)$. Nous allons nous intéresser au coût de ces algorithmes.
+Au premier TP, vous avez implémenté les algorithmes d'Euclide et d'Euclide étendu. 
+%Ces algorithmes se basent sur la propriété $pgcd(x,y)=pgcd(y,r)$ où $r$ est le reste de la division euclidienne de $x$ par $y$. La terminaison de l'algorithme fournit entre autre une preuve de l'identité de Bézout : il existe des entiers $u$ et $v$ tels que $ux+vy=pgcd(x,y)$.
+Nous allons nous intéresser au coût de ces algorithmes.
 
 \begin{enumerate}
-\item Soient $x$ et $y$ deux entiers. Montrer que $x$ et $y$ sont premiers entre eux ssi il existe $u$ et $v$ dans $\Z$ tels que $ux+vy=1$.\\ 
+\item Soit $\varphi(n)$ le nombre d'entiers premiers à $n$ qui sont strictement inférieurs à $n$, i.e. l'indicatrice d'Euler. Calculer $\varphi(n)$ en fonction de $n$ et de ses facteurs premiers.\\
+%Si $n=\prod p_j^{\alpha_j}$ est la décomposition en facteurs premiers de $n$, montrer que $\frac{\varphi(n)}{n}=\prod (1-\frac{1}{p_j})$.\\
+%\item Soient $x$ et $y$ deux entiers. Montrer que $x$ et $y$ sont premiers entre eux ssi il existe $u$ et $v$ dans $\Z$ tels que $ux+vy=1$.\\ 
 
 La suite de Fibonacci est définie par 
 $\left\{\begin{array}{c} F_0 = 0, F_1 = 1\\
@@ -55,7 +59,7 @@ La fonction de codage correspond à $\phi_A(m)= m^d \ mod\ N$. L'inverse de $\ph
 
 \begin{enumerate}
 \item Montrer que ces fonctions sont bien inverses l'une de l'autre.
-\item Y-a-t-il une contrainte sur le message $m$ ? Est-ce grave ? Indication : Calculer la proportion d'entiers non premiers à $N$ si $p$ et $q$ sont très grands, par exemple $\geq 10^50$.
+\item Y-a-t-il une contrainte sur le message $m$ ? Est-ce grave ? Indication : Calculer la proportion d'entiers non premiers à $N$ si $p$ et $q$ sont très grands, par exemple $\geq 10^{50}$.
 \item Montrer que si l'on ne connait seulement que la clé publique $(N_A,d_A)$, alors calculer l'inverse de $\phi_A$ équivaut à la connaissance de $\varphi(N)$. Conclure.
 \item Implémenter une fonction $code$ qui, étant donnée une clé publique $(N_A,d_A)$ et un message $m$, retourne $\phi_A(m)$.  
 \item Implémenter une fonction $decode$ qui, étant donnée une clé privée $(p,q,d_A)$ et un message codé $s$, retourne $\phi_A^{-1}(m)$.  
