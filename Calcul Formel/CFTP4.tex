@@ -36,14 +36,21 @@ On a donc $GH^T = 0$ et $HG^T=0$. De plus $\mathcal C$ est le noyau de $H$. Si $
 $B$ calcule $Hy$. \\
 Si $Hy=0$, $y\in \mathcal C$ et $y=x$.\\
 Sinon, $Hy\neq 0$ et, comme une seule erreur a été commise, il existe un unique $j$ tel que $He_j$ soit proportionnel à $Hy$, i.e. $\exists ! j, \exists a\in \mathcal A, Hy=aHe_j = H(ae_j)$. Alors $x=y-ae_j$.\\
+
+\textbf{Code de Hamming $H(2,7)$} : Le code $H(2,7)$ est le sous-espace vectoriel de $(\mathbb F_2)^7$ engendré par
+\[e_0=\begin{pmatrix}1 \\ 1\\ 0 \\ 1 \\ 0\\0 \\0 \end{pmatrix},
+ e_1=\begin{pmatrix}0 \\1 \\ 1\\ 0 \\ 1 \\ 0\\0  \end{pmatrix},
+e_2=\begin{pmatrix}0\\0\\ 1 \\ 1\\ 0 \\ 1 \\ 0 \end{pmatrix},
+e_3=\begin{pmatrix}0\\0\\0\\ 1 \\ 1\\ 0 \\ 1 \end{pmatrix}\] 
  
 \begin{enumerate}
 \item Implémenter une fonction \textbf{Test} qui prend en entrée un message bruité ainsi qu'une matrice vérificatrice associée à un code $\mathcal C$; et retourne $True$ si le message appartient au code défini par $H$, $False$ sinon.
 \item Implémenter une fonction \textbf{Code} qui prend en entrée un message à envoyer ainsi qu'une matrice vérificatrice associée à un code $\mathcal C$; et retourne le message codé.
 \item Implémenter une fonction \textbf{Bruit} qui prend en entrée un message non bruité et le bruite. On prendra pour cela un bit du message au hasard que l'on inverse ($0\mapsto 1$ et $1\mapsto 0$).
 %Par exemple, on peut mettre une probabilité faible sur chaque bit d'être inversé. On pourra aussi choisir un bit au hasard, et l'inverser.
-\item Implémenter une fonction qui, étant donné un code et un message reçu, vérifie s'il y a une erreur, et le cas échéant, corrige l'erreur. La fonction doit retourner le message corrigé. En cas d'erreur, en plus du message corrigé, la fonction afficher un message du type "Erreur detectée sur le bit numéro j" avec $j$ la position de l'erreur.
-\item Combien le code de Hamming $H(4,3)$ contient-t-il de mots ? Calculer sa distance, sa capacité de détection et de correction.
+\item Implémenter une fonction \textbf{Decode} qui, étant donné un code et un message reçu, vérifie s'il y a une erreur, et le cas échéant, corrige l'erreur. La fonction doit retourner le message corrigé. En cas d'erreur, en plus du message corrigé, la fonction afficher un message du type "Erreur detectée sur le bit numéro j" avec $j$ la position de l'erreur.
+\item Combien le code de Hamming $H(2,7)$ contient-t-il de mots ? Calculer sa distance, sa capacité de détection et de correction.
+\item Tester vos fonctions sur le code de Hamming $H(2,7)$ : choisir un message à envoyer, le coder, lui ajouter un bruit, puis le décoder.
 \end{enumerate}
 
 \section{Construction du polynôme générateur}
