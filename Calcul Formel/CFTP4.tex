@@ -82,7 +82,7 @@ Ces polynômes sont en fait à coefficients entiers, et donnent la décompositio
 \end{prop}
  
 La proposition suivante donne une méthode pour calculer effectivement les polynômes cyclotomiques.
-\begin{prop} Soit $p$ premier et $m$ non multiple de $p$.Si $n=p_1^{\alpha_1}...p_k^{\alpha_k}$ est non nul, on note $n'=p_1...p_k$ sa partie sans facteur carré. Alors 
+\begin{prop} Soit $p$ premier et $m$ non multiple de $p$. Si $n=p_1^{\alpha_1}...p_k^{\alpha_k}$ est non nul, on note $n'=p_1...p_k$ sa partie sans facteur carré. Alors 
 \begin{itemize}
 \item[$\bullet$] $\Phi_p(X)=1+X+...+X^{p-1}$
 \item[$\bullet$] $\Phi_{mp}(X)=\frac{\Phi_m(X^m)}{\Phi_m(X)}$
@@ -133,7 +133,7 @@ On va chercher un facteur irréductible non trivial de $\Phi_{n,2}$ grâce à l'
 \begin{enumerate}
 \item Implémenter une fonction qui, étant donné un entier $n$, retourne le $n^{\text{ième}}$ polynôme cyclotomique $\Phi_n$, grâce à l'algorithme \textbf{Polynôme Cyclotomique}.
 \item Implémenter l'algorithme de Cantor-Zassenhauss.
-\item Implénter une fonction qui, étant donné un entier impair $n$, retourne la liste des facteurs irrédutibles du $n^{\text{ième}}$ polynôme cyclotomique $\Phi_{n,2}$.
+\item Implémenter une fonction qui, étant donné un entier impair $n$, retourne la liste des facteurs irrédutibles du $n^{\text{ième}}$ polynôme cyclotomique $\Phi_{n,2}$.
 \end{enumerate}
 
 Attention, la première fonction travaille dans $\Z[X]$, la troisième dans $\mathbb F_2[X]$. Cette dernière fonction vous donne donc la liste de tous les codes cycliques binaires de longueur impaire $n$.
