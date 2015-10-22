@@ -135,5 +135,4 @@ On va chercher un facteur irréductible non trivial de $\Phi_{n,2}$ grâce à l'
 \item Implémenter l'algorithme de Cantor-Zassenhauss.
 \item Implénter une fonction qui, étant donné un entier impair $n$, retourne la liste des facteurs irrédutibles du $n^{\text{ième}}$ polynôme cyclotomique $\Phi_{n,2}$.
 \end{enumerate}
-
 Attention, la première fonction travaille dans $\Z[X]$, la troisième dans $\mathbb F_2[X]$. Cette dernière fonction vous donne donc la liste de tous les codes cycliques binaires de longueur impaire $n$.
