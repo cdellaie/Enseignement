@@ -4,7 +4,7 @@
 
 Nos deux protagonistes préférés, Alice ($A$) et Bob ($B$) ont réussi les TP $2$ et $3$. Ils savent donc trouver de très grands entiers premiers (TP $3$) et s'en servir pour coder et décoder leurs messages (TP $2$). Ils prennent toutefois conscience que leur canal de transmission est bruité ! De façon aléatoire, un voire plusieurs bits de la transmission peuvent être altérés. Pour remédier à ce problème, ils décident d'utiliser la théorie des codes correcteurs.\\
 
-$A$ et $B$ utilisent toujours un alphabet $\mathcal A$ à $q$ éléments. Nous supposerons que $\mathcal A = \mathbb F_q $ est le corps à $q$ éléments, qui s'évalue en Sage grâce à $A=GF(q)$. On rappel que $q$ est alors forcément une puissance d'un nombre premier $p$, i.e. $q=p^f$. Un mot sera un élément $x$ de $\mathcal A^n$, qui est un espace vectoriel de dimension $n$. On muni l'ensemble des mots de la distance de Hamming
+$A$ et $B$ utilisent toujours un alphabet $\mathcal A$ à $q$ éléments. Nous supposerons que $\mathcal A = \mathbb F_q $ est le corps à $q$ éléments, qui s'évalue en Sage grâce à $A=GF(q)$. On rappelle que $q$ est alors forcément une puissance d'un nombre premier $p$, i.e. $q=p^f$. Un mot sera un élément $x$ de $\mathcal A^n$, qui est un espace vectoriel de dimension $n$. On muni l'ensemble des mots de la distance de Hamming
 \[d(x,y)=Card \{j\in [1,n] : x_j\neq y_j\}\]
 et on définit le poids d'un élément comme
 \[w(x)=Card \{j\in [1,n] : x_j\neq 0\}.\]
