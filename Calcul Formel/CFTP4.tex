@@ -4,7 +4,7 @@
 
 Nos deux protagonistes préférés, Alice ($A$) et Bob ($B$) ont réussi les TP $2$ et $3$. Ils savent donc trouver de très grands entiers premiers (TP $3$) et s'en servir pour coder et décoder leurs messages (TP $2$). Ils prennent toutefois conscience que leur canal de transmission est bruité ! De façon aléatoire, un voire plusieurs bits de la transmission peuvent être altérés. Pour remédier à ce problème, ils décident d'utiliser la théorie des codes correcteurs.\\
 
-$A$ et $B$ utilisent toujours un alphabet $\mathcal A$ à $q$ éléments. Nous supposerons que $\mathcal A = \mathbb F_q $ est le corps à $q$ éléments, qui s'évalue en Sage grâce à $A=GF(q)$. On rappel que $q$ est alors forcément une puissance d'un nombre premier $p$, i.e. $q^f$. Un mot sera un élément $x$ de $\mathcal A^n$, qui est un espace vectoriel de dimension $n$. On muni l'ensemble des mots de la distance de Hamming
+$A$ et $B$ utilisent toujours un alphabet $\mathcal A$ à $q$ éléments. Nous supposerons que $\mathcal A = \mathbb F_q $ est le corps à $q$ éléments, qui s'évalue en Sage grâce à $A=GF(q)$. On rappel que $q$ est alors forcément une puissance d'un nombre premier $p$, i.e. $q=p^f$. Un mot sera un élément $x$ de $\mathcal A^n$, qui est un espace vectoriel de dimension $n$. On muni l'ensemble des mots de la distance de Hamming
 \[d(x,y)=Card \{j\in [1,n] : x_j\neq y_j\}\]
 et on définit le poids d'un élément comme
 \[w(x)=Card \{j\in [1,n] : x_j\neq 0\}.\]
@@ -31,11 +31,13 @@ A un code linéaire $\mathcal C$, on associe
 \item[$\bullet$] Une matrice génératrice $G\in \mathfrak M_{k,n}(\mathcal A)$ de rang $k$ dont les lignes forment une base de $\mathcal C$.\\
 \end{itemize}
 
-On a donc $GH^T = 0$ et $HG^T=0$. De plus $\mathcal C$ est le noyau de $H$. Si $A$ envoie le message $x\in \mathcal C$ à $B$, que ce dernier reçoit $y$, on suppose qu'une seule erreur a été commise. Comment $B$ peut-il tester la présence d'erreur et, le cas échéant, retrouver $x$ ? On note $e=y-x$ l'erreur commise.\\
+On a donc $GH^T = 0$ et $HG^T=0$. De plus $\mathcal C$ est le noyau de $H$. \\
 
-$B$ calcule $Hy$. \\
-Si $Hy=0$, $y\in \mathcal C$ et $y=x$.\\
-Sinon, $Hy\neq 0$ et, comme une seule erreur a été commise, il existe un unique $j$ tel que $He_j$ soit proportionnel à $Hy$, i.e. $\exists ! j, \exists a\in \mathcal A, Hy=aHe_j = H(ae_j)$. Alors $x=y-ae_j$.\\
+Si $A$ veut envoyer le message $m$, il code le message $x=mG$, et l'envoie à $B$. On suppose qu'au plus une erreur a été commise lors de la transmission, i.e. au plus un bit de $x$ a été changé. Comment $B$ peut-il tester la présence d'erreur et, le cas échéant, retrouver $m$ ? On note $e=y-x$ l'erreur commise.\\
+
+$B$ calcule $Hx$. \\
+Si $Hx=0$, $x\in \mathcal C$ et $m=x$.\\
+Sinon, $Hx\neq 0$ et, comme une seule erreur a été commise, il existe un unique $j$ tel que $He_j$ soit proportionnel à $Hx$, i.e. $\exists ! j, \exists a\in \mathcal A, Hx=aHe_j = H(ae_j)$. Alors $m=x-ae_j$.\\
 
 \textbf{Code de Hamming $H(2,7)$} : Le code $H(2,7)$ est le sous-espace vectoriel de $(\mathbb F_2)^7$ engendré par
 \[e_0=\begin{pmatrix}1 \\ 1\\ 0 \\ 1 \\ 0\\0 \\0 \end{pmatrix},
@@ -45,7 +47,7 @@ e_3=\begin{pmatrix}0\\0\\0\\ 1 \\ 1\\ 0 \\ 1 \end{pmatrix}\]
  
 \begin{enumerate}
 \item Implémenter une fonction \textbf{Test} qui prend en entrée un message bruité ainsi qu'une matrice vérificatrice associée à un code $\mathcal C$; et retourne $True$ si le message appartient au code défini par $H$, $False$ sinon.
-\item Implémenter une fonction \textbf{Code} qui prend en entrée un message à envoyer ainsi qu'une matrice vérificatrice associée à un code $\mathcal C$; et retourne le message codé.
+\item Implémenter une fonction \textbf{Code} qui prend en entrée un message à envoyer ainsi qu'une matrice génératrice associée à un code $\mathcal C$; et retourne le message codé.
 \item Implémenter une fonction \textbf{Bruit} qui prend en entrée un message non bruité et le bruite. On prendra pour cela un bit du message au hasard que l'on inverse ($0\mapsto 1$ et $1\mapsto 0$).
 %Par exemple, on peut mettre une probabilité faible sur chaque bit d'être inversé. On pourra aussi choisir un bit au hasard, et l'inverser.
 \item Implémenter une fonction \textbf{Decode} qui, étant donné un code et un message reçu, vérifie s'il y a une erreur, et le cas échéant, corrige l'erreur. La fonction doit retourner le message corrigé. En cas d'erreur, en plus du message corrigé, la fonction afficher un message du type "Erreur detectée sur le bit numéro j" avec $j$ la position de l'erreur.
