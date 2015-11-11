@@ -10,7 +10,7 @@ où $u$ est une unité de $A$. On définit le poids d'un élément $n$ comme
 \[T_{ij}^l(x)=I_l + xE_{ij}\in GL(l,A)\]
 \end{itemize}
 
-Lorsqu'une matrice $M$ est fixée, on note $L_i$ sa $i^{\text{ème}}$ ligne et $C_j$ sa $j^{\text{ème}}$ colonne. L'algortihme du pivot de Gauss ramène un système linéaire quelqconque à une forme que l'on appelle échelonnée au moyen d'opérations élémentaires sur les lignes et les colonnes. On se servira tout au long du TP des faits suivants : \\
+Lorsqu'une matrice $M$ est fixée, on note $L_i$ sa $i^{\text{ème}}$ ligne et $C_j$ sa $j^{\text{ème}}$ colonne. L'algorithme du pivot de Gauss ramène un système linéaire quelqconque à une forme que l'on appelle échelonnée au moyen d'opérations élémentaires sur les lignes et les colonnes. On se servira tout au long du TP des faits suivants : \\
 
 \begin{itemize}
 \item[$\bullet$] l'opération $L_i\leftarrow L_i+xL_j$ est donnée par l'opération matricielle
@@ -22,22 +22,35 @@ Lorsqu'une matrice $M$ est fixée, on note $L_i$ sa $i^{\text{ème}}$ ligne et $
 \[\left\{\begin{array}{lll} \mathfrak M_{n,m}(A) & \rightarrow & \mathfrak M_{n,m}(A) \\ M & \mapsto& MT_{ij}^m(-1)T_{ji}^m(1)T_{ij}^m(-1) \end{array}\right.\]
 \end{itemize}
 
-Si $M=(m_{ij})\in \mathfrak M_{n,m}(A)$, on définit $p_M(i)=\inf\{k : m_{ik}\neq 0\}$. On dit que $M$ est sous \textbf{forme échelonnée} si la suite $p_M(i)$ est strictement croissante. Le but du pivot de Gauss est, étant donnée une matrice $M\in \mathfrak M_{n,m}(A)$, de trouver une suite de transvections telle que, en faisant successivement les multiplications par ces transvections, la matrice obtenue soit échelonnée.\\
+Si $M=(m_{ij})\in \mathfrak M_{n,m}(A)$, on définit $p_M(i)=\inf\{k : m_{ik}\neq 0\}$. On dit que $M$ est sous \textbf{forme échelonnée} si la suite $p_M(i)$ est strictement croissante, 
+\[M=\begin{pmatrix}
+* & * & *& *\\
+0 & * &*& *\\
+0& 0 & 0 & *
+\end{pmatrix}\quad \text{par exemple.}\]
+Le but du pivot de Gauss est, étant donnée une matrice $M\in \mathfrak M_{n,m}(A)$, de trouver une suite de transvections telle que, en faisant successivement les multiplications à gauche par ces transvections, la matrice obtenue soit échelonnée. La matrice échelonnée est équivalent à la matrice de départ au sens suivant.
+\[M\sim N \text{ si }\exists P\in GL(n,A)/ M=PN. \]
 
 L'algorithme est basé sur le lemme suivant :
 \begin{lem}
-Soit $x\in A^n$ un vecteur, et $d$ les pgcd des composantes de $x$, alors il existe $L\in GL(n,A)$ telle que 
+Soit $x\in A^n$ un vecteur, et $d$ un pgcd des composantes de $x$, alors il existe $L\in GL(n,A)$ telle que 
 \[Lx=\begin{pmatrix}d \\ 0\\ :\\ 0\end{pmatrix}.\]
 \end{lem}
 
-Par récurrence, on en déduit que pour toute matrice $M\in\mathfrak M_{n,m}(A)$, il existe une matrice inversible $L\in GL(n,A)$ telle que $LM$ soit échelonnée.
+Par récurrence, on en déduit que pour toute matrice $M\in\mathfrak M_{n,m}(A)$, il existe une matrice inversible $L\in GL(n,A)$ telle que $LM$ soit échelonnée.\\
 
 \fbox{\begin{minipage}{0.9\textwidth} \textbf{Pivot de Gauss}\\
 \textbf{Entrée :} $M\in \mathfrak M_{n,m}(A)$ non nulle.\\
-\textbf{Sortie :} $D\in \mathfrak M_{n,m}(A)$ matrice échelonnée équivalente à $M$.
+\textbf{Sortie :} $D\in \mathfrak M_{n,m}(A)$ matrice échelonnée équivalente à $M$.\\
+$L:= I_n$\\
+$M_0=M$\\
+Pour $j$ allant de $1$ à $k=\min(m,n)$ :
 \begin{enumerate}
-\item 
+\item trouver $P\in GL(n-j+1,A)$ telle que \[PC_j =\begin{pmatrix}d_j \\  :\\ 0\end{pmatrix}\] 
+où $C_j$ est la $j^{\text{ème}}$ colonne de $M_j^{(j)}$, et $d_j$ le pgcd de ses composantes.
+\item $ M_{j+1} = P^{(j)}M_j$ où $P^{(j)}=\begin{pmatrix}I_{j-1} &0\\ 0 & P\end{pmatrix}$
 \end{enumerate}
+Retourner $M_k$
 \end{minipage}}\\
 \\
 
@@ -45,8 +58,40 @@ Par récurrence, on en déduit que pour toute matrice $M\in\mathfrak M_{n,m}(A)$
 \begin{enumerate}
 \item Implémenter une fonction $T$ qui prend entrée deux indices $i$ et $j$, un entier $l$, et un élément $x\in A$, et renvoie la matrice de transvection $T_{ij}^l(x)$.
 \item Implémenter une fonction \textit{echange} qui prend en entrée une matrice $M$ et quatres indices $i_0$, $i_1$, $j_0$ et $j_1$, et renvoie la matrice $M$ ayant subie les permutations $L_{i_0}\leftrightarrow L_{i_1}$ et $C_{j_0}\leftrightarrow C_{j_1}$.
+\item Implémenter une fonction \textit{Test} qui prend en entrée un vecteur $x$ de $\Z^k$ et renvoie $True$ si une seule composante de $x$ est non nulle, $False$ sinon.
+\item Implémenter une fonction \textit{DE} qui, étant donné un vecteur $x$ de $\Z^k$, renvoie une matrice inversible $P\in GL(j,\Z)$ telle que \[Px =\begin{pmatrix}pgcd(x_1,...x_k) \\  :\\ 0\end{pmatrix}.\] 
+Pour cela, on trouve la composante $i_0$ de valeur absolue minimale de $x$, $|x_{i_0}|=\min \{|x_j|\}$ et on fait la division euclidienne de toutes les autres composantes par $x_{i_0}$. On recommence jusqu'à ce qu'il n'y ait au plus qu'une composante non nulle. Une remarque importante, la division euclidienne de $x_j$ par $x_{i_0}$ se fait grâce à l'opération $L_j\leftarrow L_j-qL_{i_0}$ où $q=x_j//x_{i_0}$, donc grâce à la multiplication à gauche par une transvection bien choisie, i.e. $T^n_{ji_0}(-q)$. Une fois qu'il ne reste qu'une composante non nulle, utiliser \textit{echange} pour mettre ce coefficient en première position. Vous pouver utiliser des fonctions auxiliaires.
+\item Implémenter une fonction \textit{Pivot} qui prend en entrée une matrice $M$ de taille $n\times m$, et renvoie une matrice inversible $P\in GL(n,\Z)$ telle que $PM$ soit échelonnée.
 \item Implémenter une fonction \textit{poids} qui calcule le poids d'un entier.
-\item Implémenter une fonction \textit{MinimalWeight} qui prend en entrée une matrice $M$ et un entier $k$, et renvoie la position de l'élément de poids minimal de la première colonne de la sous-matrice $M^{(k,k)}$.
-\item Implémenter une fonction \textit{echelon} qui prend une matrice $M$ et un entier $k$, et vérifie que la ligne $k$ est bien sous forme échelonnée, i.e. renvoie $True$ si $\forall i>k, m_{ik}=0 $, $False$ sinon. 
+\item Implémenter une fonction \textit{MinimalWeight} qui prend en entrée une matrice $M$ et un entier $k$, et renvoie la position de l'élément de poids minimal de la première colonne de la sous-matrice $M^{(k)}$.
+\item Implémenter une fonction qui effectue le pivot de Gauss, cette fois-ci en remplaçant "valeur absolue" par "poids" dans le choix du pivot. ( Dans le premier cas, le pivot était choisi de façon à minimiser la valeur absolue. )
+%\item Implémenter une fonction \textit{echelon} qui prend une matrice $M$ et un entier $k$, et vérifie que la ligne $k$ est bien sous forme échelonnée, i.e. renvoie $True$ si $\forall i>k, m_{ik}=0 $, $False$ sinon. 
 \end{enumerate}
 
+Voici quelques applications de cet algorithme. Elles sont toutes traitées dans le chapitre VIII du livre de Berhuy, \textit{Modules : théorie et pratique...et un peu d'arithmétique}, que je vous conseille vivement.\\
+\begin{itemize}
+\item[$\bullet$]\textbf{ Résolution de systèmes d'équations linéaires dipophantiennes.}\\ Soit $A$ un anneau principal et $a_1$, $a_2$, ..., $a_k$ des éléments de $A$ non tous nuls et $b\in A$. Soit $d$ un généateur de $(a_1,...,a_k)$. L'équation 
+\[a_1 x_1 +...+a_k x_k = b\]
+admet une solution dans $A^k$ ssi $d|b$. Alors toute solution s'écrit de manière unique
+\[\alpha C_1 +x_2 C_2+ x_k C_k, x_j\in A,\]
+avec $\alpha \in A$ tel que $b=\alpha d$ et les $C_j$ sont les colonnes d'un matrice inversible $C\in GL(k,A)$ telle que 
+\[(a_1 \ ...\ a_k) C = (d\ 0\ ...\ 0).\]
+Par exemple, vous pouvez résoudre $3x + 4y+7z =b$ dans $\Z$, un exemple corrigé dans le livre de Berhuy, chp VII, I.22, p 248.
+\item[$\bullet$] \textbf{Théorème de structure des groupes abéliens de type fini.}\\ Soit $G$ un groupe abélien admettant un nombre fini de générateurs. Alors il existe deux entiers positifs $p$ et $q$, et des entiers non nuls $d_1|d_2|...|d_q$, $d_j\geq 2$, tels que 
+\[G\simeq \Z^p\times \Z/d_1\Z \times ...\times \Z/d_q\Z.\]
+Ces entiers $p$ et $d_j$ sont uniques et caractérisent la classe d'isomorphisme de $G$.
+\item[$\bullet$] \textbf{Décomposition de Frobenius.} \\ Soit $V$ un $k$-espace vectoriel et $f\in \mathcal L(V)$ un endomorphisme. Alors il existe des polynômes unitaires $P_1|P_2|...|P_r$ de $k[X]$ et une base $B$ de $V$ tels que
+\[Mat(f,B)=\begin{pmatrix}C_{P_1} & & \\
+& ... & \\ & & C_{P_r} \end{pmatrix}\]
+où $C_P$ est la matrice compagnon associée à $P$, i.e. si $P=X^n+p_{n-1}X^{n-1}+...+p_0\in k[X]$,
+\[C_P=\begin{pmatrix}
+0 &    &  & & -p_0\\
+1 & 0 &   &  &-p_1\\
+ &    1 & ...  &  &...\\
+&      &      & 0  &  -p_{n-2} \\
+&       &    &  1 &  -p_{n-1}  \\ 
+\end{pmatrix}.\]
+Ces polynômes sont appelés les invariants de similitudes de $f$ et la matrice diagonale par bloc ci-dessus est la forme de Frobenius de $f$? De plus, $2$ endomorphismes sont semblables ssi ils ont la même forme de Frobenius.
+\item[$\bullet$] \textbf{Théorème de structure des modules de type fini sur un anneau principal.}\\ Tous ces théorèmes sont des corollaires du théorème de structure des modules de type fini sur un anneau principal, qui est traité dans le livre de Berhuy. Pour les TP précédents, j'ai principalement utilisé les livres \textit{Cours d'Arithmétique} de Michel Demazure et  \textit{Arithmétique} de Marc Hindry.
+ 
+\end{itemize}
