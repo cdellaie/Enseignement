@@ -1,0 +1,52 @@
+On travaillera pour ce TP dans l'anneau des entiers $A=\Z$, mais l'algorithme présenté fonctionne correctement dans tout anneau euclidien $A$. La base canonique de $\mathfrak M_{n,m}(A)$ est notée $E_{ij}=(\delta_{l=i,l'=j})_{1\leq l\leq n,1\leq j\leq m}$. Soit $\mathcal P$ un système complet d'éléments irréductibles de $A$, pour les entiers on peut prendre $\mathcal P=\mathbb P$ l'ensemble des nombres premiers. Tout élément $n\in A$ s'écrit 
+\[n=u\prod_{p\in\mathcal P} p^{v_p(n)}\]
+où $u$ est une unité de $A$. On définit le poids d'un élément $n$ comme
+\[\delta(n)=\sum_{p\in\mathcal P} v_p(n) \in \N.\]
+
+\begin{itemize}
+\item[$\bullet$] Si $M=(m_{ij})\in \mathfrak M_{n,m}(A)$, $M^{(k)}$ désigne la sous matrice de taille $(n-k+1)\times (m-k+1) $ obtenue en ne gardant que le "coin en bas à gauche" :
+\[M^{(k)}=(m_{ij})_{k\leq i\leq n,k\leq j\leq m}.\]
+\item[$\bullet$] Si $x\in A$, $i\neq j$, et $l>0$, on appelle matrices de transvection les matrices 
+\[T_{ij}^l(x)=I_l + xE_{ij}\in GL(l,A)\]
+\end{itemize}
+
+Lorsqu'une matrice $M$ est fixée, on note $L_i$ sa $i^{\text{ème}}$ ligne et $C_j$ sa $j^{\text{ème}}$ colonne. L'algortihme du pivot de Gauss ramène un système linéaire quelqconque à une forme que l'on appelle échelonnée au moyen d'opérations élémentaires sur les lignes et les colonnes. On se servira tout au long du TP des faits suivants : \\
+
+\begin{itemize}
+\item[$\bullet$] l'opération $L_i\leftarrow L_i+xL_j$ est donnée par l'opération matricielle
+\[\left\{\begin{array}{lll} \mathfrak M_{n,m}(A) & \rightarrow & \mathfrak M_{n,m}(A) \\ M & \mapsto& T_{ij}^n(x) M\end{array}\right.\]
+\item[$\bullet$] l'opération $C_j\leftarrow C_j+xC_i$ est donnée par l'opération matricielle
+\[\left\{\begin{array}{lll} \mathfrak M_{n,m}(A) & \rightarrow & \mathfrak M_{n,m}(A) \\ M & \mapsto & M T_{ij}^m(x)\end{array}\right.\]
+\item[$\bullet$] l'opération $L_i\leftrightarrow L_j $ est donnée par l'opération matricielle
+\[\left\{\begin{array}{lll} \mathfrak M_{n,m}(A) & \rightarrow & \mathfrak M_{n,m}(A) \\ M & \mapsto& T_{ij}^n(1)T_{ji}^n(-1)T_{ij}^n(1) M\end{array}\right.\]
+\[\left\{\begin{array}{lll} \mathfrak M_{n,m}(A) & \rightarrow & \mathfrak M_{n,m}(A) \\ M & \mapsto& MT_{ij}^m(-1)T_{ji}^m(1)T_{ij}^m(-1) \end{array}\right.\]
+\end{itemize}
+
+Si $M=(m_{ij})\in \mathfrak M_{n,m}(A)$, on définit $p_M(i)=\inf\{k : m_{ik}\neq 0\}$. On dit que $M$ est sous \textbf{forme échelonnée} si la suite $p_M(i)$ est strictement croissante. Le but du pivot de Gauss est, étant donnée une matrice $M\in \mathfrak M_{n,m}(A)$, de trouver une suite de transvections telle que, en faisant successivement les multiplications par ces transvections, la matrice obtenue soit échelonnée.\\
+
+L'algorithme est basé sur le lemme suivant :
+\begin{lem}
+Soit $x\in A^n$ un vecteur, et $d$ les pgcd des composantes de $x$, alors il existe $L\in GL(n,A)$ telle que 
+\[Lx=\begin{pmatrix}d \\ 0\\ :\\ 0\end{pmatrix}.\]
+\end{lem}
+
+Par récurrence, on en déduit que pour toute matrice $M\in\mathfrak M_{n,m}(A)$, il existe une matrice inversible $L\in GL(n,A)$ telle que $LM$ soit échelonnée.
+
+\fbox{\begin{minipage}{0.9\textwidth} \textbf{Pivot de Gauss}\\
+\textbf{Entrée :} $M\in \mathfrak M_{n,m}(A)$ non nulle.\\
+\textbf{Sortie :} $D\in \mathfrak M_{n,m}(A)$ matrice échelonnée équivalente à $M$.
+\begin{enumerate}
+\item 
+\end{enumerate}
+\end{minipage}}\\
+\\
+
+
+\begin{enumerate}
+\item Implémenter une fonction $T$ qui prend entrée deux indices $i$ et $j$, un entier $l$, et un élément $x\in A$, et renvoie la matrice de transvection $T_{ij}^l(x)$.
+\item Implémenter une fonction \textit{echange} qui prend en entrée une matrice $M$ et quatres indices $i_0$, $i_1$, $j_0$ et $j_1$, et renvoie la matrice $M$ ayant subie les permutations $L_{i_0}\leftrightarrow L_{i_1}$ et $C_{j_0}\leftrightarrow C_{j_1}$.
+\item Implémenter une fonction \textit{poids} qui calcule le poids d'un entier.
+\item Implémenter une fonction \textit{MinimalWeight} qui prend en entrée une matrice $M$ et un entier $k$, et renvoie la position de l'élément de poids minimal de la première colonne de la sous-matrice $M^{(k,k)}$.
+\item Implémenter une fonction \textit{echelon} qui prend une matrice $M$ et un entier $k$, et vérifie que la ligne $k$ est bien sous forme échelonnée, i.e. renvoie $True$ si $\forall i>k, m_{ik}=0 $, $False$ sinon. 
+\end{enumerate}
+
