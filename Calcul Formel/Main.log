@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.28)  12 NOV 2015 00:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.28)  12 NOV 2015 21:33
 entering extended mode
 **C:/Users/Clément/Documents/GitHub/Enseignement/Calcul*Formel/Main.tex
 ("C:/Users/Clément/Documents/GitHub/Enseignement/Calcul Formel/Main.tex"
@@ -863,22 +863,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--14
 [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 40--41
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--56
+Underfull \hbox (badness 10000) in paragraph at lines 55--57
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--56
+Underfull \hbox (badness 10000) in paragraph at lines 55--57
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
 
@@ -897,11 +897,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 32.
 Here is how much of TeX's memory you used:
  15041 strings out of 493921
  260794 string characters out of 3147330
- 336156 words of memory out of 3000000
+ 335158 words of memory out of 3000000
  18035 multiletter control sequences out of 15000+200000
  11952 words of font info for 47 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 58i,11n,55p,797b,453s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 58i,11n,55p,797b,451s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
@@ -918,7 +918,7 @@ s/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
 sfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
 s/symbols/msbm10.pfb>
-Output written on Main.pdf (4 pages, 200724 bytes).
+Output written on Main.pdf (4 pages, 200757 bytes).
 PDF statistics:
  108 PDF objects out of 1000 (max. 8388607)
  16 named destinations out of 1000 (max. 500000)

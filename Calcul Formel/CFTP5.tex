@@ -10,7 +10,7 @@ où $u$ est une unité de $A$. On définit le poids d'un élément $n$ comme
 \[T_{ij}^l(x)=I_l + xE_{ij}\in GL(l,A)\]
 \end{itemize}
 
-Lorsqu'une matrice $M$ est fixée, on note $L_i$ sa $i^{\text{ème}}$ ligne et $C_j$ sa $j^{\text{ème}}$ colonne. L'algorithme du pivot de Gauss ramène un système linéaire quelqconque à une forme que l'on appelle échelonnée au moyen d'opérations élémentaires sur les lignes et les colonnes. On se servira tout au long du TP des faits suivants : \\
+Lorsqu'une matrice $M$ est fixée, on note $L_i$ sa $i^{\text{ème}}$ ligne et $C_j$ sa $j^{\text{ème}}$ colonne. L'algorithme du pivot de Gauss ramène un système linéaire quelconque à une forme que l'on appelle échelonnée au moyen d'opérations élémentaires sur les lignes et les colonnes. On se servira tout au long du TP des faits suivants : \\
 
 \begin{itemize}
 \item[$\bullet$] l'opération $L_i\leftarrow L_i+xL_j$ est donnée par l'opération matricielle
@@ -19,6 +19,7 @@ Lorsqu'une matrice $M$ est fixée, on note $L_i$ sa $i^{\text{ème}}$ ligne et $
 \[\left\{\begin{array}{lll} \mathfrak M_{n,m}(A) & \rightarrow & \mathfrak M_{n,m}(A) \\ M & \mapsto & M T_{ij}^m(x)\end{array}\right.\]
 \item[$\bullet$] l'opération $L_i\leftrightarrow L_j $ est donnée par l'opération matricielle
 \[\left\{\begin{array}{lll} \mathfrak M_{n,m}(A) & \rightarrow & \mathfrak M_{n,m}(A) \\ M & \mapsto& T_{ij}^n(1)T_{ji}^n(-1)T_{ij}^n(1) M\end{array}\right.\]
+\item[$\bullet$] l'opération $C_i\leftrightarrow C_j $ est donnée par l'opération matricielle
 \[\left\{\begin{array}{lll} \mathfrak M_{n,m}(A) & \rightarrow & \mathfrak M_{n,m}(A) \\ M & \mapsto& MT_{ij}^m(-1)T_{ji}^m(1)T_{ij}^m(-1) \end{array}\right.\]
 \end{itemize}
 
@@ -28,7 +29,7 @@ Si $M=(m_{ij})\in \mathfrak M_{n,m}(A)$, on définit $p_M(i)=\inf\{k : m_{ik}\ne
 0 & * &*& *\\
 0& 0 & 0 & *
 \end{pmatrix}\quad \text{par exemple.}\]
-Le but du pivot de Gauss est, étant donnée une matrice $M\in \mathfrak M_{n,m}(A)$, de trouver une suite de transvections telle que, en faisant successivement les multiplications à gauche par ces transvections, la matrice obtenue soit échelonnée. La matrice échelonnée est équivalent à la matrice de départ au sens suivant.
+Le but du pivot de Gauss est, étant donnée une matrice $M\in \mathfrak M_{n,m}(A)$, de trouver une suite de transvections telle que, en faisant successivement les multiplications à gauche par ces transvections, la matrice obtenue soit échelonnée. La matrice échelonnée est équivalente à la matrice de départ au sens suivant.
 \[M\sim N \text{ si }\exists P\in GL(n,A)/ M=PN. \]
 
 L'algorithme est basé sur le lemme suivant :
