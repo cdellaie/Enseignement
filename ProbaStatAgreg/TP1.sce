@@ -99,11 +99,18 @@ function melange=melange(X,Y,p)
     melange=1*(U<p)*X+1*(U>p)*Y
 endfunction
 
+function BernoulliPoisson=BernoulliPoisson()
+    N=grand(1,1,'poi',1)
+    X=rand(1,N)
+    BP=sum(X)
+endfunction
 
+BP=zeros(1,100);
+for j=1:100
+    BP(j)=BernoulliPoisson();
+end
 
-
-
-
+plotFDR(BP)
 
 
 
