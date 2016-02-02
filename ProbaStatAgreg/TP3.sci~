@@ -89,8 +89,6 @@ grand(12,'markov',P,1)
 
 T=14
 U=rand(1,1)
-k=1+1*(U<1)
+k=1+1*(U<)
 X=grand(T,'markov',P,k)
-
-//Exercice 2
 
