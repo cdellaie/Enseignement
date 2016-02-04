@@ -6,7 +6,8 @@
 
 
 \title{TP Statistiques et Séries Chronologiques  \\ Université de Lorraine \\ ~ \\
-\textbf{Régression Linéaire Multiple}}
+%\textbf{Régression Linéaire Multiple et Initiation aux tests statistiques}}
+\textbf{Partiel 2015}}
 
 %\title{TP Statistiques et Séries Chronologiques  \\ Université de Lorraine \\ ~ \\
 %\textbf{Partiel du $27$ mars $2015$}}
@@ -17,14 +18,14 @@
 
 \begin{document}  
 \maketitle
-
+\include{FDR}
 %régression
-\include{Exercices}
-\include{Regression}
+%\include{Exercices}
+%\include{Regression}
 
 %Tests
-\include{Test}
-\input{ANOVA}
+%\include{Test}
+%\input{ANOVA}
 
 %\section{Décryptage par analyse fréquentielle}
 
@@ -35,9 +36,9 @@
 %\end{enumerate}{enumerate}
 
 %Partiel
-\input{Init}
+%\input{Init}
 %Projet
-\include{Voyageur}
+%\include{Voyageur}
 \end{document}
 
 

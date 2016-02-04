@@ -37,7 +37,7 @@ On pose $\Phi_Y(s)=\log \mathbb E[e^{s(Y-\mathbb E Y)}]$.
 
 \item \begin{enumerate}
 	\item Soient $X_j$ des v.a. de Bernoulli de paramètre $p$ et $\overline X_n = \frac{1}{n}\sum_{j=1}^n X_j$, montrer que 
-		\[\mathbb P(|\overline X_n-p|\geq t)\leq 2e^{-2nt^2}.\] 
+		\[\mathbb P(|\overline X_n-p|>t)\leq 2e^{-2nt^2}.\] 
 	\item En déduire un intervalle de confiance de niveau $1-\alpha$ pour $F(x)$.
 	\end{enumerate}
 \item Comparer les différents intervalles de confiance que vous avez obtenu.
