@@ -170,7 +170,7 @@ plot([1:T],X)\\
 \end{minipage}}\\
 \\
 
-On peut facilement voir que le système atteint rapidement l'état d'équilibre sur la figure ~\ref{Ehrenfest}. C'est un fait général : la vitesse de convergence est dominé par le plus grand module $<1$ des valeurs propres de la matrice de transition $P$. Cela est donné par le théorème de Perron-Frobenius.
+On peut facilement voir que le système atteint rapidement l'état d'équilibre sur la figure \ref{Ehrenfest}. C'est un fait général : la vitesse de convergence est dominé par le plus grand module $<1$ des valeurs propres de la matrice de transition $P$. Cela est donné par le théorème de Perron-Frobenius.
 
 \begin{figure}[h]\centering
 \includegraphics[scale=0.4]{Ehrenfest.png}
