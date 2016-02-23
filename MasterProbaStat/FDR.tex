@@ -1,0 +1,45 @@
+\section{Estimation de la fonction de répartition}
+
+On se donne un $n$-échantillon $X_1$,..., $X_n$ i.i.d suivant une loi donnée par la même fonction de répartition (f.d.r) $F$ sur $\R$. $\mathcal F$ dénote l'ensemble des fonctions de répartition sur $\R$.
+
+\begin{enumerate}
+\item Décrire l'expérience statistique.
+\item Le modèle est-il dominé ?
+\item On veut estimer $F(x)=\mathbb P(X\leq x)$.
+	\begin{enumerate}
+	\item On pose $\hat F_n(x)=\frac{1}{n}\sum_{i=1}^n 1_{X_i\leq x}$. Calculer $\mathbb E[\hat F_n(x)]$ et $V[\hat F_n(x)]$.
+	\item Montrer que $\hat F_n(x)$ converge presque-sûrement vers $F(x)$.
+	\item Montrer que, si $l(x,y)=(x-y)^2$ est la perte quadratique, \[\sup_{F\in \mathcal F} \mathbb E[l(\hat F_n(x),F(x))]=\frac{1}{4n}.\]
+	\item En déduire que $\hat F_n(x)$ converge uniformément en norme $\mathcal L^2$ vers $F(x)$, et donc en probabilité.
+	\end{enumerate}
+\item \begin{enumerate}
+	\item Montrer que \[\mathbb P(|\hat F_n(x) - F(x)|>t)\leq \frac{1}{t^2}Var[\hat F_n (x)]\leq \frac{1}{4nt^2}\]
+	\item Soit $\alpha\in ]0;1[$. Déterminer 
+	\[t_{\alpha,n}=\inf \{t>0 \ : \ \frac{1}{4nt^2}\leq \alpha\}\]
+	et en déduire un intervalle de confiance pour $F(x)$ de niveau $1-\alpha$.
+	\item Comment interpréter $I_{n,\alpha}$ ? Quelle est sa précision ?
+	\end{enumerate}
+\item On pose $\xi_n = \sqrt{n}\frac{\hat F_n(x) - F(x)}{\sqrt{\hat F_n(x)(1-\hat F_n(x))}}$.
+	\begin{enumerate}
+	\item Déterminer la limite en loi de $\xi_n$.
+	\item On note $J_{n,\alpha}$ l'intervalle $[-\phi^{-1}(1-\frac{\alpha}{2});\phi^{-1}(1-\frac{\alpha}{2})]$.Calculer la limite de $\mathbb P(\xi_n\in J_{n,\alpha})$ lorque $n$ tend vers $\infty$.
+	\item Donner un intervalle de confiance asymptotique pour $J_{n,\alpha}$, ainsi que sa précision asymptotique.
+	\end{enumerate}
+\item Soient $Y_j$ des variables aléatoires réelles indépendantes centrées : $\mathbb E Y_j = 0 $ et bornées : $a_j \leq Y_j \leq b_j$. On veut démontrer ce que l'on appelle l'\textit{inégalité de Hoeffding} : pour tout $t>0$, 
+\[\mathbb P(\sum Y_j \geq t )\leq e^{-st}\prod e^{\frac{s^2(b_j-a_j)^2}{8}}\quad\forall s >0.\]
+On pose $\Phi_Y(s)=\log \mathbb E[e^{s(Y-\mathbb E Y)}]$. 
+	\begin{enumerate}
+	\item Montrer que \[\Phi''_Y(s)=e^{-\Phi_Y(s)}\mathbb E[Y^2 e^{sY}]-e^{-2\Phi_Y(s)}\mathbb (\mathbb E[Ye^{sY}])^2.\]
+	\item On définit une nouvelle mesure de probabilité par $\mathbb Q(A)= e^{-\Phi_Y(s)}\mathbb E[e^{sY}1_A]$ pour tout borélien $A$. Comment interpréter $ \Phi''_Y(s)$ dans ce cadre ?
+	\item Montrer alors que $\Phi_Y(s)\leq s^2 \frac{(b-a)^2}{8}$.
+	\item En déduire l'inégalité de Hoeffding.
+	\end{enumerate}
+
+\item \begin{enumerate}
+	\item Soient $X_j$ des v.a. de Bernoulli de paramètre $p$ et $\overline X_n = \frac{1}{n}\sum_{j=1}^n X_j$, montrer que 
+		\[\mathbb P(|\overline X_n-p|\geq t)\leq 2e^{-2nt^2}.\] 
+	\item En déduire un intervalle de confiance de niveau $1-\alpha$ pour $F(x)$.
+	\end{enumerate}
+\item Comparer les différents intervalles de confiance que vous avez obtenu.
+\end{enumerate}
+
