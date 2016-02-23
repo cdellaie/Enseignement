@@ -1,0 +1,37 @@
+\BOOKMARK [-1][-]{part.1}{I Statistiques et s\351ries chronologiques}{}% 1
+\BOOKMARK [0][-]{chapter.1}{R\351gression lin\351aire}{part.1}% 2
+\BOOKMARK [1][-]{section.1.1}{Exercice 1}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Exercice 2}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{Exercice 3}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.4}{Exercice 4}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.5}{Exercice 5}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.6}{Exercice 6}{chapter.1}% 8
+\BOOKMARK [0][-]{chapter.2}{Tests statistiques}{part.1}% 9
+\BOOKMARK [1][-]{section.2.1}{Th\351orie des tests}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.1.1}{Exemples}{section.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.1.2}{Analyse of Variance ou proc\351dure ANOVA}{section.2.1}% 12
+\BOOKMARK [1][-]{section.2.2}{R\351gression sur variables qualitatives}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.1}{ANOVA \340 1 facteur}{section.2.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.2}{ANOVA \340 2 facteurs}{section.2.2}% 15
+\BOOKMARK [0][-]{chapter.3}{Partiel}{part.1}% 16
+\BOOKMARK [1][-]{section.3.1}{Follicule de rose}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.2}{Probl\350me du voyageur de commerce et algorithme du recuit simul\351}{chapter.3}% 18
+\BOOKMARK [-1][-]{part.2}{II Probabilit\351s et processus al\351atoires}{}% 19
+\BOOKMARK [0][-]{chapter.4}{Estimation}{part.2}% 20
+\BOOKMARK [1][-]{section.4.1}{G\351n\351ralit\351s sur l'estimateur du maximum de vraisemblance}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.2}{Exemples de calculs de maximum de vraisemblance}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.3}{M\351thode des moments}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.4}{Estimation de la fonction de r\351partition}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.5}{Intervalles de confiance}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.6}{Estimateur du maximum de vraisemblance}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.7}{Estimation de la fonction de r\351partition}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.8}{Th\351or\350me de Cochran et applications}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.9}{Un mod\350le non-lin\351aire}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.10}{Maximum de vraisemblance et s\351ries temporelles}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.11}{Test du 2}{chapter.4}% 31
+\BOOKMARK [0][-]{chapter.5}{Tests}{part.2}% 32
+\BOOKMARK [1][-]{section.5.1}{Principe de Neyman : d\351cision \340 2 points}{chapter.5}% 33
+\BOOKMARK [1][-]{section.5.2}{Neyman-Pearson : familles \340 rapport de vraisemblance monotone}{chapter.5}% 34
+\BOOKMARK [1][-]{section.5.3}{Exercice}{chapter.5}% 35
+\BOOKMARK [1][-]{section.5.4}{Neyman-Pearson : loi exponentielle}{chapter.5}% 36
+\BOOKMARK [1][-]{section.5.5}{ Tests du 2}{chapter.5}% 37

@@ -21,7 +21,8 @@
 %\input{EMV}
 %\input{FDR}
 %\input{Neyman}
-\input{Partiel}
+%\input{Partiel}
+
 \input{Chi2}
 
 \input{ENSAE}

@@ -1,13 +1,13 @@
 
-\documentclass[a4paper]{article}
+\documentclass[a4paper]{book}
 
 \input{macro}
 
 
 
-\title{TP Statistiques et Séries Chronologiques  \\ Université de Lorraine \\ ~ \\
+\title{Statistiques et Séries Chronologiques, Probabilités et processus aléatoires  \\ Université de Lorraine \\ ~ \\
 %\textbf{Régression Linéaire Multiple et Initiation aux tests statistiques}}
-\textbf{Partiel 2015}}
+\textbf{Enoncés des exercices de TP et TD}}
 
 %\title{TP Statistiques et Séries Chronologiques  \\ Université de Lorraine \\ ~ \\
 %\textbf{Partiel du $27$ mars $2015$}}
@@ -15,17 +15,21 @@
 \date{} %la date
 \author{ Clément Dell'Aiera }
 
-
 \begin{document}  
+
 \maketitle
-\input{FDR}
+\tableofcontents
+
+\part{Statistiques et séries chronologiques}
 %régression
-%\include{Exercices}
-%\include{Regression}
+\chapter{Régression linéaire}
+\include{Regression}
+\include{Exercices}
 
 %Tests
-%\include{Test}
-%\input{ANOVA}
+\chapter{Tests statistiques}
+\include{Test}
+\include{ANOVA}
 
 %\section{Décryptage par analyse fréquentielle}
 
@@ -35,10 +39,25 @@
 %\item Arrivez-vous à décrypter le message suivant ? Mettre un message. 
 %\end{enumerate}{enumerate}
 
-%Partiel
-%\input{Init}
+\chapter{Partiel}
+\include{Init}
 %Projet
-%\include{Voyageur}
+\include{Voyageur}
+
+\part{Probabilités et processus aléatoires}
+
+\chapter{Estimation}
+\include{EMV}
+\include{FDR}
+\include{Partiel}
+\include{FDR}
+\include{ENSAE}
+
+\chapter{Tests}
+\include{Neyman}
+\include{Chi2}
+
+
 \end{document}
 
 
