@@ -13,7 +13,6 @@ plot(N1,N2, col= "blue", pch="+")
 plot(sort(N1),1:N,type='s')
 
 #densité de la loi normale
-t=seq(-2,2,0.1);
 plot(t, dnorm(t,mean=0,sd=1/5), type='l')
 for (j in 2:4) {lines(t, dnorm(t,mean=0,sd= 1/j),col=j)}
 
