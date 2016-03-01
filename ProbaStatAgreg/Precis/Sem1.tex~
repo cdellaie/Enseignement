@@ -26,7 +26,7 @@ Pour l'illustrer avec Scilab, on peut :\\
 
 Un bon contre-exemple est la loi de Cauchy, de densité 
 \[P(dx)=\frac{1}{\pi}\frac{1}{1+x^2}dx.\]
-On voit qu'elle ne satisfait pas les hypothèses : elle n'a pas de moment d'ordre $1$, puisqu'équivalente à $\text{cte}.\frac{1}{x}$ en $+\infty$.\\ 
+On voit qu'elle ne satisfait pas les hypothèses : elle n'a pas de moment d'ordre $1$, puisqu'équivalente à $\frac{1}{\pi x^2}$ en $+\infty$.\\ 
 Pour la simuler, on peut utiliser le lemme suivant. 
 
 \begin{lem}
@@ -125,7 +125,7 @@ Vous devez penser à la mesure invariante comme la mesure que le système attein
 \[P(k,k-1)=1-P(k,k+1)=\frac{k}{m} \quad \text{et}\quad P(0,1)=P(m,m-1)=1.\]
 Ce modèle est sensé représenter $m$ particules indistingables dans une pièce, que l'on sépare en deux zones distinctes $A$ et $B$. L'état du système est entièrement determiné par le nombre $X_T$ de particules qui se trouvent à l'instant $T$ dans la zone $A$ par exemple.\\
 
-La chaîne est irréductible, mais admet une période : la parité des états vistés alterne en fonction du temps. On ne peut donc qu'appliquer la convergence presque-sûre, et pas la convergence en loi, dans le théorème ergodique.
+La chaîne est irréductible, mais admet une période : la parité des états vistés alterne en fonction du temps. On ne peut donc qu'appliquer la convergence presque-sûre, et pas la convergence en loi, dans le théorème ergodique.\\B
 
 Un simple calcul montre que $\nu(x)=\frac{1}{2^m}\binom{x}{m}$ est une mesure réversible, donc invariante, qui est unique par irréductibilité. Cela signifie que si l'expérimentateur lance son expérience, quitte la pièce assez longtemps pour que le système atteigne l'équilibre, et qu'il fait une mesure du nombre de particules dans la zone $A$ lors de son retour, il trouvera $x$ avec une probabilité proche de $\nu(x)$ (d'autant plus proche que le temps passe).\\
 
