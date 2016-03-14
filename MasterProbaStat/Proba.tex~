@@ -19,13 +19,13 @@
 \maketitle
 
 \input{EMV}
-%\input{FDR}
+\input{FDR}
 \input{Neyman}
-%\input{Partiel}
+\input{Partiel}
 
-%\input{Chi2}
+\input{Chi2}
 
-%\input{ENSAE}
+\input{ENSAE}
 \end{document}
 
 
