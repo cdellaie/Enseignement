@@ -1,0 +1,89 @@
+chemin<- function(U,V)
+	{
+	N=min(length(U),length(V));
+	for ( j in 2:N ) {segments(U[j-1],V[j-1],U[j],V[j])}
+	}
+
+permutation <- function(w,i,j)
+	{
+	ww<- w;
+	ww[i]<- w[j];
+	ww[j] <- w[i];
+	return(ww);
+	}
+
+l=1:N;
+for (j in 1:N)
+	{
+	x11();
+	plot(X,Y,col='blue');
+	chemin(X[l],Y[l]);
+	l<- permutation(l,1,j);
+	Sys.sleep(0.5);
+	}
+
+cost <- function(U,V){ N=min(length(U),length(V));
+		return(sum(sqrt((U[-1]-U[-N])^2+(V[-1]-V[-N])^2)))}
+
+MRS <- function(U,V,l0,m)
+	{
+	l=l0;
+	error=1:m;
+	error[1]=cost(U[l0],V[l0]);
+	for (k in 2:m)
+		{
+		s=runif(1,0,1);
+		x=sample(l,2);
+		T=1/log(k);
+		ll=permutation(l,x[1],x[2]);
+		e=error[k-1];
+		if (s< min(1,exp( (cost(U[l],V[l])-cost(U[ll],V[ll]))/T )) )
+			{l<- ll;e<-cost(U[ll],V[ll]);};
+		error[k]=e;
+		}
+	return(list(l,error));
+	}
+
+N=50;
+X=runif(N,0,1);
+Y=runif(N,0,1);
+
+P=cos(2*pi*X);
+Q=sin(2*pi*X);
+
+calcul = MRS(X,Y,1:N,50000);
+court=calcul[[1]];
+erreur=calcul[[2]];
+
+x11();
+plot(X,Y,col='blue');
+chemin(X[court],Y[court])
+
+x11();
+plot(1:50000,erreur,type='s',col='blue');
+
+cercle=MRS(P,Q,1:N,100000);
+arc=cercle[[1]];
+longueur = cercle[[2]];
+
+x11();
+plot(P,Q,col='blue');
+title(main='Algorithme du recuit simulé')
+chemin(P[arc],Q[arc])
+
+x11();
+plot(1:100000,longueur,type='s',col='blue');
+title(main='Evolution de la longueur du chemin')
+
+
+
+install.packages('animation')
+library(animation)
+
+oopt = ani.options(interval = 0.2, nmax = 10)
+
+for (i in 1:ani.options("nmax")) {
+plot(rnorm(30))
+ani.pause() ## pause for a while ('interval')
+}
+
