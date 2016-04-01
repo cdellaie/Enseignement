@@ -103,8 +103,6 @@ calcul = MRS(X,Y,1:N,50000);
 court=calcul[[1]];
 erreur=calcul[[2]];
 
-# Graphiques 
-
 x11();
 plot(X,Y,col='blue');
 chemin(X[court],Y[court])
@@ -128,8 +126,3 @@ title(main='Evolution de la longueur du chemin')
 # Pour faire une animation
 
 Anim(P,Q,1:N,100)
-
-
-#########################
-#########################
-#########################
