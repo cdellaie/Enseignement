@@ -9,7 +9,7 @@ Quelques adresses utiles :
 Les deux théorèmes suivant sont à maîtriser impérativement.
 
 \begin{thm}[LGN et TCL]
-Soient $X_1,...,X_n$ des variables aléatoires indépendantes identitquement distribuées, centrées et réduites, on note $\hat \theta_n =\frac{1}{n}\sum X_j$. Alors
+Soient $X_1,...,X_n$ des variables aléatoires indépendantes identiquement distribuées, centrées et réduites, on note $\hat \theta_n =\frac{1}{n}\sum X_j$. Alors
 \[\hat\theta_n\rightarrow _{ps}0,\]
 \[\sqrt{n}\hat\theta_n\rightarrow _{\mathcal L}0.\] 
 \end{thm}
@@ -50,7 +50,7 @@ Pour, la loi de Cauchy, un simple calcul donne $F(x)=\frac{1}{\pi}\arctan(x)+\fr
 
 Le code suivant illustre cela, avec une fonction courte pour afficher des fonctions de répartition empiriques.\\
 
-\fbox{\begin{minipage}{0.9\textwidth} 
+\fbox{\begin{minipage}{0.9 pt\textwidth} 
 N=500\\
 m=10\\
 
@@ -61,7 +61,8 @@ W= grand(1,N,'exp',2)\\
 U=rand(1,N)\\
 Cauchy=30*tan($\%$ pi*(U-0.5))\\
 
-\textbf{Loi des grands nombres}
+\textbf{Loi des grands nombres}\\
+
 function esperance=esperance(X)\\
     [p,q]=size(X)\\
     scf()\\
@@ -72,7 +73,7 @@ endfunction\\
 esperance(Z)\\
 plot2d([0:N],0*[0:N])\\
 
-\textbf{FDR empirique}
+\textbf{FDR empirique}\\
 
 $//$ Theoreme Central Limite\\
 function plotFDR=plotFDR(X)\\
@@ -125,7 +126,7 @@ Vous devez penser à la mesure invariante comme la mesure que le système attein
 \[P(k,k-1)=1-P(k,k+1)=\frac{k}{m} \quad \text{et}\quad P(0,1)=P(m,m-1)=1.\]
 Ce modèle est sensé représenter $m$ particules indistingables dans une pièce, que l'on sépare en deux zones distinctes $A$ et $B$. L'état du système est entièrement determiné par le nombre $X_T$ de particules qui se trouvent à l'instant $T$ dans la zone $A$ par exemple.\\
 
-La chaîne est irréductible, mais admet une période : la parité des états vistés alterne en fonction du temps. On ne peut donc qu'appliquer la convergence presque-sûre, et pas la convergence en loi, dans le théorème ergodique.\\B
+La chaîne est irréductible, mais admet une période : la parité des états vistés alterne en fonction du temps. On ne peut donc qu'appliquer la convergence presque-sûre, et pas la convergence en loi, dans le théorème ergodique.\\
 
 Un simple calcul montre que $\nu(x)=\frac{1}{2^m}\binom{x}{m}$ est une mesure réversible, donc invariante, qui est unique par irréductibilité. Cela signifie que si l'expérimentateur lance son expérience, quitte la pièce assez longtemps pour que le système atteigne l'équilibre, et qu'il fait une mesure du nombre de particules dans la zone $A$ lors de son retour, il trouvera $x$ avec une probabilité proche de $\nu(x)$ (d'autant plus proche que le temps passe).\\
 
@@ -152,7 +153,7 @@ Le calcul utilise successivement :
 \item[$\bullet$] l'inégalité de Markov.
 \end{itemize}
 
-Voici pour la simulation. Essentiellement, on entrela matrice de transition, et on utilise l'option \textit{markov} de \textit{grand}.\\
+Voici pour la simulation. Essentiellement, on entre la matrice de transition, et on utilise l'option \textit{markov} de \textit{grand}.\\
 
 \fbox{\begin{minipage}{0.9\textwidth} 
 //Entree de la matrice de transition de la chaine de Markov associee au modele d Ehrenfest\\
@@ -172,7 +173,7 @@ plot([1:T],X)\\
 \end{minipage}}\\
 \\
 
-On peut facilement voir que le système atteint rapidement l'état d'équilibre sur la figure ~\ref{Ehrenfest}. C'est un fait général : la vitesse de convergence est dominé par le plus grand module $<1$ des valeurs propres de la matrice de transition $P$. Cela est donné par le théorème de Perron-Frobenius.
+On peut facilement voir que le système atteint rapidement l'état d'équilibre sur la figure ~\ref{Ehrenfest}. C'est un fait général : la vitesse de convergence est dominée par le plus grand module $<1$ des valeurs propres de la matrice de transition $P$. Cela est donné par le théorème de Perron-Frobenius.
 
 \begin{figure}[h]\centering
 \includegraphics[scale=0.4]{Ehrenfest.png}

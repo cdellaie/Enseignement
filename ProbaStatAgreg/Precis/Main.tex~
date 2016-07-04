@@ -15,7 +15,6 @@
 \maketitle
 \input{Sem1}
 
-\newpage
 \input{AlgLin}
 
 \end{document}

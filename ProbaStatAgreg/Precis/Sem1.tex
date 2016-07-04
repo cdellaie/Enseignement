@@ -9,7 +9,7 @@ Quelques adresses utiles :
 Les deux théorèmes suivant sont à maîtriser impérativement.
 
 \begin{thm}[LGN et TCL]
-Soient $X_1,...,X_n$ des variables aléatoires indépendantes identitquement distribuées, centrées et réduites, on note $\hat \theta_n =\frac{1}{n}\sum X_j$. Alors
+Soient $X_1,...,X_n$ des variables aléatoires indépendantes identiquement distribuées, centrées et réduites, on note $\hat \theta_n =\frac{1}{n}\sum X_j$. Alors
 \[\hat\theta_n\rightarrow _{ps}0,\]
 \[\sqrt{n}\hat\theta_n\rightarrow _{\mathcal L}0.\] 
 \end{thm}
@@ -61,7 +61,8 @@ W= grand(1,N,'exp',2)\\
 U=rand(1,N)\\
 Cauchy=30*tan($\%$ pi*(U-0.5))\\
 
-\textbf{Loi des grands nombres}
+\textbf{Loi des grands nombres}\\
+
 function esperance=esperance(X)\\
     [p,q]=size(X)\\
     scf()\\
@@ -72,7 +73,7 @@ endfunction\\
 esperance(Z)\\
 plot2d([0:N],0*[0:N])\\
 
-\textbf{FDR empirique}
+\textbf{FDR empirique}\\
 
 $//$ Theoreme Central Limite\\
 function plotFDR=plotFDR(X)\\
@@ -152,7 +153,7 @@ Le calcul utilise successivement :
 \item[$\bullet$] l'inégalité de Markov.
 \end{itemize}
 
-Voici pour la simulation. Essentiellement, on entrela matrice de transition, et on utilise l'option \textit{markov} de \textit{grand}.\\
+Voici pour la simulation. Essentiellement, on entre la matrice de transition, et on utilise l'option \textit{markov} de \textit{grand}.\\
 
 \fbox{\begin{minipage}{0.9\textwidth} 
 //Entree de la matrice de transition de la chaine de Markov associee au modele d Ehrenfest\\
@@ -172,7 +173,7 @@ plot([1:T],X)\\
 \end{minipage}}\\
 \\
 
-On peut facilement voir que le système atteint rapidement l'état d'équilibre sur la figure ~\ref{Ehrenfest}. C'est un fait général : la vitesse de convergence est dominé par le plus grand module $<1$ des valeurs propres de la matrice de transition $P$. Cela est donné par le théorème de Perron-Frobenius.
+On peut facilement voir que le système atteint rapidement l'état d'équilibre sur la figure ~\ref{Ehrenfest}. C'est un fait général : la vitesse de convergence est dominée par le plus grand module $<1$ des valeurs propres de la matrice de transition $P$. Cela est donné par le théorème de Perron-Frobenius.
 
 \begin{figure}[h]\centering
 \includegraphics[scale=0.4]{Ehrenfest.png}

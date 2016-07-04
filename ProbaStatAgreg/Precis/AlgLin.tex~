@@ -1,0 +1,27 @@
+\section{Réduction des endomorphismes}
+
+Ce numéro présente la réduction des endomorphisme vue sous l'angle des $k[X]$-modules. Pour cela, nous nous inspirons fortement du livre de R. Mneimé, \textit{Réduction des endomorphismes}. On rappelle que $f,g\in \mathcal L(E)$ sont équivalents ssi il existe $T\in GL(E)$ tel que $Tf=gT$.\\
+
+Soit $k$ un corps, $E$ un $k$-espace vectoriel et $f\in \mathcal L(E)$ un endomorphisme de $E$. La loi
+\[\forall P\in k[X],\forall v\in E, \ P.v :=P(f)v\]
+définit une structure de $k[X]$-module sur $E$. On notera $E_f$ le $k[X]$-module obtenu. Une remarque importante : soient $f,g\in \mathcal L(E)$, alors une endormorphisme $T\in \mathcal L(E)$ induit un morphisme de $k[X]$-module $\tilde T\in Hom_{k[X]}(E_f,E_g)$ ssi $Tf=gT$. On a alors facilement la proposition suivante :
+
+\begin{prop}
+Soient $f,g\in \mathcal L(E)$. Alors $E_f$ et $E_g$ sont isomorphes ssi $f$ et $g$ sont équivalents.
+\end{prop}
+
+Rappelons que $k[X]$ est un anneau euclidien. L'algorithme du pivot de Gauss assure donc que pour toute matrice $A\in M_n(k[X])$, il existe $Q_0,Q_1\in GL_n(R)$ et des polynômes $P_1,...,P_r\in k[X]$ vérifiant $P_j|P_{j+1}$ tels que 
+\[Q_0AQ_1= \begin{pmatrix} 
+P_1 & 0 &     &   &  & \\
+0 &... & 0    &   &  & \\
+  &   0  & P_r &   &  & \\
+  &    &      & 0 &  &  \\
+  &    &      &   & ..  &  \\
+  &    &      &    &  & 0\\
+\end{pmatrix}\]
+avec $Q_j$ qui sont produit de transvections. Lorsque $A = \text{mat}(f)-X.id_E$a famille de polynômes $P_1,...,P_r$ sont appelés les facteurs invariants de $f$.\\
+
+Dans un tel anneau, l'identité $A.Com(A)^T = Com(A)^T . A = det(A)I_n$ a toujours un sens, et fournit une preuve simple du théorème de Cayley-Hamilton. En effet, appliquée à la matrice $A-XI_n\in M_n(k[X])$, on obtient 
+\[\chi_A(X) I_n = Com(A-XI_n)^T . (A-XI_n)\]
+mais dans $E_A$, on a par définition $X.e_i=Ae_i = \sum a_{ij}e_j$ donc $\chi_A(X).e_i=0$ pour tout $i$, i.e. $\chi_A(A)=0$.\\ 
+
