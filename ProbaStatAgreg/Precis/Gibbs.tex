@@ -1,0 +1,36 @@
+\section{Séries de Fourier}
+
+\subsection{Séries de Fourier et convolution}
+
+Soit $f$ une fonction continue $2\pi$-périodique $\R\rightarrow \R$. Pour $N\in\N$, sa série partielle de Fourier est donnée par 
+\[S_N(f)(x)=\sum_{n=-N}^{N} \hat f(n) e^{inx} = \frac{1}{2\pi}\int_0^{2\pi}D_N(x-t)f(t)dt.\]
+avec $D_N(x)=\frac{\sin(\frac{2N+1}{2}x)}{\sin(\frac{x}{2})}$. L'intérêt du membre de droite est de remarquer que la série partielle de Fourier peut s'exprimer comme la convolution de $f$ avec le noyau $D_N$, appelée noyau de Dirichlet.\\  
+
+Le noyau de Féjer est \[F_N(x)=\sum_{-N}^N (1-\frac{|n|}{N})e^{inx}.\]
+\subsection{Oscillations de Gibbs}
+
+Pour une fonction différentiable $f\in \mathcal D(\R^n,\R^n)$, on définit sa variation totale par 
+\[||f||_V=\int_{\R^n} ||\nabla f(x)||dx.\]
+
+\begin{rk}Pour $n=1$, \\
+\begin{itemize}
+\item[$\bullet$] si $f$ n'est pas différentiable, on peut tout de même définir sa variation totale en passant par la dérivée au sens des distributions
+\[||f||_V=\lim_{h\rightarrow 0}\int_{\R} \frac{|f(x+h)-f(x)|}{|h|}dx.\]
+\item[$\bullet$] Montrer que si $f$ est différentiable avec des extrema locaux en $(x_p)_{p\in \Z}$, alors $||f||_V=\sum |f(x_{p+1})-f(x_p)|$.
+\end{itemize}\end{rk}
+
+Soit $\phi_\varepsilon$ un fonction dont la transformée de Fourier vérifie $\hat\phi_\varepsilon=1_[-\varepsilon,\varepsilon]$. On note $f_\varepsilon= \phi_\varepsilon \ast f$, alors $||f-f_\varepsilon||_2=||\hat f-1_[-\varepsilon,\varepsilon]\hat f||_2=\int_{|\xi|>\varepsilon} |f(\xi)|^2 d\xi $, qui tend vers $0$ lorque $\varepsilon$ tend vers $+\infty$.\\
+
+On a donc convergence dans $L^2$ de $f_\varepsilon$ vers $f$. Peut-on avoir convergence uniforme, i.e. $\lim_{\varepsilon \rightarrow \infty}||f-f_\varepsilon||_\infty=0$ ?\\
+
+On va voir que lorsque $f$ possède une discontinuité isolée, la réponse est négative. \\
+
+Soit $H(x)=1_{x\geq 0}(x)$ la fonction de Heavyside. Un simple calcul montre que 
+\[\phi_\varepsilon \ast H = \int_{-\infty}^{\varepsilon x} \frac{sin(t)}{\pi t}dt\quad,\forall \varepsilon>0.\]
+Une évaluation en $x=\varepsilon^{-1}$ donne $||H-H_\varepsilon||_\infty\geq |1-\int_{-\infty}^{1} \frac{sin(t)}{\pi t}dt|>0$. Si $f$ possède une sigularité isolée en $x_0$, alors $f$ peut s'écrire comme $C.H+g$ où $C=f(x_0^+)-f(x_0^{-}>0$ et $g$ est une fonction continue sur un voisinage $V$ de $x_0$. On prendra $V$ relativement compact.\\
+
+Montrons qu'une fonction à variation totale finie et uniformément continue vérifie $\lim ||g-g_\varepsilon||_\infty =0 $.\\
+%\begin{itemize}
+%\item[$\bullet$] $\hat\phi_\varepsilon(\xi) = 1\forall\xi\in [-\varepsilon,\varepsilon]$,
+%\item[$\bullet$]
+%\end{itemize}
