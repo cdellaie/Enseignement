@@ -1,8 +1,8 @@
-Quelques remarques :
-\begin{itemize}
-\item[$\bullet$] Le TP est à rendre par mail avant le mercredi $21$ octobre. Votre fichier sage doit être nommé $TP3\_Nom$ où vous remplacerez Nom par votre nom de famille. Essayez de commenter votre code, vous ne le faîtes pas assez. Un code mal commenté est un code incompréhensible.
-\item[$\bullet$] Dans l'énoncé et dans tous les suivants, les verbes "démontrer", "montrer", etc. impliquent que l'on attend de vous une démonstration mathématique écrite, tandis que les instructions "implémenter une fonction", "écrire un programme", etc. signifient que vous devez utiliser Sage.
-\end{itemize}
+%Quelques remarques :
+%\begin{itemize}
+%\item[$\bullet$] Le TP est à rendre par mail avant le mercredi $3$ janvier. Votre fichier sage doit être nommé $TP3\_Nom$ où vous remplacerez Nom par votre nom de famille. Essayez de commenter votre code, vous ne le faîtes pas assez. Un code mal commenté est un code incompréhensible.
+%\item[$\bullet$] Dans l'énoncé et dans tous les suivants, les verbes "démontrer", "montrer", etc. impliquent que l'on attend de vous une démonstration mathématique écrite, tandis que les instructions "implémenter une fonction", "écrire un programme", etc. signifient que vous devez utiliser Sage.
+%\end{itemize}
 
 \section{Calcul rapide de puissance}
 
@@ -26,7 +26,7 @@ Nous allons utiliser le petit théorème de Fermat, que voici.
 Soient $p$ un nombre premier et $a$ un entier. Alors $a^{p-1} \equiv 1\pmod p$ pour $a$ premier à $p$ et $a^p\equiv a \pmod p$ pour tout entier $a$.
 \end{thm}
 
-Si l'on parvient à trouver un entier $a\in \{1,2,...,n-1\}$ tel que $a^{n-1}\neq 1\mod n$ alors $n$ n n'est pas premier. Un tel $a$ est appelé un temoin de Fermat.
+Si l'on parvient à trouver un entier $a\in \{1,2,...,n-1\}$ tel que $a^{n-1}\neq 1\mod n$ alors $n$ n n'est pas premier. Un tel $a$ est appelé un témoin de Fermat.
 \begin{enumerate}
 \item Implémenter une fonction $Fermat(a,n)$ qui prend deux entiers $a$ et $n$ en entrée, et qui retourne $True$ si $a$ est une témoin de Fermat pour $n$, $False$ sinon.
 \item Implémenter une fonction qui prend en entrée deux entiers $n$ et $M$, qui effectue au plus $M$ fois le test $Fermat(a,n)$ sur un nombre $a$ tiré au hasard entre $2$ et $n-1$, et qui s'arrête dès que $Fermat(a,n)$ renvoie $True$. Cette fonction doit retourner une chaîne de caractère : "n n'est pas premier" si elle a trouvé un témoin de Fermat, et "n est probablement premier" sinon.
