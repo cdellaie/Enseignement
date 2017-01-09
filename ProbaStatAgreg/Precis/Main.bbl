@@ -11,6 +11,11 @@ Ha{\"\i}m Brezis, Philippe~G Ciarlet, and Jacques~Louis Lions.
 \newblock {\em Analyse fonctionnelle: th{\'e}orie et applications}, volume~91.
 \newblock Dunod Paris, 1999.
 
+\bibitem{demailly}
+Jean-Pierre Demailly.
+\newblock {\em Analyse num{\'e}rique et {\'e}quations diff{\'e}rentielles}.
+\newblock EDP sciences, 2012.
+
 \bibitem{kahane}
 Jean-Pierre Kahane.
 \newblock S{\'e}ries de fourier et ondelettes.
@@ -20,5 +25,21 @@ Jean-Pierre Kahane.
 Rached Mneimn{\'e}.
 \newblock R{\'e}duction des endomorphismes.
 \newblock {\em Calvage et Mounet}, 2006.
+
+\bibitem{rouviere}
+Fran{\c{c}}ois Rouvi{\`e}re.
+\newblock Petit guide de calcul diff{\'e}rentiel {\`a} l'usage de la licence et
+  de l'agr{\'e}gation.
+\newblock 2009.
+
+\bibitem{rudinreal}
+Walter Rudin.
+\newblock {\em Real and complex analysis}.
+\newblock Tata McGraw-Hill Education, 1987.
+
+\bibitem{rudinfunctional}
+Walter Rudin.
+\newblock Functional analysis. international series in pure and applied
+  mathematics, 1991.
 
 \end{thebibliography}
