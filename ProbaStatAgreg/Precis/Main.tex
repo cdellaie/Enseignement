@@ -2,9 +2,11 @@
 \documentclass[a4paper]{article}
 
 \input{macro}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
 
 \title{Préparation à l'Agrégation Externe  \\ Université de Lorraine \\ ~ \\
-\textbf{Méthodes}}
+\textbf{Poly d'agreg}}
 
 
 \date{} %la date
@@ -13,6 +15,9 @@
 
 \begin{document}  
 \maketitle
+\tableofcontents
+\newpage 
+
 \input{Sem1}
 
 \newpage
@@ -21,7 +26,12 @@
 \newpage
 \input{AlgLin}
 
+\newpage
+\input{Lecons}
 
+\bibliographystyle{plain}
+\bibliography{biblio}
+\nocite{*}
 \end{document}
 
 

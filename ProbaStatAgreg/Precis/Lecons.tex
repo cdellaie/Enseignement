@@ -1,0 +1,73 @@
+\section{Leçons d'Analyse et Probabilités}
+
+\subsection{232 Méthodes d'approximation des solutions d'une équation F(X)=0. Exemples.}
+\subsection{247 Exemples de problèmes d'interversion de limites}
+
+\subsection{253 Utilisation de la notion de convexité en analyse}
+
+Développements possibles :\\
+\begin{itemize}
+\item[$\bullet$] théorème de Stampacchia, et applications. (Version plus faible : Lax-Milgram),
+\item[$\bullet$] sous-différentielle de fonctions convexes,
+\item[$\bullet$] théorème de Hahn-Banach,
+\item[$\bullet$] problèmes d'optimisation.\\
+\end{itemize}
+
+Questions :\\
+\begin{itemize}
+\item[$\bullet$] Montrer que la fonction $\Gamma$ est $\log$-convexe, où : \[\Gamma(x)=\int_0^\infty e^{-t}t^{x-1}dt.\]
+\item[$\bullet$] Rappeler l'inégalité de Jensen.
+\item[$\bullet$] Montrer que toute fonction strictement convexe admet un unique minimum.\\
+\end{itemize}
+
+Voici quelques idées pour le plan.\\
+
+\subsubsection{Projection sur un convexe fermé}
+Soit $(H,\langle \ ,\ \rangle)$ un espace de Hilbert. 
+
+\begin{thm}[Projection sur un convexe fermé]
+Soit $C$ un convexe fermé non-vide de $H$ et $x\in H$. Alors il existe un unique $y\in C$ tel que :
+\begin{itemize}
+\item[$\bullet$] $||y-x|| = \inf_{z\in C}||z-x||$,
+\item[$\bullet$] $\langle x-y,z-y \rangle \leq 0 $ pour tout $z\in C$.
+\end{itemize}
+\end{thm}
+
+Cet élément, noté $p_C(x)$, est nommé le projeté de $x$ sur $C$. Attention, on perd l'unicité si la norme n'est pas euclidienne. Un contre-exemple simple est donné par la boule unité sur $(\R^2,||.||_\infty)$. L'existence reste vraie pour les espaces de Banach réflexifs (les boules sont compactes pour la topologie faible-$*$). 
+
+\begin{thm}[Stampacchia]
+Soit $H$ un espace de Hilbert, et $C$ un convexe non-vide fermé de $H$. Soit $a : H\times H \rightarrow \R$ une forme bilinéaire continue et coercive, i.e. il existe des contante $C,\alpha >0$ telles que :
+\[\forall x,y\in H, |a(x,y)|\leq C ||x|| ||y|| \text{ et } |a(x,y)|\geq \alpha ||x||^2.\]
+Alors pour toute forme linéaire continue $\phi\in H'$, il existe un unique $u\in H$ vérifiant 
+\[\forall x\in C, a(u,x-u)\geq \phi(x-u). \]
+
+Si de plus $a$ est symmétrique, $u$ est caractérisé comme l'unique minimum du problème d'optimisation suivant
+\[\min_{v\in C} \{\frac{1}{2} a(v,v,)-\langle \phi,v\rangle_{H'\times H}\}.\]
+\end{thm}
+
+Pour une preuve, on peut se référer au livre de Brézis \cite{brezis} \cite{brezis2010}.
+
+\begin{cor}[Lax-Milgram]
+Soit $a$ une forme bilinéaire continue et coercive sur $H$. Alors, pour toute forme linéaire continue $\phi\in H'$, il existe un unique $u\in H$ vérifiant $a(u,v)= \langle \phi, v\rangle_{H'\times H}$ pour tout $v\in H$.\\
+
+Si de plus $a$ est symmétrique, $u$ est caractérisé comme l'unique minimum du problème d'optimisation suivant
+\[\min_{v\in H} \{\frac{1}{2} a(v,v,)-\langle \phi,v\rangle_{H'\times H}\}.\]
+\end{cor}
+
+\subsubsection{Applications aux EDP}
+
+Ces théorèmes sont des résultats efficaces pour prouver des théorèmes d'existence et d'unicité pour des équations aux dérivées partielles linéaires elliptiques \cite{brezis2010}. De plus, le lien avec un problème d'optimisation donne une interprétation naturelle des solutions comme satisfaisant au principe de la moindre action. Les phyiciens aiment à faire des modèles munis d'une fonctionnelle appelé le lagrangien du système. Les équations du mouvement sont alors donnés par les équations d'Euler-Lagrange associées. Ici, $\frac{1}{2}a(v,v)$ representerait l'énergie et $\langle \phi , v\rangle$ le potentiel.\\
+
+ \textbf{EDP non homogène.} On s'intéresse au probléme suivant sur $U=(0,1)$ :
+\[\left\{\begin{array}{c}-u'' +u =f \\ u(0)=\alpha \text{ et } u(1)=\beta \end{array}\right.\]
+avec $f\in L^2(U)$.\\
+
+Si $\alpha=\beta=0$, l'existence et l'unicité de la solution dans $H_0^1(U)$ découle du théorème de Lax-Milgram. Sinon, l'espace des fonctions
+\[H_{\alpha,\beta}^1 = \{ f\in H^1(U) : f(0)=\alpha \text{ et } f(1)=\beta \}\]
+n'est pas un espace de Hilbert. C'est par contre un convexe fermé de $H^1(U)$, on peut donc appliquer le théorème de Stampacchia.\\
+
+\textbf{Problème de l'obstacle.} On se donne $h\in C([0,1])$ telle que $h(0)$ et $h(1)<0$. On observe $C = \{ \eta\in H_0^1(U) \text{ tel que : }\eta \geq h $, et on définit la fonction énergie $J(u)=\int_0^1 \sqrt{1+u'(x)^2} dx$ sur $H_0^1(U)$. Le problème de l'obstacle est 
+\[\min_{u\in C} J(u).\]
+ 
+
+
