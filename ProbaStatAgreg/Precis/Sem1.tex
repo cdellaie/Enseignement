@@ -50,54 +50,7 @@ Pour, la loi de Cauchy, un simple calcul donne $F(x)=\frac{1}{\pi}\arctan(x)+\fr
 
 Le code suivant illustre cela, avec une fonction courte pour afficher des fonctions de répartition empiriques.\\
 
-\fbox{\begin{minipage}{0.9\textwidth} 
-N=500\\
-m=10\\
-
-\textbf{Loi normale, exponentielle, et de Cauchy}\\
-
-Z=grand(1,N,'nor',0,1)\\
-W= grand(1,N,'exp',2)\\
-U=rand(1,N)\\
-Cauchy=30*tan($\%$ pi*(U-0.5))\\
-
-\textbf{Loi des grands nombres}\\
-
-function esperance=esperance(X)\\
-    [p,q]=size(X)\\
-    scf()\\
-    plot2d([1:q],cumsum(X)./[1:q],2)\\
-    xtitle("Loi des grands nombres" )\\
-endfunction\\
-
-esperance(Z)\\
-plot2d([0:N],0*[0:N])\\
-
-\textbf{FDR empirique}\\
-
-$//$ Theoreme Central Limite\\
-function plotFDR=plotFDR(X)\\
- \quad     [p,q]=size(X);\\
-  \quad    scf()\\
- \quad     plot2d2(-sort(-X),(1/q)*[1:q],2)\\
- \quad     xtitle("Fonction de repartition empirique")\\
-endfunction\\
-
-h=0.1;\\
-t=[-5:h:5];\\
-
-plotFDR(Z)\\
-ynor=cdfnor("PQ",t,0*t,0*t+1)\\
-plot2d(t,ynor)\\
-
-plotFDR(W)\\
-t=[0:h:5];\\
-ypoi=cdfpoi("PQ",t,0*t+2)\\
-plot2d(t,ypoi)\\
-
-plotFDR(Cauchy)\\
-\end{minipage}}\\
-\\
+\lstinputlisting[language= Scilab, firstline = 7, lastline=51]{Limit.sci}
 
 \section{Chaînes de Markov}
 
@@ -155,23 +108,7 @@ Le calcul utilise successivement :
 
 Voici pour la simulation. Essentiellement, on entre la matrice de transition, et on utilise l'option \textit{markov} de \textit{grand}.\\
 
-\fbox{\begin{minipage}{0.9\textwidth} 
-//Entree de la matrice de transition de la chaine de Markov associee au modele d Ehrenfest\\
-
-function P=ehrenfest(N)\\
-d1=(N-(0:N-1))/N;\\
-d2=(1:N)/N;\\
-P=diag(d1,1)+diag(d2,-1);\\
-endfunction;\\
-
-// Simulation\\
-m=1000\\
-T=100000\\
-x0=m\\
-X=grand(T,'markov',ehrenfest(m),x0)\\
-plot([1:T],X)\\
-\end{minipage}}\\
-\\
+\lstinputlisting[language= Scilab, firstline = 59, lastline=73]{Limit.sci}
 
 On peut facilement voir que le système atteint rapidement l'état d'équilibre sur la figure ~\ref{Ehrenfest}. C'est un fait général : la vitesse de convergence est dominée par le plus grand module $<1$ des valeurs propres de la matrice de transition $P$. Cela est donné par le théorème de Perron-Frobenius.
 

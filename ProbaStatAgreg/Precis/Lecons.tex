@@ -8,9 +8,10 @@
 Développements possibles :\\
 \begin{itemize}
 \item[$\bullet$] théorème de Stampacchia, et applications. (Version plus faible : Lax-Milgram),
-\item[$\bullet$] sous-différentielle de fonctions convexes,
 \item[$\bullet$] théorème de Hahn-Banach,
-\item[$\bullet$] problèmes d'optimisation.\\
+\item[$\bullet$] méthode du gradient,
+\item[$\bullet$] problèmes d'optimisation, équilibre de Nash \cite{Testard},
+\item[$\bullet$] sous-différentielle de fonctions convexes.\\
 \end{itemize}
 
 Questions :\\
@@ -21,6 +22,31 @@ Questions :\\
 \end{itemize}
 
 Voici quelques idées pour le plan.\\
+
+On peut séparer le plan en $2$ parties, une sur l'utilisation de la notion d'ensemble convexe, l'autre sur celle de fonction convexe. Dans celle sur les ensembles convexes, je choisirais de traiter :
+\begin{enumerate}
+\item Définition et exemples
+\item Enveloppe convexe : théorème de Carathéodory
+\item Jauge d'un convexe : \[\rho_C(x)=\inf \{ \alpha >0 : \frac{x}{\alpha}\in C\} \]
+Corollaire : Tout convexe borné d'intérieur non vide est homéomorphe à une boule unité. ( via $x\mapsto \rho_C(x)\frac{x}{||x||}$)
+\item Projection sur un convexe fermé (dans un Hilbert) \\
+Donner un exemple de non-unicité du projeté quand la norme n'est pas euclidienne. ($\R^2$ muni de $||.||_\infty$, et $C$ est une droite affine).
+\item Théorème de séparation : Hahn-Banach.
+\end{enumerate}
+
+Pour la partie sur les fonctions, je choisirais d'insister sur le problèmes d'optimisation. 
+\begin{enumerate}
+\item Définition et exemples
+\item Régularité des fonctions convexes : continuité automatique, dérivabilité partout sauf un nombre dénombrable de points, condition $H_f(x)>0$ lorsque l'on est deux fois différentiable.,... Une application linéaire non conitnue en dimension infinie, pour donner un contre exemple à la continuité. Par exemple $C([0,1],\R)\rightarrow \R : f\mapsto f(0)$ pour $||f||_1=\int_0^1 |f| $.
+\item Recherche d'extrema : méthode du gradient à pas optimal.
+\end{enumerate}
+Quelques applications :
+\begin{itemize}
+\item[$\bullet$] $ (\sum_i \frac{x_i}{n})^2 \leq \sum_i \frac{x_i^2}{n} $. Plus généralement, si on définit $\phi : \R^{n+1}\rightarrow \R ; x\mapsto \sum x_i$, alors \[|\phi(x)|\leq n^{1-\frac{1}{p}} ||x||_p.\]
+\item[$\bullet$] Si on se donne un échantillon statistique $X_1,..., X_n$, alors on définit la moyenne empirique comme $\overline X_n = \frac{1}{n}\sum_j X_j$ et la médiane empirique comme $m_n = X_{(E(\frac{n}{2}))}$, où $X_{(1)} \leq X_{(2)} \leq ... X_{(n)}$ ets l'échantillon ordonné, et $E$ est la partie entière. Alors $\overline X_n$ et $m_n$ sont solutions des problèmes d'optimisation convexe suivant :
+\[\overline X_n = \text{argmin } \{ \sum_i (x-X_i)^2\} \quad m_n = \text{argmin }\{\sum_i |x-X_i|\}. \]
+\item[$\bullet$] L'estimateur des moindres carrés ordinaire est la solution du problème convexe suivant $\text{argmin } ||Y - X^{T}\beta||^2$. Pour rappel, $\hat \beta = (X^T X)^{-1} X^T Y$, et si le modèle est $Y = X\beta + \varepsilon$ avec $E[\varepsilon]=0$, $E[\varepsilon \varepsilon^T] = \sigma^2 Id$, alors l'estimateur est BLUE (Best Linear Unbiased Estimator), i.e. il est de variance minimale parmi les estimateurs sans biais.
+\end{itemize}
 
 \subsubsection{Projection sur un convexe fermé}
 Soit $(H,\langle \ ,\ \rangle)$ un espace de Hilbert. 
@@ -33,7 +59,21 @@ Soit $C$ un convexe fermé non-vide de $H$ et $x\in H$. Alors il existe un uniqu
 \end{itemize}
 \end{thm}
 
-Cet élément, noté $p_C(x)$, est nommé le projeté de $x$ sur $C$. Attention, on perd l'unicité si la norme n'est pas euclidienne. Un contre-exemple simple est donné par la boule unité sur $(\R^2,||.||_\infty)$. L'existence reste vraie pour les espaces de Banach réflexifs (les boules sont compactes pour la topologie faible-$*$). 
+Cet élément, noté $p_C(x)$, est nommé le projeté de $x$ sur $C$. Attention, on perd l'unicité si la norme n'est pas euclidienne. Un contre-exemple simple est donné par la boule unité sur $(\R^2,||.||_\infty)$. L'existence reste vraie pour les espaces de Banach réflexifs (les boules sont compactes pour la topologie faible-$*$). \\
+
+POur une preuve, voir Brézis \cite{brezis}. L'idée est assez simple : on se donne une suite minimisante, et on prouve qu'elle est de Cauchy avec l'identité du parallélogramme, ce qui assure sa convergence vers un élément dont on prouve qu'il satisfait les hypothèses du théorème.\_
+
+Quelques applications :\\
+
+\begin{itemize}
+\item[$\bullet$] si $F\subset H$ est un sous-espace vectoriel, alors $H= \overline F \oplus F^{\perp}$, et donc $F$ est dense ssi $F^{\perp} =0$,
+\item[$\bullet$] Soit $(\Omega, \mathcal A,\mathbb P)$ un espace de probabilité et $\mathcal B$ une sous-tribu. Dans $H= L^2(\Omega, \mathbb P)$, notons $C $ les sous-espace des fonctions de $H$ $\mathcal B$-mesurables, qui est un sous-espace vectoriel, donc convexe, fermé de $H$. Alors $p_c(X)=E[X|\mathcal B]$. 
+\item[$\bullet$] théorème de Schauder : le théorème de Brouwer affirme que, en dimension finie, toute application continue de la boule unité dans elle même admet un point fixe. Ce théorème peut s'adapter à la dimension infinie, ce qui donne le théorème de Schauder.\\
+\begin{thm}
+Soit $C$ un convexe fermé non-vide d'un espace vectoriel normé $E$. Alors, toute application continue $f : C \rightarrow C$ d'image relativement compacte admet un point fixe. 
+\end{thm}
+Remarquons que l'on n'impose pas la compacité de $C$, qui serait alors nécessairement d'intérieur vide en dimension infinie (car contiendrait une boule).
+\end{itemize}
 
 \begin{thm}[Stampacchia]
 Soit $H$ un espace de Hilbert, et $C$ un convexe non-vide fermé de $H$. Soit $a : H\times H \rightarrow \R$ une forme bilinéaire continue et coercive, i.e. il existe des contante $C,\alpha >0$ telles que :
@@ -45,7 +85,7 @@ Si de plus $a$ est symmétrique, $u$ est caractérisé comme l'unique minimum du
 \[\min_{v\in C} \{\frac{1}{2} a(v,v,)-\langle \phi,v\rangle_{H'\times H}\}.\]
 \end{thm}
 
-Pour une preuve, on peut se référer au livre de Brézis \cite{brezis} \cite{brezis2010}.
+Pour une preuve, on peut se référer au livre de Brézis \cite{brezis} \cite{brezis2010}. Celle-ci se base complètement sur la caractérisation du projeté, et a donc toute sa place dans cette leçon.\\
 
 \begin{cor}[Lax-Milgram]
 Soit $a$ une forme bilinéaire continue et coercive sur $H$. Alors, pour toute forme linéaire continue $\phi\in H'$, il existe un unique $u\in H$ vérifiant $a(u,v)= \langle \phi, v\rangle_{H'\times H}$ pour tout $v\in H$.\\
@@ -57,6 +97,8 @@ Si de plus $a$ est symmétrique, $u$ est caractérisé comme l'unique minimum du
 \subsubsection{Applications aux EDP}
 
 Ces théorèmes sont des résultats efficaces pour prouver des théorèmes d'existence et d'unicité pour des équations aux dérivées partielles linéaires elliptiques \cite{brezis2010}. De plus, le lien avec un problème d'optimisation donne une interprétation naturelle des solutions comme satisfaisant au principe de la moindre action. Les phyiciens aiment à faire des modèles munis d'une fonctionnelle appelé le lagrangien du système. Les équations du mouvement sont alors donnés par les équations d'Euler-Lagrange associées. Ici, $\frac{1}{2}a(v,v)$ representerait l'énergie et $\langle \phi , v\rangle$ le potentiel.\\
+
+On rappelle que $H^1(U)$ est l'espace de Hilbert obtenu comme complétion de $C^\infty(U)$ par rapport au produit scalaire $\langle u,v \rangle = \int_U uv +u'v'$. Tout élément de $H^1$ admet une dérivée (au sens des distributions) qui est dans $L^2(U)$.\\
 
  \textbf{EDP non homogène.} On s'intéresse au probléme suivant sur $U=(0,1)$ :
 \[\left\{\begin{array}{c}-u'' +u =f \\ u(0)=\alpha \text{ et } u(1)=\beta \end{array}\right.\]
