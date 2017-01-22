@@ -1,0 +1,64 @@
+\section{L'essentiel du cours}
+
+On se fixe un espace probabilisé $(\Omega,\mathcal A ,\mathbb{P})$. Pour toute variable aléatoire $X$, on note $F_X(x)= \mathbb{P}(X\leq x)$ sa fonction de répartition, et $\phi_X(t)= \mathbb{E}(e^{itX})$ sa fonction caractéristique. On rappelle que $F_X$ est une fonction càd-làg, i.e. continue à droite et possédant une limite à gauche.
+
+\subsection{Un rappel sur les convergences}
+
+On rappelle quelques notions de convergence utilisées en probabilités.\\ 
+
+\begin{definition}
+Soit $(X_n)$ une suite de variables aléatoires.
+\begin{itemize}
+\item[$\bullet$] $X_n$ converge presque-sûrement vers $X$, ce que l'on note $X_n \overset{p.s.}{\longrightarrow}X$, si $\lim X_n(\omega) = X(w)$ pour tout $\omega\in \Omega \backslash \mathcal N$ où $\mathcal N$ est un ensemble négligeable, 
+\item[$\bullet$] $X_n$ converge en probabilité vers $X$, ce que l'on note $X_n \overset{\mathbb P}{\longrightarrow} X$, si $\lim_{n \rightarrow \infty} \mathbb P (|X-X_n|>\varepsilon)= 0$ pour tout $\varepsilon>0$, 
+\item[$\bullet$] $X_n$ converge en loi vers $X$, ce que l'on note $X_n \overset{\mathcal L}{\longrightarrow} X$, si $\lim F_{X_n}(x) = F_X(x)$ pour tout $x\in \R$,
+\item[$\bullet$] Soit $p\geq 1$ et $X_n$ une suite de variables aléatoires dans $L^p(\Omega,\mathbb P)$. $X_n$ converge en norme $L^p$ vers $X$, ce que l'on note $X_n \overset{L^p}{\longrightarrow} X$, si $X \in L^p(\Omega,\mathbb P)$ et $\lim \mathbb{E}[|X_n-X|^p] = 0$.\\ 
+\end{itemize}
+\end{definition}
+
+Le théorème de Lévy assure que $X_n \overset{\mathcal L}{\longrightarrow} X$ ssi on a convergence simple des fonctions caractéristiques sur $\R$, i.e. $\phi_{X_n} \overset{cvs}{\longrightarrow} \phi_X $.\\
+
+Voici un récapitulatif des différentes convergences :
+\[\begin{tikzcd}
+ & L^q \arrow{d} & \\
+ & L^p \arrow{d} & \\
+p.s. \arrow{r}  & \mathbb P \arrow{r} & \mathcal L
+\end{tkzcd}\]
+
+\subsection{Les théorèmes fondamentaux}
+
+Les marins... Le cadre probabiliste formalise cette situation en postulant que les mesures sont des variables aléatoires $\theta_j$ identiquement distribuées (i.i.d.). On notera : 
+\[\hat\theta_n = \frac{1}{n}\sum_{j=1}^n \theta_j.\]
+
+\begin{thm}[LGN]
+Si $\mathbb E |X|<\infty $ alors $\hat \theta_n \overset{p.s.}{\longrightarrow}\theta$.
+\end{thm}
+
+\begin{thm}[TCL]
+Si $\mathbb E |X|<\infty $ et $\sigma^2=Var(X)<\infty$ alors \[\sqrt{n}\frac{(\hat \theta_n -\theta)}{\sigma}\overset{\mathcal L}{\longrightarrow}\mathcal{N}(0,1)\]
+\end{thm}
+
+\begin{lem}[Slutsky]
+Si $X_n \overset{\mathcal L}{\longrightarrow} X$ et $Y \overset{p.s.}{\longrightarrow}a$ où $a$ est une constante, alors le couple $(X_n,Y_n) \overset{\mathcal L}{\longrightarrow} (X,a)$.
+\end{lem}
+
+Une application importante est que l'on peut se passer de connaître la variance théorique $\sigma^2$ et simplement l'estimer, car, dans les hypothèses du théorème Central-Limite, si on note $\hat\sigma_n^2 =\frac{1}{n}\sum (\theta_j -\hat{\theta}_n)^2$, le lemme de Slutsky assure que :
+\[\sqrt{n}\frac{(\hat\theta_n - \theta)}{\hat\sigma_n} \overset{\mathcal L}{\longrightarrow} \mathcal N(0,1)\]
+
+Ces théorèmes sont asymptotiques, et ne donnent pas d'informations sur le nombres d'observations nécessaires pour atteindre une précision donnée. Le théorème de Berry-Essen apporte une réponse à cette problématique.\\
+
+\begin{thm}[Berry-Essen]
+\end{thm}
+ 
+Le théorème fondamental de la Statistique donne la convergence uniforme de la f.d.r. empirique vers la "vraie" f.d.r d'un échantillon. On se donne une suite $(X_j)_j$ de variables aléatoires i.i.d. et on note : 
+\[\hat F_n(x) = \frac{1}{n} \sum_{j=1}^n 1_{X_j\leq x},\]
+appelée fonction de répartition empirique.
+
+\begin{thm}[TFS, Glivenko-Cantelli]
+La fonction de répartition empirique $\hat F_n$ converge uniformément vers la fonction de répartition théorique $F$ avec probabilité $1$ :
+\[\sup_{x\in \R} |F_n(x)-F(x)| \underset{n\to\infty}{\longrightarrow} 0.\]
+\end{thm}
+
+Pour la culture, le théorème de Donsker affirme que le processus $W_n(t) = \sqrt{n}(\hat F_n(t)-F(t))$ converge en loi vers un pont brownien, dans l'espace des fonctions càd-làg munie de la topologie de Storokhod. On a de plus une inégalité plus précise, qui permet d'estimer la vitesse de convergence de la f.d.r. empirique, appelée inégalité DKW (Dvoretzky-Kiefer-Wolfowitz) :
+\[\forall \varepsilon>0, \mathbb{P}(||\hat F_n -F||_\infty>\varepsilon)\leq e^{-2n\varepsilon^2}.\] 
+Le livre de Van Der Vaart et Wellner \cite{VDVWellner} et le livre de Van Der Vaart \cite{VDV} sont de bonnes références pour ces résultats. 
