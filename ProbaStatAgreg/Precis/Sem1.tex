@@ -118,11 +118,37 @@ On peut facilement voir que le système atteint rapidement l'état d'équilibre 
 \label{fig:Ehrenfest}
 \end{figure}
 
+\subsection{Marche aléatoire simple sur un graphe}
 
+\begin{definition}
+Un graphe fini $G=(V,E)$ est la donnée d'un ensemble fini $V$ dont les éléments sont appelés les sommets, et d'un sous-ensemble $E\subset V\times V$ dont les éléments sont appellés les arêtes. La marche aléatoire sur le graphe fini $G$ est la chaîne de Markov donnée par le noyau de transition 
+\[\forall x,y\in V,\quad P(x,y) = \frac{1}{|\{ y \in V \text{ t.q. } (x,y)\in E\}|}.\]
+\end{definition}
 
+\begin{prop}
+La mesure donnée par $\nu(x)= |\{ y \in V \text{ t.q. } (x,y)\in E\}|$ est réversible pour la marche aléatoire simple sur $G$.
+\end{prop}
 
+\begin{dem}
+En effet, si on note $deg(x) =|\{ y \in V \text{ t.q. } (x,y)\in E\}|$, alors 
+\[\nu(x) P(x,y) = 1 = P(y,x)\nu(y)\]
+ce qui montre que la marche aléatoire simple sur $G$ converge vers le tirage aléatoire sur le graphe, i.e. si l'on part de $v\in V$ en effectuant des pas selon le noyau de transition $P$, le régime stationnaire se comporte comme le tirage uniforme sur la composante connexe de $v$.\\
+\qed
+\end{dem}
 
+Pour rappel, une mesure réversible est toujours invariante : soit $\nu$ telle que $\nu(x) P(x,y) = P(y,x)\nu(y)$, alors :
+\[(\nu P )(x) = \sum_{y} \nu(y)P(y,x) = \sum_y \nu(x)P(x,y) = \nu(x).\]
 
+Une application rigolote de ce genre de marche aléatoire est le mélage de carte. \\
+\begin{definition}
+Soit $G$ un groupe finiement engendré et $S$ une partie finie génératrice ne contenant pas le neutre de $G$ et telle que $g\in S \Rightarrow g^{-1}\in S$. On définit le graphe de Cayley $Cay(G,S)$ comme le graphe 
+\begin{itemize}
+\item[$\bullet$] de sommets $V= G$,
+\item[$\bullet$] d'arêtes $E = \{(g,gs) : g\in G, s\in S\}$. \\
+\end{itemize} 
+
+Si l'on prend $G = \mathfrak S_n$, le groupe des permutations d'un ensemble fini que l'on identifie à notre jeu de carte, et pour $S$ une partie génératrice représentant les mouvements de mélange possibles, alors l'analyse qui précède assure que si l'on mélange les cartes assez longtemps, on s'approchera de la mesure stationnaire proportionnelle à $deg(x)$. Mais un graphe de Cayley est régulier, en effet, pour tout $g\in G$, $deg(g)= |S|$, donc la mesuire stationnaire est la mesure uniforme sur $G$. 
+\end{definition}
 
 
 
