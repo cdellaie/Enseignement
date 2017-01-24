@@ -27,6 +27,12 @@ Voici un récapitulatif des différentes convergences :
 p.s. & \Rightarrow  & \mathbb P & \Rightarrow & \mathcal L
 \end{tikzcd}\]
 
+Certaines implications sont simples :
+\begin{itemize}
+\item[$\bullet$] si $p\leq q$, alors $|x|^p\leq |x|^q+1$, donc \[E|X|^p \leq E|X|^q + 1,\] 
+donc $L^q(\Omega,\mathbb P) \subset L^q(\Omega,\mathbb P) $. Cette inclusion n'est pas vraie si la mesure n'est pas de masse finie (les constantes ne sont plus intégrables).
+\item[$\bullet$] si $E|X|^p< + \infty$, alors l'inégalite de Markov assure que $\mathbb P (|X|>\varepsilon) \leq \frac{E|X|^p}{\varepsilon^p}$, ce qui permet de prouver que la convergence $L^p$ implique la convergence en probabilité.
+\end{itemize}
 \subsection{Les théorèmes fondamentaux}
 
 Les marins... Le cadre probabiliste formalise cette situation en postulant que les mesures sont des variables aléatoires $\theta_j$ identiquement distribuées (i.i.d.). On notera : 
