@@ -1,4 +1,6 @@
-\section{Réduction des endomorphismes}
+\section{Algèbre linéaire}
+
+\subsection{Réduction des endomorphismes}
 
 Ce numéro présente la réduction des endomorphisme vue sous l'angle des $k[X]$-modules. Pour cela, nous nous inspirons fortement du livre de R. Mneimé, \textit{Réduction des endomorphismes}\cite{mneimnereduction}. On rappelle que $f,g\in \mathcal L(E)$ sont équivalents ssi il existe $T\in GL(E)$ tel que $Tf=gT$.\\
 
@@ -24,4 +26,41 @@ avec $Q_j$ qui sont produit de transvections. Lorsque $A = \text{mat}(f)-X.id_E$
 Dans un tel anneau, l'identité $A.Com(A)^T = Com(A)^T . A = det(A)I_n$ a toujours un sens, et fournit une preuve simple du théorème de Cayley-Hamilton. En effet, appliquée à la matrice $A-XI_n\in M_n(k[X])$, on obtient 
 \[\chi_A(X) I_n = Com(A-XI_n)^T . (A-XI_n)\]
 mais dans $E_A$, on a par définition $X.e_i=Ae_i = \sum a_{ij}e_j$ donc $\chi_A(X).e_i=0$ pour tout $i$, i.e. $\chi_A(A)=0$.\\ 
+
+\subsection{Un rappel sur le déterminant}
+On notera $\mathfrak S_n $ le groupe des permutations de $\{1,n\}$ et pour $\sigma\in\mathfrak S_n$, $(-1)^\sigma$ sa signature.\\
+
+Le déterminant d'une matrice $A=(a_{i,j})_{i,j}\in \mathfrak M_n(k)$ est souvent défini comme 
+\[det(A) = \sum_{\sigma\in \mathfrak S_n} (-1)^\sigma \prod_{i=1,n} a_{i,\sigma(i)},\]
+ce qui rend difficile de montrer (autrement que par calcul) la multiplicativité. Le but de ce numéro est de donner une définition plus conceptuelle qui rend la démonstration presque automatique.\\
+
+\begin{definition}
+Soit $V$ un $k$-espace vectoriel de dimension $n\in \N$ et soit $p$ un entier. On définit le $k$-espace vectoriel des formes $p$-linéaires alternées comme :
+\[\Lambda_p V = \{ \phi : V^{\times p} \rightarrow \text{ t.q. } \phi(\sigma.x)= (-1)^\sigma x\ ,\forall \sigma\in \mathfrak S_n \text{ et } \phi \text{ est linéaire en chaque variable}\}\]
+où :
+\begin{itemize}
+\item[$\bullet$] $V^{\times p} = V\times ... \times V$ est le produit ($p$ fois) de $V$,
+\item[$\bullet$] $\sigma.(x_1,...,x_p) = (x_{\sigma(1)},...,x_{\sigma(p)}) $ est l'action canonique de $\mathfrak S_p$ sur $V^{\times p}$,
+\end{itemize}
+\end{definition}
+
+On remarque facilement que $dim_k (\Lambda_p V )= \dbinom{n}{p}$, en particulier les formes $n$-linéaire alternées sont toutes proportionnelles.
+
+\begin{definition} Si $V = k^n$ et $\{e_j\}_{j=1,n}$ est la base canonique.
+Le déterminant est l'unique forme $n$-linéaire alternée $det$ qui satisfait $det(e_1,...,e_n)=1$. Le déterminant d'une application linéaire est défini comme 
+\[det(f) = det(f(e_1),...,f(e_n)).\]
+\end{definition}
+
+\begin{prop}
+Soient $f,g\in\mathcal L(V)$, alors :
+\[det(f \circ g ) = det(f)det(g).\] 
+\end{prop}
+
+\begin{dem}
+L'application $\phi : (v_1,...,v_n) \mapsto det(f(v_1),...,f(v_n))$ est $n$-linéaire alternée, elle est donc proportionnelle au déterminant. Elle vaut $det(f)$ sur $(e_1,...,e_n)$ donc $\phi(v_1,...,v_n) = det(f) det(v_1,...,v_n)$. On a donc :
+\[\phi(g(e_1),...,g(e_n)) = \left\{\begin{array}{l}det(f)det(g) \\ det(f\circ g) \end{array}\right.\]
+\qed 
+\end{dem}
+
+
 

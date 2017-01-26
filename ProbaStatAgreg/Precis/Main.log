@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.5)  24 JAN 2017 14:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.5)  26 JAN 2017 10:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1219,7 +1219,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
 LaTeX Warning: Reference `Ehrenfest' on page 8 undefined on input line 113.
 
-<Ehrenfest.png, id=206, 612.2875pt x 461.725pt>
+<Ehrenfest.png, id=216, 612.2875pt x 461.725pt>
 File: Ehrenfest.png Graphic file (type png)
  <use Ehrenfest.png>
 Package pdftex.def Info: Ehrenfest.png used on input line 116.
@@ -1273,28 +1273,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--46
  []
 
 [9] (./AlgLin.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--23
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--27
+Underfull \hbox (badness 10000) in paragraph at lines 27--29
 
  []
 
-) (./Main.bbl) [10]
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--36
+
+ []
+
+[10]) (./Main.bbl) [11]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 55.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 55.
  (./Main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 55.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 55.
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: 0216C7E5EBF41A45DD0E876858DA566B;1081.
+(rerunfilecheck)             Checksum: 41B78DB35C134EE09D433982A48FEBC5;1234.
 
 
 LaTeX Warning: There were undefined references.
@@ -1302,10 +1312,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 55.
  ) 
 Here is how much of TeX's memory you used:
- 20687 strings out of 494924
- 357686 string characters out of 6179709
- 574398 words of memory out of 5000000
- 23509 multiletter control sequences out of 15000+600000
+ 20695 strings out of 494924
+ 357783 string characters out of 6179709
+ 574401 words of memory out of 5000000
+ 23511 multiletter control sequences out of 15000+600000
  13967 words of font info for 55 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  57i,9n,54p,681b,3098s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1328,12 +1338,13 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/symbols/msbm7.pfb>
-Output written on Main.pdf (10 pages, 299154 bytes).
+lic/amsfonts/euler/eufm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/symbols/msbm7.pfb>
+Output written on Main.pdf (11 pages, 306388 bytes).
 PDF statistics:
- 337 PDF objects out of 1000 (max. 8388607)
- 299 compressed objects within 3 object streams
- 117 named destinations out of 1000 (max. 500000)
- 122 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 360 PDF objects out of 1000 (max. 8388607)
+ 319 compressed objects within 4 object streams
+ 123 named destinations out of 1000 (max. 500000)
+ 138 words of extra memory for PDF output out of 10000 (max. 10000000)
 
