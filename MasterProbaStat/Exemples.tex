@@ -1,0 +1,30 @@
+\section{Quelques exemples}
+
+\subsection{Théorème de Moivre-Laplace}
+
+Soient $X_i$ des variables aléatoires i.i.d. suivant une loi de Bernoulli de paramètre $p\in (0,1)$ et 
+\[S_n=\frac{1}{n}\sum_{i=1}^n X_i.\]
+
+\begin{enumerate}
+\item Quelle loi suit $S_n$ ?
+\item Calculer l'espérance et la variance de $S_n$.
+\item Vers quoi tend \[\sqrt{n}\frac{S_n - p}{p(1-p)}\quad \text{?}\]
+Rappeler le mode de convergence et sa définition, ainsi que les différents modes de convergence que vous connaissez, et leurs liens logiques.
+\end{enumerate}
+
+\subsection{Moindres carrés}
+
+On se place dans l'espace euclidien $(\mathbb R^n, \langle \ , \ \rangle) $, on notera $||x||_2 = \sqrt{\langle x,x\rangle}$, et on fixe $x_1,...,x_N \in \R^n$. On définit 
+\[L\left\{ \begin{array}{rcl} \R^n & \rightarrow & \R \\ x &  \mapsto & \sum_{i=1}^N ||x-x_i||_2^2 \end{array}\right.\]
+
+Montrer que $L$ admet un unique minimum sur $\R^n$, et le calculer explicitement en fonction des $x_i$.
+
+\subsection{Moyenne et variances empiriques}
+Soient $X_i$ des variables aléatoires i.i.d. d'espérance $\mu\in\R$ et de variance $\sigma^2>0$. On définit 
+\[\begin{array}{rcl} \overline X_n = \frac{1}{n}\sum_{i=1}^n X_i, & S^2_n = \frac{1}{n-1}\sum_{i=1}^n (X_i -\overline{X}_n)^2, & \hat{\sigma}^2_n = \frac{1}{n}\sum_{i=1}^n (X_i -\overline{X}_n)^2  \end{array}.\]
+
+\begin{enumerate}
+\item Calculer l'espérance et la variance de chacune de ces statistiques.
+\item De quoi ces statistiques sont-elles les estimateurs ? Préciser leurs propriétés.
+\end{enumerate}
+
