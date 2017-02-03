@@ -118,6 +118,12 @@ On peut facilement voir que le système atteint rapidement l'état d'équilibre 
 \label{fig:Ehrenfest}
 \end{figure}
 
+\subsection{Circulation des pièces de monaie dans la zone euro}
+
+Voici un code basé sur le texte de modélisation "L'euro voyage" publié par le jury. Le modèle est une variation du modèle d'Erhenfest. On suppose désormais qu'il y a $2$ types de particules. A chaque instant, on choisit deux particules, une dans chaque compartiment, et on les échange. Le code contient une fonction qui permet de simuler des trajectoires de cette chaîne de Markov, et affiche ensuite l'histogramme empirique superposé à la densité de la probabilité invariante, ce qui permet d'illutsrer le théorème ergodique.
+
+\lstinputlisting[language= Scilab]{Euroland.sci}
+
 \subsection{Marche aléatoire simple sur un graphe}
 
 \begin{definition}
