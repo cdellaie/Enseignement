@@ -1,0 +1,30 @@
+\section{Réseaux de neurones}
+
+On donne dans cette partie une définition d'une classe de modèles très à la mode : les réseaux de neurones. On se place dans le cadre de l'apprentissage supervisé comme définit précédement.\\
+
+Soit $N\geq 1$ un entier appelé le nombre de couche, et $d=\{d_j\}_{j=1,N}$ une suite de dimensions. On note $\Omega_{N,d}$ l'espace des $N$-uplets de matrices $W_j$ de taille $(d_j,d_{j+1})$, et on se donne des fonctions $f_j : \mathbb R \rightarrow \mathbb R$. On définit alors par récurrence des fonctions $x^{(j)}$, chacune à $j$ variables:
+\[x^{(N)}(W_1,...,W_N,f_1,...,f_N) = \sum_{i=1}^{d_N} f_N([W_N x^{(N-1)}(W_1,...,W_{N-1},f_1,...,f_{N-1})]_i)e_i \quad \forall (W_1,...,W_N)\in \Omega_{N,d}. \]
+
+\begin{definition}
+Un réseau de neurones à $N$ couches est la donnée
+\begin{itemize}
+\item[$\bullet$] d'une suite  d'entiers $d=\{d_j\}_{j=1,N}$,
+\item[$\bullet$] d'une famille de fonctions $f_j : \mathbb R \rightarrow \mathbb R$,
+\item[$\bullet$] d'un $N$-uplets $W=(W_1,...,W_N)$ de $\Omega_{N,d}$.
+\end{itemize}
+Etant donné une entrée $x_0\in \mathbb R^d_1$, le réseau renvoie $x^{(N)}(W_1,...,W_N)$.
+\end{definition}  
+
+On appelle couches cachées le complémentaire de la première et de la dernière couche. En général, les fonctions $f_j$ sont les mêmes sur les couches cachées. On supposera donc que $f_j=f,\forall j$, et on notera $x^{(j)}(W_1,...,W_j)$ à la place de $x^{(j)}(W_1,...,W_j,f,...,f)$.\\
+
+Comme suggéré dans la partie précédente, on peut effectuer une descente de gradient sur la perte $L^2$. Il faut donc calculer le gradient de 
+\[W\in\Omega_{N,d} \mapsto ||t - x^{(N)}(W)||^2,\]
+ce qui se fait par récurrence. Si l'on note $e_l$ les vecteurs de la base canonique, $W_k=(w_{ll'}^{(k)})_{ll'}$ et $\partial_{ll'}^{(k)}x^{(j)} = \frac{\partial}{\partial w_{ll'}^{(k)}}x^{(N)}(W)$, on obtient les relations suivantes :
+\[\begin{array}{c}
+\partial_{ll'}^{(k)}x^{(k)}= f'([W_k x^{(k-1)}]_l) x^{(k-1)}_{l'} e_l \\
+\partial_{ll'}^{(k)}x^{(j)}= f'(W^{(j)} x^{(j-1)}) .\times W_N \partial_{ll'}^{(k)}x^{(j-1)} \text{si }j\geq k 
+\end{array}.\]
+
+Voici un code Scilab qui génère et entrâine un réseau de neurones suivant le modèle de cette section.
+
+\lstinputlisting[language= Scilab, firstline = 5, lastline=40]{Layer.sci}

@@ -1,0 +1,17 @@
+Dans ce chapitre, nous présentons quelques méthodes d'apprentissage statistique. Notre point de vue est celui de la modélisation statistiques : les algorithmes d'apprentissage sont des fonctions paramétrées sur un espace, et les paramètres sont actualisés à chaque fois que l'on lui fournit une donnée en entrée.
+
+\section{Les différents types d'apprentissage statistique}
+
+\subsection{Apprentissage supervisé}
+
+Pour l'apprentissage supervisé, on possède un échantillon de donnée $x_1,...,x_N$ ainsi que les réponses correspondantes $t_1,...,t_N$. L'idée de l'algorithme est d'actualiser les paramètres du modèle à chaque itération en observant la différence $f(x_j)-t_j$. 
+
+On observe donc des données $(x_j,t_j)_{j=1,N}$, que l'on modélise comme 
+\[t_j = f_\beta (x_j) +\varepsilon_j,\]
+où $\{f_\beta\}_{\beta\in\Omega}$ est une famille de fonctions indexée sur un espace. Le but est donc d'estimer le $\beta$ optimal en un certain sens.\\
+ 
+Par exemple, supposons que $\Omega$ soit un ouvert dans un espace vectoriel réel de dimension finie, et que les fonctions $f_\beta$ soient à valeurs dans $\mathbb R^d$. Un critère d'erreur est la perte $ l^2$ :
+\[L(\beta)= \sum_{j=1}^N ||t_j-f_\beta(x_j)||^2.\]
+Une méthode courante pour se diriger vers un $\beta$ performant est d'effectuer une descente de gradient sur $L$, i.e. d'actualiser $\beta$ selon la règle :
+\[\beta_{j+1} = \beta_j -\eta \nabla L(\beta_j),\]
+où l'on se donne un pas $\eta>0$. Sous de bonnes conditions, on peut démontrer que cette méthode converge vers un minimum de $L$.

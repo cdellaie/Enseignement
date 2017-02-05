@@ -10,6 +10,24 @@
 \usepackage{amssymb}
 \usepackage{tikz-cd}
 
+\usepackage{listings}
+\lstdefinestyle{Scilab}{%
+  language=Scilab,%
+  breaklines=true,%
+  frame=l,%
+  xleftmargin=\parindent,%
+  basicstyle=\ttfamily\small,%
+  keywordstyle=\bfseries\color{green!40!black!80},%
+  showstringspaces=false,%
+  commentstyle=\itshape\color{purple!70},%
+  identifierstyle=\color{blue!80},%
+  stringstyle=\color{red!80},%
+  directivestyle=\color{orange!90!black!80},%
+  % otherkeywords={},%
+  escapeinside={<latex>}{</latex>},%
+}
+\lstset{style=Scilab}
+
 \hypersetup{                    % parametrage des hyperliens
     colorlinks=true,                % colorise les liens
     breaklinks=true,                % permet les retours à la ligne pour les liens trop longs
