@@ -44,8 +44,8 @@ function Q=WF(N)
 endfunction
 
 //Parametres
-m2=20 // taille de la population N=2*m2+1
-T2=200 // temps de simulation
+m2=100 // taille de la population N=2*m2+1
+T2=1000 // temps de simulation
 x1=m2  // nombre d'individu de type A
 
 // Une trajectoire
@@ -67,8 +67,22 @@ disp('Wright-Fisher : fréquence de fixation en 0: '+string(f0));
 histplot(m2,temps);
 xtitle('WrightFisher : histogramme du temps de fixation')
 
+N=10;
+Y=zeros(2*N+1)
+M=100;
+for x=1:(2*N+1)
+    s=0;
+    for j=1:M
+        Y=grand(T2,'markov',WF(N),x);
+        temps= sum(x>1&x<2*m2+1,'c')+1;
+        s=s+temps;
+        Tau(x)=s/M
+    end
+end
 
-
+scf()
+plot2d2(1:(2*N+1),Tau)
+xtitle("Temps de fixation en fonction du point de départ")
 
 
 

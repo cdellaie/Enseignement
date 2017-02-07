@@ -28,7 +28,7 @@ function C = C(n)
     C= prod(1:n) ./ (v .* gsort(v))
 endfunction
 
-// ProbabilitÃ© invariante et
+// Probabilite invariante et
 // Histogramme empirique
 
 h=tabul(X)
