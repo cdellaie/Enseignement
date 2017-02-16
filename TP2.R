@@ -9,7 +9,7 @@ plot(maxO3 ~ T12, data=data,
 title(main = "Nuage de points")
 
 #regression lineaire
-mco <- lm(max03 ~ T12, data=data)
+mco <- lm(maxO3 ~ T12, data=data)
 coef(mco)
 fitted(mco)
 
